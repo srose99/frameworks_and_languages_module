@@ -20,6 +20,7 @@
     * Framework example - code review
     * Without a Framework - code review
 * Session 8 - Monday 21st November
+    * Containers (revisited)
     * Frameworks in other domains
 * Session 9 - Monday 28th November
     * Engineering stories
