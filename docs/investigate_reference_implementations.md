@@ -1,6 +1,11 @@
 Investigate Reference Implementations (2 hours)
 =====================================
 
+In industry, we need to be able to read code and evaluate solutions.
+We need to describe and justify why an approach is flawed.
+Today we are going to attempt to build some of these skills.
+This is a requirement of you Assignment 2.
+
 * Task 1 (1 hour)
     * For each of the server (30min) + client (30min)
         * (20min) Individually, view the code attempting to identify permalinks to the items listed below
