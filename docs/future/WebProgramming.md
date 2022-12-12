@@ -1,10 +1,19 @@
 Web Programming
 ===============
 
+Level 5
+
+
 Description
 -----------
 
 Web technologies are a foundation of modern software. Web technologies facilitate networked applications that are easily deployable. Web technologies can facilitate realtime interaction/communication.
+
+Students are to understand the foundations of web technology (server/client separation).
+The focus of the module is to accrue practical web programming skills.
+By understanding web foundation technologies, students will have the prerequisite knowledge to work with more advanced libraries.
+This module is to be delivered using bare-bones IDEs, standard language libraries and common builtin browser development tools.
+
 
 This module attempts to give students the opportunity to practically interact with a range of core web technologies:
 * HTTP Server
@@ -12,7 +21,7 @@ This module attempts to give students the opportunity to practically interact wi
 * WebSockets
 * Document Object Model
 * CSS (including transitions and variables)
-* HTML5 Canvas (including shape paths)
+* HTML5 Canvas (including shape paths and requestAnimationFrame)
 * Web Forms (POST)
 * Browser Events
 * Cookies/Sessions
@@ -21,8 +30,8 @@ This module attempts to give students the opportunity to practically interact wi
 * HTML Offline Storage
 
 Once the students have engaged with the above technologies in a practical way, students are to use CDIO to conceive, design and implement a simple practical project to demonstrate a range of skills acquired.
-Template project ideas will be provided to support weaker students. More advanced students will be encouraged to be creative with their implementation.
-
+Template project ideas will be provided to support weaker students. 
+More advanced students will be encouraged to be creative with their implementation.
 
 
 Learning Goals
@@ -38,18 +47,12 @@ Learning Goals
 6. Understand that data can be POST'ed by forms. This can be stored and returned with a GET requests
 7. Understand that server and client can share data in the form of cookies
 8. Understand that all IO in browsers is performed by asynchronous non blocking calls
-9.  Understand that browsers have a range of build in api's e.g. offline storage
-10. Understand that rather than always working with raw web technologies, complex problems often require the structure of established frameworks (linking to Programming Frameworks)
+9. Understand that browsers have a range of build in api's e.g. offline storage
+10. Understand how to use developer tooling built into modern web browsers effectively
+    * Network requests, Console/REPL, builtin debugger
+11. Understand that rather than raw web technologies are a foundation. Complex problems often require the structure of established frameworks (linking to Programming Frameworks)
+12. Understand the tools software engineers use to collaborate on code projects
 
-Template Projects include:
-* HTTP Server
-* HTTP Message Board
-* Network Chat
-    * WebSockets, Events
-* Network Paint
-    * WebSockets, JSON, Canvas
-* Poor man's Chromecast
-    * WebSockets, DOM, 
 
 
 Learning and Teaching Strategies
@@ -57,7 +60,9 @@ Learning and Teaching Strategies
 
 * The module will be taught in a lab using mixed mode delivery as required, so that theory, practical and discussion can take place as required within one session.
 * Students will demonstrate progress in their assignment and will have the opportunity to gain feedback of their understanding in each session through the artefacts they are working on.
-* Students are to use version control and engage in professional behaviours like code review and pair programming
+* Students are to use version control and engage with 'professional behaviours' like code review and pair programming
+
+* In industry, it is expected that developers engage with code-base's they are unfamiliar with add features. The final assessment of this module is for students to add a feature to another students project (preferably via a pull-request for students to understand the tooling professional developers collaborate on software).
 
 
 Indicative Assessment 
@@ -65,10 +70,33 @@ Indicative Assessment
 
 | Name | Type | Module % | Word equivalent |
 |-|-|-|-|
-| Guided Projects | Digital Artefact | 50% | 2000 |
+| Guided Projects | Digital Artefact | 30% | 1200 |
 | Personal Project | Digital Artefact | 50% | 2000 |
+| Feature Addition | Digital Artefact | 20% | 800 |
 
 
+Progression
+-----------
+
+* This module forms the foundation for moving on to larger frameworks and more complex development toolchains (see Programming Frameworks)
+
+
+Support Materials
+-----------------
+
+Template/Example Projects include:
+* HTTP Server
+* HTTP Message Board
+    * WebForms POST, GET, Cookies
+* HTTP Shopping Basket
+    * Cookies
+* Network Chat
+    * WebSockets, Events
+* Network Paint
+    * WebSockets, JSON, Canvas
+* Poor man's Chromecast
+    * WebSockets, DOM, Events
+Each example is to be short (less than 100 lines) and require no external libraries (with the exception of raw WebSocket handling)
 
 
 
