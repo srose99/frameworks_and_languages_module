@@ -30,7 +30,7 @@ This module attempts to give students the opportunity to practically interact wi
 * HTML Offline Storage
 * Simple Deployment mechanisms
 * URL components (scheme, domain, path, hash, query string)
-* BASE64 encoding
+* BASE64 encoding (of images)
 
 
 Once the students have engaged with the above technologies in a practical way, students are to use CDIO methodology to conceive, design and implement a simple practical project to demonstrate a range of skills acquired.
@@ -86,8 +86,8 @@ Progression
 * This module forms the foundation for moving on to larger frameworks and more complex development toolchains (see Programming Frameworks)
 
 
-Support Materials
------------------
+Supporting Materials
+--------------------
 
 Template/Example Projects include:
 * HTTP Server
@@ -96,8 +96,11 @@ Template/Example Projects include:
 * HTTP Message Board
     * WebForms POST, GET, Cookies
     * [python](https://github.com/calaldees/TeachProgramming/blob/9a33e0254e4f9f6330654004208f036b63fa2581/teachprogramming/static/projects/web/messages.py) [php](https://github.com/calaldees/TeachProgramming/blob/9a33e0254e4f9f6330654004208f036b63fa2581/teachprogramming/static/projects/web/messages.php)
+        * Potential to be expanded with sqlite datastore?
 * HTTP Shopping Basket
     * Cookies
+    * BASE64 encoded images in json
+    * (example TODO)
 * Network Chat
     * WebSockets, Events
     * [js](https://github.com/calaldees/TeachProgramming/blob/9a33e0254e4f9f6330654004208f036b63fa2581/teachprogramming/static/projects/net/chat.html) [python](https://github.com/calaldees/TeachProgramming/blob/9a33e0254e4f9f6330654004208f036b63fa2581/teachprogramming/static/projects/net/chat.py) [java](https://github.com/calaldees/TeachProgramming/blob/9a33e0254e4f9f6330654004208f036b63fa2581/teachprogramming/static/projects/net/chat.java)
@@ -107,97 +110,16 @@ Template/Example Projects include:
 * Simple Chromecast
     * WebSockets, DOM, Events
     * [js](https://github.com/calaldees/TeachProgramming/blob/9a33e0254e4f9f6330654004208f036b63fa2581/teachprogramming/static/projects/net/disco.md)
+* Fly the Copter Network?
+    * (example TODO) (network every 3 or 4 frames)
 Each example is to be short (less than 100 lines) and require no external libraries (with the exception of raw WebSocket handling)
-
+* WebSocket Echo server
+    * provided to students [example](https://github.com/calaldees/channelServer) (can be simplified for class use)
 
 
 Notes
 =====
 
 Personal Project - Require documentation "how to run"
-
-* (theory) (don't use I and B etc)
-    * ? BASE64 images, webcam?
-    * Certificates
-    * DNS
-* database extension - sqllite?
-    1. 
-    2. Create a simple server side Message Board (Web Forms) that tracks user identity (Cookies)
-
-
----
-
-This is a business module -- it's nonsense -- I'm going to disregard this specification
-
-
-Description
------------
-"E-commerce Case Analysis" is an important professional group elective course for computer majors. The purpose of the case analysis course is to enable students to master the methods and perspectives of case analysis. The understanding of business applications can achieve the effect of repeating one thing and three , and accumulate knowledge and methods for students to optimize e-commerce projects, analyze problems and plan e-commerce solutions and projects in the future. Therefore, in the teaching process of e-commerce case analysis, we must recognize the significance of case analysis, understand the classification of e-commerce models, and master the analysis model and teaching model of e-commerce cases.
-
-Objectives
-
-Knowledge goal
---------------
-(1)	Business value creation in the Internet age;
-(2)	Internet commerce development strategy;
-(3)	New business model development;
-(4)	B2B value creation;
-(5)	E-commerce integrates industry resources;
-(6)	The profit model of the Internet entertainment platform;
-(7)	The formation of the electronic magazine industry;
-(8)	The value chain of online map information services;
-(9)	application of customer relationship management;
-(10)	Internet marketing strategy and implementation;
-(11)	Virtual economy and social interaction;
-(12)	Public service and new rural construction.
-Ability target
-Through the study of this course, students can master the methods and ideas of e-commerce case analysis, familiarize themselves with the actual application of e-commerce in many typical domestic and foreign enterprises, and cultivate students' ability of case analysis and generalization, so that students can master The operation law of e-commerce, on the basis of investigation, discussion and practice, a deeper understanding of the basic principles of e-commerce.
-
-Teaching content and allocation of hours
-1. E-Commerce Case Study Model (4 hours)
-2. Case Study of Online Brokerage Mode (8 hours)
-3. Case Study of Search Engine Mode (8 hours)
-4. Online Advertising Model Case Study (4 hours)
-5. Case Study of Network Direct Selling Mode (4 hours)
-6. Case Study of Online Store Mode (4 hours)
-7. Network Marketing Model Case Analysis (4 hours)
-8. Case Study of Online Payment Mode (4 hours)
-9. Case Study of Network Aggregation Mode (8 hours)
-10. User Contribution Model Case Study (8 hours)
-11. Network Community Model Case Analysis (4 hours)
-12. Case Analysis of Classified Information Patterns (4 hours)
-
-
-
-
-Description
-This course is one of the selected courses for software engineering majors in the direction of e-commerce application, and it is an important course to strengthen students' practical ability of application development in the field of e-commerce. The overall goal of the course is to let students understand the general business requirements and related technical schemes of e-commerce application system, understand the ideas and methods of e-commerce application system development, and master the ability of designing related solutions and coding them according to business requirements, thus laying a solid foundation for participating in e-commerce application work and further studying e-commerce application system development.
-The course mainly includes two parts, basic knowledge of e-commerce and development technology of application system. E-commerce knowledge mainly includes e-commerce foundation, e-commerce technology foundation, e-commerce security and e-commerce system planning. The technical content of system development mainly includes typical cases of e-commerce, technical scheme and implementation of typical system of e-commerce application, etc. The course adopts the project-and-case driven method to implement teaching. Taking several typical e-commerce application system projects as examples, the related technical schemes of different types of e-commerce application systems are decomposed, and students are instructed to select one of them for system development practice. 
-
-Objectives
-1. Knowledge
-(1) Understand the basis of e-commerce.
-(2) Understand the technical basis of e-commerce.
-(3) Understand e-commerce security.
-(4) Understand the planning of e-commerce system.
-(5) Master the development tools of e-commerce application system.
-(6) Master the coding skills of developing e-commerce application systems.
-(7) Understand and explore the new development direction and new technical solutions of e-commerce.
-2. Capability
-(1) Understand the business process of e-commerce.
-(2) Understand the functions of existing application systems of mainstream e-commerce enterprises, their solutions and their effects.
-(3) Pay attention to the non-functional requirements of e-commerce business requirements, understand the advantages and disadvantages of existing solutions, and try to put forward your own solutions.
-(4) Master the skills of developing e-commerce application system by flexibly selecting appropriate methods and modes according to the business requirements of e-commerce.
-
-Teaching Content and Study Hours Allocation
-1. Theory
-(1) Fundamentals of e-commerce (4 hours) 
-(2) Technical Basis of E-commerce (4 hours)      
-(3) E-commerce security (6 hours)      
-(4) Planning of e-commerce system (6 hours)      
-(5) Typical cases of e-commerce (6 hours)      
-(6) Technical scheme and implementation of typical system of e-commerce application (8 hours)       
-2. Practice
-(1) Project 1: Web-based shopping mall sales platform (32 hours)
-(2) Project 2: Ordering system of fresh fruits and vegetables in community (32 hours)
-(3) Project 3: Customer Relationships Management System for SMEs (32 hours) 
+* Certificates
+* DNS
