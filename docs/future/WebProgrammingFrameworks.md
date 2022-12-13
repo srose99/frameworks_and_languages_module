@@ -38,8 +38,9 @@ Learning Goals
 Learning and Teaching Strategies
 --------------------------------
 
-* The module will be taught in a lab using mixed mode delivery as required, so that theory, practical and discussion can take place as required within one session.
-* Students will demonstrate progress in their assignment and will have the opportunity to gain feedback of their understanding in each session through the artefacts they are working on. 
+* The module will be taught in a lab using mixed mode delivery as required, so that theory, practical and discussion can take place as required within one session
+* Students will demonstrate progress in their assignment and will have the opportunity to gain feedback of their understanding in each session through the artefacts they are working on
+* Automated tests (via industry CI tools) are to be used to give students feedback on their implementation progress
 
 
 Indicative Assessment 
