@@ -15,6 +15,13 @@ This course strengthen students' core technical ability of Web application syste
 Learning Goals
 --------------
 
+1. Use a range of frameworks and languages in a range of different problem domains to solve a problem to a formal specification
+2. Identify a range of framework/language features and describe the problems the technologies are trying to solve using technical language
+3. Engage with professional industry developer tooling, including: containers, continuous integration and automated test frameworks
+
+
+### Expanded
+
 1. Understand that modern web applications are often split into multiple components (backend, frontend)
 2. Independently select a variety frameworks solve a business problem/specification
 3. Use a framework to create a RESTful API server that meets to an specification (e.g. OpenAPI spec)

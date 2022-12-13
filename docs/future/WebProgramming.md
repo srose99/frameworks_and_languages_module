@@ -41,8 +41,15 @@ Students will be asked to demonstrate their understanding by adding a feature to
 Complex datastores (sql) [databases] and Network infrastructure (https/certificates, DNS) [networking] are out of scope of this module, but should be mentioned.
 
 
-Learning Goals
---------------
+Learning Objectives
+-------------------
+
+1. Develop the skills to independently develop and deploy a simple web application using foundation/standard technologies
+2. Describe the purpose and use of a range of server and client foundation technologies
+3. Engage with industry standard developer tooling
+
+
+### Expanded
 
 1. Understand the HTTP protocol by implementing a HTTP sever from scratch using raw sockets
 2. Understand WebSockets by implementing a WebSocket EchoServer and creating browser clients that can send messages via this server
