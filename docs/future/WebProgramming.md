@@ -16,6 +16,7 @@ This module is to be delivered using bare-bones IDEs, standard language librarie
 
 
 This module attempts to give students the opportunity to practically interact with a range of core web technologies:
+
 * Modern HTML boilerplate structure
 * HTTP Server
 * WebSockets
@@ -97,6 +98,7 @@ Supporting Materials
 --------------------
 
 Template/Example Projects include:
+
 * HTTP Server
     * Serve static files and generate some form of dynamic content
     * [python](https://github.com/calaldees/TeachProgramming/blob/9a33e0254e4f9f6330654004208f036b63fa2581/teachprogramming/static/projects/net/http_server.py) [java](https://github.com/calaldees/javalib/blob/7326a70c2914f11335809766a1b13d1f41a5eac3/lib/Utils/Utils/Apps/WebServer.java)
@@ -124,9 +126,9 @@ Each example is to be short (less than 100 lines) and require no external librar
     * provided to students [example](https://github.com/calaldees/channelServer) (can be simplified for class use)
 
 
-Notes
+Unsorted Notes
 =====
 
 Personal Project - Require documentation "how to run"
-* Certificates
-* DNS
+* Certificates?
+* DNS?
