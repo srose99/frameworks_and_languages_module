@@ -52,7 +52,9 @@ Learning Objectives
 
 ### Expanded
 
-1. Understand the HTTP protocol by implementing a HTTP sever from scratch using raw sockets
+1. Understand the HTTP protocol
+    * be able to describe the structure of a HTTP request and HTTP response
+    * by implementing a HTTP sever from scratch using raw sockets
 2. Understand WebSockets by implementing a WebSocket EchoServer and creating browser clients that can send messages via this server
 3. Understand that webpages are based on a Document Object Model that can be manipulated with code (createElement, remove, querySelector)
 4. Understand that DOM elements can be styled/animated with CSS (transition)
@@ -65,8 +67,8 @@ Learning Objectives
 11. Understand how to use developer tooling that is built into modern web browsers effectively
     * Network requests, Console/REPL, builtin debugger
 12. Understand how to deploy simple web-apps
-13. Understand that rather than raw web technologies are a foundation. Complex problems often require the structure of established frameworks (linking to Programming Frameworks)
-14. Understand the tools software engineers use to collaborate on code projects
+13. Understand that rather than raw web technologies are a foundation. Complex problems often require the structure of established frameworks (linking to next module 'Programming Languages and Frameworks')
+14. Understand the tools software engineers use to collaborate on code projects (version control)
 
 
 Learning and Teaching Strategies
@@ -84,7 +86,7 @@ Indicative Assessment
 | Name | Type | Module % | Word equivalent |
 |-|-|-|-|
 | Guided Projects | Digital Artefact | 25% | 1000 |
-| Personal Project | Digital Artefact | 50% | 2000 |
+| Personal Project | Digital Artefact + Code Review Presentation to Peers | 50% | 2000 |
 | Feature Addition to another students personal project | Digital Artefact | 25% | 1000 |
 
 
@@ -127,8 +129,68 @@ Each example is to be short (less than 100 lines) and require no external librar
 
 
 Unsorted Notes
-=====
+==============
+
+De-scoped ideas
+---------------
 
 Personal Project - Require documentation "how to run"
 * Certificates?
 * DNS?
+
+
+Validation
+----------
+
+Snippets from our validation documents that align with this module
+
+> software  development  using  a  variety  of  different  tools  and  techniques  alongside  appropriate  professional  practice.  
+* Develop your understanding of the range and scope of use of Computer Science;
+* Enable you to work through the entire software development lifecycle, using modern technologies, in order to produce a solution to a given problem; 
+
+Aims (Working towards)
+* > 2. create a substantive piece of individual work using all the skill sets acquired to  solve  a  Computer  Science  problem  through  the  use  of  appropriate  software;
+* > 5. reflect on working co-operatively as a member of a team to work on an issue related to your programme, recognising and using the different strengths and abilities of fellow team members;
+* > 7. apply appropriate   industry   standards,   theories   and   concepts   for   the   specification,   design,   implementation,   management   and   evaluation   of   computer systems;
+* > 8. effectively and efficiently use a range of software tools for the documentationand development of computer systems.
+
+> You will take  part  in  a  large  quantity  of  active  learning  using  group  projects  and  problem-based learning with industrial involvement.  
+
+> The CDIO scheme is a way of helping you to become workplace ready and have commercial awareness in many ways.  You will learn to work at all the stages of the typical product or service lifecycle.
+
+> 1. Using  industrially  recognised  and  relevant  technology  and  examples  whenever  possible.
+> 4. Building the level of complexity of problems, challenges and solutions over the period of the degree programme.
+
+accreditation
+> there is no accreditation with external bodies at this stage, but accreditation will be sought from British Computer Society and the programme has been designed with this accreditation in mind.
+
+NOTE: Would like to consider - verbal presentation assessment
+* > 6. devise efficient computing models to solve sophisticated computing problems and  communicate  these solutions  succinctly  and  accurately  to  a  range  of  audiences;
+
+Other Certifications this module aligns with
+--------------------
+
+* Udemy [Web Development Masterclass & Certifications](https://www.udemy.com/course/become-a-certified-web-developer/)
+    * £85
+    * 55 hours of video (+? implementation time, 25 lab exercises + 1 project)
+* coursera.org
+    * by University of Michigan - [Web Design for Everybody: Basics of Web Development & Coding Specialization](https://www.coursera.org/specializations/web-design)
+        * £200? 100 hours
+    * by Johns Hopkins University - [HTML, CSS, and Javascript for Web Developers](https://www.coursera.org/learn/html-css-javascript-for-web-developers)
+    * by University of California, Davis - [Introduction to Web Development](https://www.coursera.org/learn/web-development)
+    * By Meta 
+        * [Meta Back-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-back-end-developer)
+            * £300? 200 Hours
+        * [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer)
+            * £300? 200 Hours
+* LinkedIn Learning
+    * [Getting Started as a Full-Stack Web Developer](https://www.linkedin.com/learning/getting-started-as-a-full-stack-web-developer)
+        * £30
+        * 50 Videos
+        * Certificate of completion to add to your LinkedIn profile
+* openclassrooms.com - University of Massachusetts Global Partnership - [Web Developer](https://openclassrooms.com/en/paths/555-web-developer) [pdf](https://openclassrooms.com/en/paths/555-web-developer/pdf)
+    * Full time 6-months - 400 hours? 1000 hours
+    * Hired or refunded
+    * 'Web Programming' combined with 'Programming Frameworks' (Vue.js, Express, Mongo)
+* eCornell cornell.edu university - [Web Design and DevelopmentCornell](https://ecornell.cornell.edu/certificates/technology/web-design-and-development/)
+    * $4000 3months - part time - 150hours?

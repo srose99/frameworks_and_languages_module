@@ -163,6 +163,12 @@ Server State Frameworks
 
 Question: What problem is the 'DREAM' pattern trying to solve?
 
+Cloud First Frameworks?
+-----
+
+https://www.winglang.io/
+
+
 
 BlockChain Applications
 -----------------------
@@ -208,3 +214,4 @@ Game Frameworks
     * [PyGame](https://en.wikipedia.org/wiki/Pygame)
         * https://realpython.com/pygame-a-primer/#basic-pygame-program
         * A library not a framework - if you implement the game loop - its not a framework
+    * [melonjs.org](https://melonjs.org/)
