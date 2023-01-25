@@ -85,7 +85,7 @@ Indicative Assessment
 
 | Name | Type | Module % | Word equivalent |
 |-|-|-|-|
-| Guided Projects | Digital Artefact | 25% | 1000 |
+| Guided Projects | Log Books | 25% | 1000 |
 | Personal Project | Digital Artefact + Code Review Presentation to Peers | 50% | 2000 |
 | Feature Addition to another students personal project | Digital Artefact | 25% | 1000 |
 
