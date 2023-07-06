@@ -142,6 +142,7 @@ In django templates
 
 ### TODO
 * [Anatomy of a Django/HTMX Project](https://danjacob.net/posts/anatomyofdjangohtmxproject/)
+* [Appliku](https://appliku.com/) - Deploy Django in 5 minutes - to most cloud providers
 
 
 ### Falcon Framework (Python)

@@ -160,13 +160,43 @@ Server State Frameworks
 * [Dream](https://github.com/aantron/dream) [docs](https://aantron.github.io/dream/) - Tidy Web framework for OCaml and ReasonML 
     * > Easy-to-use, feature-complete Web framework without boilerplate.
     * SQL, WebSockets, Middleware, Streams, Cookies
+### Pynecone
+* [pynecone.io](https://pynecone.io/)
+    * Frontend. Backend. Hosting. Pure Python. Build web apps in minutes. Deploy with a single command.
+    * > In Pynecone, the frontend compiles down to a React/NextJS app
+    * > The app state is just a class. State updates are functions in the class. And the UI is a reflection of the state
+    * > We store user state on the backend, and use Websockets to send events and state updates
+    * > You can easily integrate all your existing Python libraries into your app. In the future, we hope to leverage WebAssembly to offload many operations to the client.
+    * [Launch HN: Pynecone (YC W23) – Web Apps in Pure Python](https://news.ycombinator.com/item?id=35136827)
+        * > Our goal is for the user to never have to see JS. We try to catch most errors in Python during compile time. We're also not trying to reinvent things like CSS styles, just make them accessible in Python.
 
 Question: What problem is the 'DREAM' pattern trying to solve?
+
+Other - TODO:
+------------
+
+Google
+https://flutter.dev/
+> Deploy to multiple devices from a single codebase: mobile, web, desktop, and embedded devices.
+> Flutter code compiles to ARM or Intel machine code as well as JavaScript, for fast performance on any device.
+
 
 Cloud First Frameworks?
 -----
 
 https://www.winglang.io/
+
+
+Local First?
+-----------
+
+* [Offline Is Just Online With Extreme Latency](https://blog.jim-nielsen.com/2023/offline-is-online-with-extreme-latency/)
+    * > You want to work with a co-worker on a piece of software? If you're in the same room, sitting at the same table, looking at screens side-by-side, any communication between those two computers is actually happening [by sending signals] across the ocean to some data center, to some other server and then coming back to you. One: that's crazy. But two, it's also very slow and expensive and it doesn't have to be that way.
+    * YouTube [Local-first software - Peter Van Hardenberg](https://www.youtube.com/watch?v=KrPsyr8Ig6M) 45min
+* [Yjs](https://docs.yjs.dev/)
+    * Merging data framework
+
+* [Push notifications are now supported cross-browser](https://web.dev/push-notifications-in-all-modern-browsers/)
 
 
 

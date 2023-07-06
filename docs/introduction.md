@@ -177,13 +177,13 @@ Task: Fork + Run + Commit
   * `git status`
   * `git commit -a`
   * `git push`
+  * [GitPod: granting-additional-github-oauth-permissions](https://www.gitpod.io/docs/configure/authentication/github#granting-additional-github-oauth-permissions)
+    * `public_repo`, `repo` and `workflow`
 
 * GitPod shutdown and startup
   * 50 hours a month free
-    * [GitHub Student Developer Pack](https://education.github.com/pack) - 100 hours with cccu address + cccu id 
-
-
-
+* (Optional)
+  * [GitHub Student Developer Pack](https://education.github.com/pack) - with cccu address + cccu id 
 
 
 
@@ -202,13 +202,13 @@ Unsorted
     5. Frameworks
     6. Tests
   2. Practical
-    7. Clone and commit
-    8. gitpod
-    9. Containers
+    1. Clone and commit
+    2. gitpod
+    3. Containers
       1. build/run
       2. compose
-    10. Make HTTP Server
-      3. python/java
+    4.  Make HTTP Server
+      1. python/java
   3. Homework: 
 
 

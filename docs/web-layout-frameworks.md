@@ -489,6 +489,8 @@ tailwindcss
 * [tailwindcss](https://tailwindcss.com/)
     * > Rapidly build modern websites without ever leaving your HTML.
     * [Utility First](https://tailwindcss.com/docs/utility-first)
+    * [Tailwind CSS is the worst…](https://www.youtube.com/watch?v=lHZwlzOUOZ4)
+        * Great commentary on the problems that tailwind is trying to solve
 
 * My opinion
     * Great when used with a client framework with reusable components
@@ -524,6 +526,9 @@ Forms is not part of default functionality - requires plugin
 
 * [Example of tailwind and react together](https://github.com/gentabelardi/search-app/blob/595a66eafa2992a0c2c4458c954433b50b6899fc/components/atoms/Input/index.tsx#L79)
     * Discussion - why is this a popular model? - What problem is react+tailwind solving?
+* Frameworks built on top of frameworks
+    * [Konsta UI](https://konstaui.com/)
+        * Pixel perfect mobile UI components built with Tailwind CSS With iOS and Material Design components for React, Vue & Svelte
 
 
 Pure.css
@@ -561,6 +566,7 @@ Other Projects
 * [Pico CSS](https://picocss.com/) - Minimal CSS Framework for semantic HTML
 * [simple.css](https://simplecss.org/) - A classless CSS framework that makes semantic HTML look good.
 
+
 Other Addons
 ------------
 
@@ -571,6 +577,7 @@ Other Addons
 Further Reading
 ---------------
 
+* [Media Queries, Responsive Design? Help me!](https://engineering.kablamo.com.au/posts/2023/media-queries-and-responsive-design/) Everything You Want To Know About Media Queries and Responsive Design
 * [top bootstrap alternatives](https://hackr.io/blog/top-bootstrap-alternatives)
 * [Top 5 CSS Frameworks for Website Developers and Designers](https://www.browserstack.com/guide/top-css-frameworks)
 * [10 CSS Pro Tips - Code this, NOT that!](https://www.youtube.com/watch?v=Qhaz36TZG5Y) 10min Video

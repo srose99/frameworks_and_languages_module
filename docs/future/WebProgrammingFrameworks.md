@@ -8,10 +8,15 @@ Description
 
 This course strengthen students' core technical ability of Web application system development.
 
-* Build the knowledge and skills required for the development of web systems based on front-end and back-end separation, which lays a solid technical foundation for the development of enterprise-level web application systems.
-* Students independently select technologies to solve a business problem based on a specification
-* Though independent use of mainstream web frameworks, students build an understanding of the features of programming frameworks
-* Use professionally relevant development tools and processes (version control, continuous integration, containers)
+
+Aims
+----
+
+1.	Build the knowledge and skills required for the development of a full stack web systems based on front-end and back-end separation, which lays a solid technical foundation for the development of enterprise-level web application systems.
+2.	Students independently select technologies to solve a business problem based on a specification
+3.	Though independent use of mainstream web frameworks, students build an understanding of the features of programming frameworks
+4.	Use professionally relevant development tools and processes (version control, continuous integration, automated-tests, containers)
+
 
 
 Learning Goals
@@ -60,3 +65,29 @@ Additional/Extension/Optional links to other modules/domains
 1. Use an appropriate persistent datastore
 2. Deployment of containerised system
 3. Integrate with a 3rd party service for authentication of web users
+
+
+
+---
+
+## Equipment you need to bring to class
+•	We will be using linux containers to develop and test software
+•	A cloud based IDE will be used to support your work both on and off campus
+    o	(GitPod (historically) was the recommend online cloud IDE but their pricing model has changed. GitHub-CodeSpaces should be investigated as CCCU in 2023 had an education licence)
+    o	Cloud based development environments are becoming common practice for industry development. 
+o	Some students may wish to setup their own equipment for native development environment (Docker Desktop)
+
+
+---
+
+
+Job alignment
+https://www.linkedin.com/jobs/search?keywords=Software Engineer&location=United Kingdom
+https://www.reed.co.uk/jobs/software-developer-jobs
+https://uk.indeed.com/jobs?q=Software+Developer
+
+
+The majority of software engineering jobs require understanding and use of frameworks. Many software-engineering job are web technology focused as this is the current standard practice for interfacing and distributing content. Many of these jobs refer to frameworks such as React Native (client framework), Django (server framework), Full-Stack (client and server understanding) deploying to the cloud (containers), use of API’s (understanding how to build one, microservices). Many cite DevOps understanding (automated testing).
+
+The module is highly aligned with practical employable skills.
+I would posit that this is single handily the most industry relevant module in our offering.

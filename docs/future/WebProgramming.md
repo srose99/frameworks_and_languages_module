@@ -90,6 +90,64 @@ Indicative Assessment
 | Feature Addition to another students personal project | Digital Artefact | 25% | 1000 |
 
 
+### Assessment Strategy
+* Logbooks
+    * The initial foundation skills are built using a range of guided tasks. Students will be heavily guided with the solutions but should submit regular ongoing progress as logbooks to demonstrate engagement and practical understanding of the core technology foundations.
+* Individual Project
+    * Using the pallet of ‘foundations’ built from the logbooks. Students are asked to create a demo/bare-bones/mvp implementation of a product (see examples in indicative module content)
+    * Projects should be documented (in markdown) with setup/run instructions (see next project/assessment)
+    * These projects are to be presented to peers in a manner that professional engineers will ‘code review’ their solutions. It is expected that participants of the ‘code review’ ask questions and ask the prester to describe their process and justify their design decisions. As a code review group, there should be suggested ‘action points’ to improve the solution.
+    * The assessment is based on the following dimensions.
+        * Quality of the solution
+        * Quality of presentation (technical language)
+        * Quality of suggested improvements
+* Individual Project – Expand another’s project
+    * Students fork/clone a peers project and attempt to add a new feature.
+    * Students are to use industry tools (pull request) to (possibly asynchronously) comment and discuss the proposed solution before the ‘pull request’ is merged. 
+        * The above flow mirrors the flow of a professional code project and collaboration.
+    * The assessment is based on the following dimensions
+        * Quality of feature addition (demoed)
+        * Quality of comments (technical language, questioning, suggestions)
+
+* It is expected that peers are given clear guidance and a rubric on peer assessment criteria. Moderated by members of academic staff.
+* Where possible the assessment should be focused on student understanding and professional ways of working rather than just a ‘one dimensional code only submission’.
+
+
+
+•	(Training tasks)
+o	The initial foundation skills are built using a range of guided tasks. Students will be heavily guided with the solutions but should submit regular ongoing progress as logbooks to demonstrate engagement and practical understanding of the core technology foundations.
+•	Individual Presentation (Code Review)
+o	Using the pallet of ‘foundations’ built from the logbooks. Students are asked to create a demo/bare-bones/mvp implementation of a product (see examples in indicative module content)
+o	Projects should be committed to version control (to allow reviewing of code)
+o	These projects are to be presented to peers in a manner that professional engineers will ‘code review’ their solutions.
+o	Code review structure:
+	Describe the purpose of the software.
+	Demo the software working.
+	Project documented (in markdown) with setup/run instructions (see next project/assessment)
+	Take participants through the journey of how the software work by explaining and commenting on each line of code. Everybody should understand how the code functions and continually asking questions to verify they all have the same understanding. 
+	Justifying design decisions 
+	Taking on board action points and accrue a list of ‘action points’ or ‘suggested improvements’.
+	Code reviews are an active process for all participants. There should be no passive observers in code reviews.
+o	An assessment rubric should be based on the following dimensions.
+	Quality of the solution
+	Quality of presentation (technical language)
+	Quality of discussion/inquiry/collaboration
+	Quality of next steps, conclusions, suggested improvements.
+o	There is no need for “PowerPoint” or any other presentation software. This is a ‘code review’.
+o	The use of whiteboards, paper or visualisers are encouraged.
+o	The working code should be submitted for TurnitIn for reference.
+
+•	Individual Presentation (Code Review) – Feature Addition
+o	Students fork/clone a peers project and attempt to add a new feature.
+o	Students are to use industry tools (pull request) to (possibly asynchronously) comment and discuss the proposed solution before the ‘pull request’ is merged. 
+	The above flow mirrors the flow of a professional code project and collaboration.
+o	The feature addition is to be code reviewed (see above). It us up to code owner if they ‘approve’ the pull request.
+•	It is expected that peers are given clear guidance and a rubric on peer assessment criteria. Moderated by members of academic staff.
+•	Where possible the assessment should be focused on student understanding and professional ways of working rather than just a ‘one dimensional code only submission’
+
+
+
+
 Progression
 -----------
 
@@ -126,6 +184,16 @@ Template/Example Projects include:
 Each example is to be short (less than 100 lines) and require no external libraries (with the exception of raw WebSocket handling)
 * WebSocket Echo server
     * provided to students [example](https://github.com/calaldees/channelServer) (can be simplified for class use)
+
+References
+----------
+
+https://www.amazon.co.uk/HTML5-CSS3-JavaScript-Years-Experience/dp/B0BMZC65M3
+https://www.amazon.co.uk/HTML-CSS-JavaScript-All-One/dp/0672338084
+https://www.amazon.co.uk/Front-End-Back-End-Development-aScript-jQuery/dp/1119813093/
+https://www.amazon.co.uk/dp/184078878X
+https://www.amazon.co.uk/HTML-CSS-QuickStart-Guide-Simplified/dp/1636100007/
+
 
 
 Unsorted Notes
@@ -170,6 +238,8 @@ NOTE: Would like to consider - verbal presentation assessment
 Other Certifications this module aligns with
 --------------------
 
+* [Exam 70-480: Programming in HTML5 with JavaScript and CSS3](https://learn.microsoft.com/en-us/certifications/exams/70-480)
+    * Retired 2021
 * Udemy [Web Development Masterclass & Certifications](https://www.udemy.com/course/become-a-certified-web-developer/)
     * £85
     * 55 hours of video (+? implementation time, 25 lab exercises + 1 project)

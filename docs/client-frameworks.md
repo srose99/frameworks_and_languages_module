@@ -161,8 +161,8 @@ Interacting with our API from client browser javascript
 // Open a blank browser tab and bring up devtools (F12)
 // Copy and paste the code below
 //   These are javascript equivalent of `curl` statesmen's from previous session
-// Start example_server api
-// Set `urlAPI` to your server address. It MUST not end with a `/`
+// Start `example_server` api (suggest: `make run_example_server`)
+// Set `urlAPI` to your server address. (It MUST not end with a `/` as path is appended e.g. `/items`)
 // TASK: using the devtools console
 //   - add 3 items
 //   - get the item list (explore in devtools)
@@ -213,7 +213,7 @@ function deleteItem(item_id) {
 ```
 
 
-Helpers for Assignment 2: Client (notes)
+Helpers for Assignment 1: Client (notes)
 --------------------------------
 
 ### Helper HTML
@@ -396,6 +396,8 @@ Facebook
 
 ### Further Reading
 * [5 Steps to THINK in React](https://www.codestackr.com/blog/5-steps-to-think-in-react/)
+* [react.dev](https://react.dev/)
+    * recommends [Next.js](https://nextjs.org/) for server side integration and [Remix](https://remix.run/) for state in parallel
 
 
 Client Further Reading
@@ -413,7 +415,15 @@ Client Further Reading
 * Other Frameworks in other langauges
     * [fritz2](https://www.fritz2.dev/) Kotlin
     * [WebApps with PureScript & RactiveJS](https://blog.brakmic.com/webapps-with-purescript-and-ractivejs/)
-
+* Frontend Frameworks
+    * [The Market for Lemons](https://infrequently.org/2023/02/the-market-for-lemons/)
+        * js does not perform well on low end android phones - frameworks are too big and developers are stupid for using them
+    * [The case for frameworks](https://seldo.com/posts/the_case_for_frameworks)
+        * SPA are good for: long running sessions with login-gate
+        * > money doesn't care how the developer experiences anything, money cares how fast they work. Any framework obviously takes more time to get started than a simple static site, but I think it's uncontroversial to claim that over time, a framework like React is going to save your developers time: that's what frameworks are invented to do. Let's be clear why that is, though: 
+        * > React has already been used to solve your problem: the React ecosystem will get you 80% of the way there with pre-built solutions and well-documented boilerplate.
+* [Simple, Modern JavaScript](https://vue-mjs.web-templates.io/blog/javascript) 2023
+    * Doing most things with vue3 and tailwind
 
 Other Client frameworks
 -----------------------
@@ -434,3 +444,10 @@ Linked in [other-frameworks.md](./other-frameworks.md)
 * [How to OVER Engineer a Website // What is a Tech Stack?](https://www.youtube.com/watch?v=Sxxw3qtb3_g) YouTube 11min FireShip
     * Talks though all the tech for client, server, ci, containers and then suggests a cutdown concept
     * [stackshare.io/stacks](https://stackshare.io/stacks) - Popular Tech Stacks: The open source tools and SaaS behind popular tech companies
+* [Building a Frontend Framework; Reactivity and Composability With Zero Dependencies](https://18alan.space/posts/how-hard-is-it-to-build-a-frontend-framework.html)
+    * No dependencies.
+    * No build-step before it can be used.
+* [vanilla-fp](https://github.com/abuseofnotation/vanilla-fp)
+    * The no-framework framework for building component-based purely-functional UIs.
+* [VanJS](https://github.com/vanjs-org/van)
+    *  🍦VanJS (Vanilla JavaScript): World's smallest reactive UI framework 
