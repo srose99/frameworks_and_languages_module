@@ -1,4 +1,4 @@
-_DOCKER_COMPOSE:=USER=$(shell id -u):$(shell id -g) docker-compose
+_DOCKER_COMPOSE:=USER=$(shell id -u):$(shell id -g) docker compose
 DOCKER_COMPOSE:=${_DOCKER_COMPOSE} --file docker-compose.yml
 DOCKER_COMPOSE_EXAMPLE:=${DOCKER_COMPOSE} --file docker-compose.example.server.yml --file docker-compose.example.client.yml
 DOCKER_COMPOSE_TEST:=${DOCKER_COMPOSE} --file docker-compose.cypress.yml --file docker-compose.test.yml
