@@ -582,3 +582,13 @@ Further Reading
 * [Top 5 CSS Frameworks for Website Developers and Designers](https://www.browserstack.com/guide/top-css-frameworks)
 * [10 CSS Pro Tips - Code this, NOT that!](https://www.youtube.com/watch?v=Qhaz36TZG5Y) 10min Video
     * Understand the power of raw CSS without being locked into framework
+* [many.pw](https://many.pw/) - A table that looks good on mobile and desktop.
+    * > We use tailwindcss to place both tables on the page but only show one at a time. The classes "hidden md:block large" hides the large table on small screens and "md:hidden small" does the opposite, hides the small table on large screen. 
+    * ```html
+    <div class="hidden md:block large">          
+        {{ template "_table_large" . }}
+    </div>
+    <div class="md:hidden small">
+        {{ template "_table_small" . }}
+    </div>
+        ```
