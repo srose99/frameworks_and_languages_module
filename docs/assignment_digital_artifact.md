@@ -120,7 +120,7 @@ no framework == 0 marks.
     * CORS
         * OPTIONS 204 `/`
         * `/items/` headers
-    * Bonus - GET `/items/` - additional filters (not used by web client, for bonus marks)
+    * Bonus - GET `/items/` - additional filters (not used by web client)
         * filter username
         * filter location
         * filter date_from
@@ -138,7 +138,7 @@ no framework == 0 marks.
     * 200 (1 mark)
     * has `Freecycle` text (1 mark)
     * has text `<input>` and `<button>` (1 mark)
-    * submit + see item (7 marks for single test)
+    * submit + see item (6 marks for single test)
         * `?api=` from query string (1)
         * button actions `POST` (2)
         * update list `GET` (2)

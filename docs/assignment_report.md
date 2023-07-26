@@ -27,6 +27,18 @@ Submission Guidance
 * A markdown report template has been provided [`./technical_report.md`](https://github.com/calaldees/frameworks_and_languages_module/blob/main/technical_report.md)
 * You will edit/commit `technical_report.md` markdown file in-place in your cloned fork repository. (do not rename the file)
 
+### Converting MarkDown to PDF for TurnItIn submission
+
+* https://hub.docker.com/r/pandoc/core
+    * ```bash
+        alias pandock=\
+        'docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/core'
+        ```
+* https://www.tutorialsteacher.com/articles/convert-word-doc-to-markdown
+    * `C:\pathToFile> pandoc myarticle.docx -o myarticle.md --extract-media=./images/`
+* https://stackoverflow.com/a/53139628/3356840
+    * `pandoc -f docx -t gfm somedoc.docx -o somedoc.md`
+
 
 Marks Overview
 --------------
@@ -96,6 +108,7 @@ Describe the features of the language and explain the problem that they are solv
 * Headings
     * 2 * Server language features (2 * 3 marks per feature = 6 marks)
     * 2 * Client language features (2 * 3 marks per feature = 6 marks)
+        * You can only claim marks for 3 features per language. The server and client languages should be different to claim full marks for this section
 * (see feature marks above)
 
 ### Critique of framework-less prototype (4 marks)
@@ -136,3 +149,17 @@ Guidance
 * Your justifications need to be supported with references. 
     * Show links to developer documentation, blog articles and case studies that support your technical assessment/recommendations.
     * Note: with _Academic Writing_ it is an institutional policy to use Harvard style referencing. However; this assignment is not _Academic Writing_, This assignment is _Technical Writing_. You may use urls to refer to developer documentation with the commit-timestamp to your markdown document serving as a record of the access time.
+
+
+In progress
+===========
+
+From level6 guidance
+https://www.canterbury.ac.uk/quality-and-standards-office/assessment-criteria.aspx
+
+| |100-80: Excellent|79-70: Very good|69-60: Good|59-50: Sound|49-40: Satisfactory|39-20: Fail|19-0: Fail|
+|-|-|-|-|-|-|-|-|
+|Knowledge and application of subject and theories" | Knowledge and understanding of theory are exceptionally detailed and beyond what has been taught. Appreciation of the limits of subject-specific theories demonstrated throughout the work. Approach to assessment task is clearly, appropriately, and consistently theoretically informed. | Demonstrates an extensive, sophisticated, accurate, systematic theoretical understanding of the subject and a wide range of key theories. Appropriately selected theoretical knowledge is synergised into the overall assessment task with some appreciation of the limits of subject specific theories. | Shows a sophisticated systematic and accurate understanding of key subject-specific theories, which are appropriately integrated within the context of the assessment task. | Sound descriptive knowledge of key theories with appropriate application; sometimes balanced towards the descriptive rather than the critical or analytical. | Selection of theory is satisfactory, and terminology, facts and concepts are handled accurately, but application and/or understanding is generalised. | In this assignment some of the theories presented are not appropriate. Terminology, facts, and concepts are presented inaccurately and/or with omissions in key areas. The application and/or understanding demonstrated is limited. | In this assignment there is a lack of relevant subject-specific theory. |
+|Analysis| Demonstrates outstanding command of relevant analytic techniques, and the ability to apply these to new and/or abstract information and situations. Shows an exceptional appreciation of the limits and/or appropriate uses of analytic approaches.   | Makes excellent use of a range of relevant analytic techniques and applies these to new and/or abstract information and situations. Shows well developed ability to compare critically alternative theories and/or analytic approaches (where relevant).  | Makes very good use of established techniques of analysis relevant to the discipline. Shows ability to compare with some insight alternative theories and/or analytic approaches (where relevant).  | Makes consistent, albeit conventional, use of established techniques of analysis, relevant to the discipline.   | Makes satisfactory but limited use of established techniques of analysis, relevant to the discipline.  | The submission includes analysis, but the analysis is ineffective and/or uninformed by key disciplinary techniques.   | This submission does not contain effective analysis and does not yet engage with key disciplinary techniques. 
+|Conclusions| Conclusions coherent, exceptionally well developed and show considerable originality. They form an integrated part of well-substantiated overall arguments and/or discussion, reflecting commanding grasp of a wide range of theory and/or evidence and/or literature and appropriate forms of conceptualisation. Demonstrates very sophisticated critical insight and interpretation of complex matters and ideas. | Conclusions coherent, well developed, analytical, and show sophisticated insight. They are systematic and thoroughly grounded in a wide range of theory and/or evidence and/or literature and use appropriate forms of conceptualisation, forming an integrated part of well-substantiated overall arguments and/or discussion. Demonstrates sophisticated critical insight and interpretation of complex matters and ideas. | Conclusions show development and critical insight and relate clearly and logically to substantiated arguments based on a wide range of sources of evidence and/or theory and/or literature. A range of views and information are critically evaluated and synthesised and there is thorough, perceptive interpretation of complex matters and ideas.  | Logical and evidenced conclusions are drawn from evaluation of a range of sources of evidence and/or theory and/or literature. Shows the ability to consider and evaluate a range of views and to explain complex matters and ideas consistently and clearly.  | Adequate conclusions are drawn which are derived from understanding of evidence and/or theory and/or literature. Shows the ability to consider alternative views and explain complex matters and ideas.  | The work demonstrates limited or inaccurate understanding of the evidence and does not draw together arguments effectively.   | The work either lacks a conclusion or presents an unsubstantiated and/or invalid conclusion. 
+|Referencing| Sources used are acknowledged in the text and reference list and used perceptively to support discussion. Referencing follows a systematic approach, appropriate to the discipline. All elements of individual references are present.  | Sources used are acknowledged in the text and reference list and used fluently to support discussion. Referencing follows a systematic approach, appropriate to the discipline. All elements of individual references are present.   | Sources used are acknowledged in the text and reference list and used to support discussion. Referencing follows a systematic approach, appropriate to the discipline. All elements of individual references are present.  | Sources used are acknowledged in the text and reference list. Referencing follows a systematic approach, appropriate to the discipline. Most elements of individual references are present.  | Sources of information acknowledged but integration between text and reference list is mainly effective. Attempts to follow systematic approach, appropriate to the discipline. Elements of individual references are generally complete.  | Some sources of information are acknowledged here but links between text and reference list are unclear. Referencing does not follow a systematic approach. Elements of individual references are incomplete and/or absent.  | Little or no acknowledgement of sources of information in text and/or reference list in this submission. 
