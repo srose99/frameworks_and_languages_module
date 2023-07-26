@@ -1,30 +1,31 @@
 
 
-* Session 1 - Monday 26th September
-    * GitPod
+* Session 1
+    * GitPod/CodeSpaces
     * Containers
-* Session 2 - Monday 3rd October
+    * OpenAPI, WebService, SinglePage WebApp
+* Session 2
     * Server Frameworks 1
-    * ExpressJS Worked Example
-* Session 3 - Monday 10th October
+    * ExpressJS Worked Example - RSPV App Server
+* Session 3
     * Client Frameworks 1
-    * VueJS Worked Example
-* Session 4 - Monday 17th October
+    * VueJS Worked Example - RSPV App Client
+* Session 4
     * Test Frameworks
-* ACW
-* Session 5 - Monday 31st October
+* Alternative Curriculum Week
+* Session 5
     * Client Layout Frameworks
-* Session 6 - Monday 7th November
+* Session 6
     * Language Features
-* Session 7 - Monday 14th November
+* Session 7
     * Full webapp case study example - investigation
-* Session 8 - Monday 21st November
+* Session 8
     * Prototype 'Without a Framework' - code review (overran)
     * Other Frameworks/Tech/Approaches (part 1)
-* Session 9 - Monday 28th November
+* Session 9
     * Other Frameworks/Tech/Approaches (cont part 2)
     * Containers (implementation understanding)
-* Session 10 - Monday 5th December
+* Session 10
     * Engineering stories
-* Session 11 - Monday 12th December
+* Session 11
     * Assignment Workshop

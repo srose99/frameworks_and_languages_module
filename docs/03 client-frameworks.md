@@ -440,7 +440,7 @@ These looks cool. I've not investigated them.
 
 Unsorted
 ========
-Linked in [other-frameworks.md](./other-frameworks.md)
+Linked in [other-frameworks.md](09 other-frameworks.md)
 * [How to OVER Engineer a Website // What is a Tech Stack?](https://www.youtube.com/watch?v=Sxxw3qtb3_g) YouTube 11min FireShip
     * Talks though all the tech for client, server, ci, containers and then suggests a cutdown concept
     * [stackshare.io/stacks](https://stackshare.io/stacks) - Popular Tech Stacks: The open source tools and SaaS behind popular tech companies
