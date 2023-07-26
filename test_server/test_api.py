@@ -192,6 +192,14 @@ def test_items_filter_username(get_items, item_factory):
     assert len(items) == 2, "There should be items posted by user1"
 
 
+def test_ids_generated_are_unique(ENDPOINT, new_item, get_items, item_factory):
+    ids = tuple(item['id'] for item in get_items())
+    for id in ids:  # DELETE all items
+        requests.delete(f"{ENDPOINT}/item/{id}")
+    new_item = item_factory()
+    assert new_item['id'] not in ids, 'id fields should be unique and not reused from previous deleted items'
+
+
 @pytest.mark.skip(reason="optional advanced functionality")
 def test_items_filter_location(get_items, item_factory):
     # Create mock items in line

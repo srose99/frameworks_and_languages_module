@@ -40,7 +40,7 @@ ITEMS = {}
 class DataModelPythonDict():
     def __init__(self, items):
         self.items = items or {}
-        self.items_id_max = max(self.items.keys() or (0,0))
+        self.items_id_max = max(self.items.keys() or (0,))
     def get_item(self, item_id):
         return self.items.get(item_id)
     def delete_item(self, item_id):

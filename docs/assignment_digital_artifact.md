@@ -105,6 +105,7 @@ no framework == 0 marks.
         * returns json
         * complete 201 (1 mark)
         * incomplete 405 (1 mark)
+        * ids generated are unique (1 mark)
     * GET `/item/{id}`
         * json (1 mark)
         * fields (1 mark)
@@ -121,8 +122,12 @@ no framework == 0 marks.
     * CORS
         * OPTIONS 204 `/` (1 mark)
         * `/items/` headers (1 mark)
+    * Bonus - GET `/items/` - additional filters (not used by web client, for bonus marks)
+        * filter location
+        * filter date_from
+        * filter keywords
 
-16 marks total
+17 marks total
 
 
 ### Client Tests

@@ -64,10 +64,11 @@ Table 1: Marks overview for all assignments
 
 ### Viva Process
 
-Submissions may be subject to a viva process.
-The digital artefact is a proxy for assessing student understanding. For some students, understanding will have already been incrementally demonstrated in sessions.
+Submissions to any submission may be subject to a viva process.
 The purpose of a viva is to verify student understanding. 
-In the two weeks following a submission deadline, students may be called to a viva. Student could be asked to demo their solution, describe aspects of it’s functionality and show their workflow.
+A digital artefact submission or written submission are only a proxies for assessing student understanding. 
+For some students, understanding will have already been incrementally demonstrated in sessions.
+In the two weeks following a submission deadline, students may be called to a viva. Student could be asked to demo their solution, describe aspects of it’s functionality, show their workflow or engage in discussion about framework/language features.
 
 ### Plagiarism detection
 It is expected that some code solutions could be shared. Some sharing of solutions is acceptable and normal, only if the developer conversion is referenced as detailed in the assignment guidance.
