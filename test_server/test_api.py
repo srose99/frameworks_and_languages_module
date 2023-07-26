@@ -184,14 +184,6 @@ def test_items_contains_from_post(ENDPOINT, item_factory):
     assert new_item['id'] in item_ids
 
 
-def test_items_filter_username(get_items, item_factory):
-    for i in range(6):
-        item_factory(user_id=f"user{i//2}")
-    
-    items = get_items(user_id='user1')
-    assert len(items) == 2, "There should be items posted by user1"
-
-
 def test_ids_generated_are_unique(ENDPOINT, new_item, get_items, item_factory):
     ids = tuple(item['id'] for item in get_items())
     for id in ids:  # DELETE all items
@@ -200,7 +192,16 @@ def test_ids_generated_are_unique(ENDPOINT, new_item, get_items, item_factory):
     assert new_item['id'] not in ids, 'id fields should be unique and not reused from previous deleted items'
 
 
-@pytest.mark.skip(reason="optional advanced functionality")
+@pytest.mark.skip(reason="optional functionality not used by client")
+def test_items_filter_username(get_items, item_factory):
+    for i in range(6):
+        item_factory(user_id=f"user{i//2}")
+    
+    items = get_items(user_id='user1')
+    assert len(items) == 2, "There should be items posted by user1"
+
+
+@pytest.mark.skip(reason="optional functionality not used by client")
 def test_items_filter_location(get_items, item_factory):
     # Create mock items in line
     for lat in (100+(i*0.1) for i in range(6)):
@@ -210,7 +211,7 @@ def test_items_filter_location(get_items, item_factory):
     assert len(items) == 3, "should return lat=100 + lat=100.1 + lat=100.2"
 
 
-@pytest.mark.skip(reason="optional advanced functionality")
+@pytest.mark.skip(reason="optional functionality not used by client")
 def test_items_filter_date_from(get_items, item_factory):
     for i in range(2):
         item_factory()
@@ -221,7 +222,7 @@ def test_items_filter_date_from(get_items, item_factory):
     assert len(items) == 2, "There should be items posted since the date_from"
 
 
-@pytest.mark.skip(reason="optional advanced functionality")
+@pytest.mark.skip(reason="optional functionality not used by client")
 def test_items_filter_keywords(get_items, item_factory):
     item_factory(keywords=("test1", "test2"))
     item_factory(keywords=("test2", "test3"))
