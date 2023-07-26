@@ -32,14 +32,14 @@ Marks Overview
 
 | Assignment | Section | Marks (Total 60) |
 |---|--------------------------------|---:|
-| 1 | Server tests                   | 16 |
-| 1 | Server framework (independent) |  5 |
-| 1 | Server documentation           |  4 |
-| 1 | Client tests                   | 16 |
-| 1 | Client framework (independent) |  5 |
-| 1 | Client documentation           |  4 |
-| 1 | Visual framework               |  6 |
-| 1 | Visual framework (independent) |  4 |
+| 1 | Server tests                   | 12 |
+| 1 | Server framework (independent) | 10 |
+| 1 | Server documentation           |  3 |
+| 1 | Client tests                   | 12 |
+| 1 | Client framework (independent) | 10 |
+| 1 | Client documentation           |  3 |
+| 1 | Visual framework               |  5 |
+| 1 | Visual framework (independent) |  5 |
 |   |                                | 60 |
 
 1 mark = 1% of module
@@ -98,36 +98,35 @@ Mark Breakdown
 0 automated tests pass == 0 marks.
 no framework == 0 marks.
 
-* Automated Test (16 marks) (see `/test_server/test_api.py`)
-    * Port open (1 mark)
-    * serves html on `/` (1 mark)
+* Automated Test (12 marks - each test is .5 of a mark) (see `/test_server/test_api.py`)
+    * Port open
+    * serves html on `/`
     * POST `/item/`
-        * returns json
-        * complete 201 (1 mark)
-        * incomplete 405 (1 mark)
-        * ids generated are unique (1 mark)
+        * complete 201
+        * incomplete 405
+        * ids generated are unique
     * GET `/item/{id}`
-        * json (1 mark)
-        * fields (1 mark)
-        * 404 (1 mark)
-        * iso date (1 mark)
+        * json
+        * fields
+        * 404
+        * iso date
     * GET `/items/`
-        * json (1 mark)
-        * fields (1 mark)
-        * from POST (1 mark)
-        * filter username (1 mark)
+        * json
+        * fields
+        * from POST
     * DELETE `/item/{id}`
-        * 204 (1 mark)
-        * 404 (1 mark)
+        * 204
+        * 404
     * CORS
-        * OPTIONS 204 `/` (1 mark)
-        * `/items/` headers (1 mark)
+        * OPTIONS 204 `/`
+        * `/items/` headers
     * Bonus - GET `/items/` - additional filters (not used by web client, for bonus marks)
+        * filter username
         * filter location
         * filter date_from
         * filter keywords
 
-17 marks total
+12 marks total
 
 
 ### Client Tests
@@ -135,45 +134,46 @@ no framework == 0 marks.
 0 automated tests pass == 0 marks.
 no framework == 0 marks.
 
-* Automated tests (15 marks) (see `/test_client/cypress/freecycle.cy.js`)
+* Automated tests (12 marks) (see `/test_client/cypress/freecycle.cy.js`)
     * 200 (1 mark)
-    * has 'Freecycle' text (1 mark)
-    * has Text input and button (2 mark)
+    * has `Freecycle` text (1 mark)
+    * has text `<input>` and `<button>` (1 mark)
     * submit + see item (7 marks for single test)
-        * api_url from query string (1)
-        * button actions post (2)
-        * auto fetch list (2)
-        * ul populate with data (2)
-    * delete + remove (4 marks for single test)
-        * button on item (1)
-        * id in li data (1)
-        * delete called (1)
-        * list updated (1)
-* Tutor verified (1 mark)
-    * Displays real image url (1 mark)
+        * `?api=` from query string (1)
+        * button actions `POST` (2)
+        * update list `GET` (2)
+        * `<ul>` populate with data (1)
+    * delete + remove (3 marks for single test)
+        * id in `<li>` data (1)
+        * `DELETE` called (1)
+        * update list `GET` (1)
 
-16 marks total
+12 marks total
 
 
 ### Server framework (independent)
 
 * Independent (use of) Framework (Server and Client)
-* Optional! For advanced students aiming for 80% or more
+    * You will have been given a worked example in a framework (expressjs?) as part of your lectures. To access the marks for independent working, you must select and use a different framework
+* Optional! For advanced students aiming for 50% or more
+    * It is strongly recommended that most student create a working solution (expressjs?) before you move on to investigating and using another framework
 
 * Use of a language or framework that was not under direct instruction from lectures (5 marks)
-    * Use of framework features (1 mark)
-    * Use of language features (list comprehensions, async etc) (1 mark)
+    * Use of framework features (3 marks)
+        * comment with text `framework feature` and url to framework feature documentation
+    * Use of language features (list comprehensions, async etc) (3 marks)
+        * comment with text `language feature` and url to language feature documentation
     * Conciseness (verbose? unneeded intermediaries? readable) (1 mark)
-    * File/folder structure (sensible names) (1 mark)
+    * File/folder structure (sensible names, use of framework conventions) (1 mark)
 
-5 marks total
+10 marks total
 
 
 ### Client framework (independent)
 
 * See Server framework (independent) (above)
 
-5 marks total
+10 marks total
 
 
 ### Server documentation
@@ -181,38 +181,37 @@ no framework == 0 marks.
 * README sufficient to explain, launch, test, use  (1 mark)
 * Comments in code describe/explain functionality (1 mark)
 * minimum 24+ Commits - well worded and technical (1 mark) (12 weeks == average 2 commits per week)
-* minimum 4x References snippets/tutorial urls inline (1 mark)
-    * Disclose your sources - what conversations with other members of the group contributed to this code with dates and @githubUsernames
+* Disclose your sources - what conversations with other members of the group contributed to this code with dates and @githubUsernames
 
-4 marks total
+3 marks total
 
 
 ### Client documentation
 
 * See Server documentation (above)
 
-4 marks total
+3 marks total
 
 
 ### Visual framework
 
 no framework == 0 marks (even if it looks nice).
 
-* Tutor verified (6 marks)
+* Tutor verified (5 marks)
     * Navbar/Title (1 mark)
     * styled
-        * inputs (1 mark)
-        * buttons (1 mark)
+        * inputs and submit button (1 mark)
         * item/card (1 mark)
-    * Responsive to mobile (2 marks)
+    * Responsive to mobile (2 mark)
 
-6 marks total
+5 marks total
 
 
 ### Visual framework (independent)
 
 * Optional! For advanced students aiming for 80% or more
-* You independently used a framework that was not under direct instruction (4 marks).
+* You independently used a framework that was not under direct instruction (5 marks).
+    * comment with text `layout framework feature` and url to framework feature documentation
 
 
-4 marks total
+5 marks total
