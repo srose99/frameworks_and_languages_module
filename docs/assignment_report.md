@@ -14,6 +14,7 @@ This will be 40% of this module.
 Intended Learning Outcomes 
 --------------------------
 
+* LO 1. Demonstrate an understanding of the concept of a Framework in general, a Framework used for Programming, and a Framework used for software Testing.
 * LO 2. Critically evaluate the effectiveness of a particular framework for an application and platform.
 
 
