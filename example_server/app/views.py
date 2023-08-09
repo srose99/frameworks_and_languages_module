@@ -13,6 +13,7 @@ def get_index(request):
 </head>
 <body>
     <h1>Test</h1>
+    <p>You probably what a human readable description here. Maybe a link to the OpenAPI spec? Maybe some example curl commands?</p>
 </body>
 <html>"""
     response = {'body': body}
