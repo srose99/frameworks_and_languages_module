@@ -88,6 +88,24 @@ Guidance
 * You will be allocated marks for partial solutions (based on tests that pass)
 * You are working towards being a professional software engineers. It is expected that you share and discuss your solutions with peers throughout this assignment. 
 * It is expected that you document your sources/references for your code (this includes discussions with dates with classmates, url's to stack overflow resources and framework documentation)
+    * It is typical to have citations inline with code (not at the end of a file or document) [e.g.](https://github.com/calaldees/frameworks_and_languages_module/blob/main/test_server/test_api.py#L17)
+        * ```python
+            def isiterable(iterable):
+                """
+                https://stackoverflow.com/a/36407550/3356840
+                `iter(o)` will work for all items that implement `__iter__` and is more correct/flexible than explicitly looking for a `Sequence`
+                """
+                if isinstance(iterable, (str, bytes)):
+                    return False
+                try:
+                    _ = iter(iterable)
+                except TypeError:
+                    return False
+                else:
+                    return True
+            ```
+        * Do NOT put all of your references at the bottom of a code file or in a separate document.
+
 
 
 Mark Breakdown
@@ -134,7 +152,7 @@ no framework == 0 marks.
 0 automated tests pass == 0 marks.
 no framework == 0 marks.
 
-* Automated tests (12 marks) (see `/test_client/cypress/freecycle.cy.js`)
+* Automated tests (12 marks) (see `test_client/cypress/freecycle.cy.js`)
     * 200 (1 mark)
     * has `Freecycle` text (1 mark)
     * has text `<input>` and `<button>` (1 mark)

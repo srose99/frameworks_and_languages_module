@@ -1,8 +1,45 @@
-Viva: XXX
+Academic Misconduct
+===================
+
+* https://www.canterbury.ac.uk/our-students/ug-current/academic-services/assessments/plagiarism
+* https://www.canterbury.ac.uk/learning-and-teaching-enhancement/docs/Student-Academic-Integrity-Policy.pdf
+* https://www.canterbury.ac.uk/quality-and-standards-office/docs/assessment-prcedures/Plagiarism-and-Academic-Misconduct-Procedures.pdf
+
+
+Email Template - Academic Misconduct
+--------------
 
 Hi XXX,
 
-Your submission for MCOMD3PFL Programming_Frameworks_and_Languages Assignment X has been selected for a viva.
+Your submission for MCOMD3PFL Programming_Frameworks_and_Languages Assignment X has been selected for an Academic Misconduct Investigation.
+
+The Programme Director appoints a representative to interview the Student (‘the interviewer’)
+The interviewer is a tutor other than the tutor identifying the plagiarism.
+
+The interviewer invites the student to a meeting. In exceptional
+circumstances, the student may participate in a telephone or
+video conference.
+At the meeting, the allegation is to be explained to the student
+and the student invited to respond.
+
+Programme Director (or nominee) should inform the student
+within seven days of receiving the information from the tutor or
+meeting with the student, whichever is the later.
+The interviewer should arrange the meeting with the student to
+take place within seven days of the notification from the
+Programme Director.
+The interviewer should inform the student of the outcomes within
+seven days of the meeting
+
+The investigating officer will meet jointly with the tutor
+identifying the plagiarism (or another suitable nominee of the
+tutor when the tutor is unavailable) and the student.
+At the meeting, the allegation is to be explained to the student
+and the student invited to respond
+
+The investigating officer will determine whether there was a case
+for plagiarism and/or academic misconduct to be sustained and if
+so to determine the appropriate penalties.
 
 * A viva is a meeting where you can demonstrate knowledge and understanding about your submission.
 * Your meeting can be online or face-to-face.
@@ -20,10 +57,10 @@ Let us know if you would prefer this meeting online or face to face.
 
 See you soon.
 
+(Module Lead)
 
-Allan Callaghan (Module Lead)
 
-Viva Questions
+ Questions
 --------------
 
 * Can you describe the problem that you are trying to solve

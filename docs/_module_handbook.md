@@ -62,13 +62,21 @@ Return: Monday 30th January 2023, Turnitin
 
 Table 1: Marks overview for all assignments
 
-### Viva Process
+### Academic Misconduct
 
-Submissions to any submission may be subject to a viva process.
-The purpose of a viva is to verify student understanding. 
-A digital artefact submission or written submission are only a proxies for assessing student understanding. 
-For some students, understanding will have already been incrementally demonstrated in sessions.
-In the two weeks following a submission deadline, students may be called to a viva. Student could be asked to demo their solution, describe aspects of it’s functionality, show their workflow or engage in discussion about framework/language features.
+* The objective is NOT to submit work that meets the assessment criteria.
+* The objective is to meet the leaning objectives of the module.
+
+Submissions to any submission may be subject to the academic misconduct process.
+"Student understanding" is the objective of the course/module.
+The digital artifact and written report on their own are are poor proxies for student understanding.
+It is expected that students have continually demonstrated their understanding continually throughout the formative assessment process of this modules delivery.
+Student that submit a solution that has not been subject to the module formative assessment could be called for an Academic Misconduct Meeting. A student could be asked to demo their solution, describe aspects of it’s functionality, show their workflow or engage in discussion about framework/language features.
+
+Examples:
+* If a student submits a repository, with 2 or 3 commits with the title `added stuff`, a few days before the assignment deadline. It is likely that the submission will be reported for the Academic Misconduct process.
+* If a student commits multiple times a week (20+ commits over the module). Each commit message has an accurate technical description of what was added/attempted/changed. The student can demonstrate in sessions, an understanding of their functionality to a tutor or peer. It is evident that the student understands the module leaning outcomes.
+
 
 ### Plagiarism detection
 It is expected that some code solutions could be shared. Some sharing of solutions is acceptable and normal, only if the developer conversion is referenced as detailed in the assignment guidance.

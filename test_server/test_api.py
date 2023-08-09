@@ -17,6 +17,7 @@ import requests
 def isiterable(iterable):
     """
     https://stackoverflow.com/a/36407550/3356840
+    `iter(o)` will work for all items that implement `__iter__` and is more correct/flexible than explicitly looking for a `Sequence`
     """
     if isinstance(iterable, (str, bytes)):
         return False
