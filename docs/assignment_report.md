@@ -4,10 +4,11 @@ Assignment - Technical Report
 Overview
 --------
 
-Create a 1600 word technical report. This will be 40% of this module.
+Create a 1600 word technical report.
+This will be 40% of this module.
 
-* You will demonstrate your understanding of the frameworks and languages you have used in your _digital artefact_ assignment
-* You will use technically accurate language
+* You will demonstrate your understanding of the frameworks and languages you have experimented with in your _digital artefact_ assignment
+* You will use domain specific and technically accurate language/terminology
 
 
 Intended Learning Outcomes 
@@ -116,11 +117,11 @@ Describe the features of the language and explain the problem that they are solv
 Guidance
 --------
 
-* Every week a writing workshop will be provided in sessions.
-    * We will as a group refine our writing for individual sections above.
 * Level of Expectation
     * Realistically; You are not a lead developer. You are not expected to write this to a true industry standard. You are trying to demonstrate to an external examiner your knowledge and understanding of these technologies.
 * Technical reports heavily used bullet points. You do not need to write in full english paragraphs all the time.
+* Formative feedback of written work will be provided throughout module delivery.
+    * It is expected that you will be incrementally working on your writeup (assignment2) alongside your digital artifact (assignment1) and committing regularly.
 * Your justifications need to be supported with references. 
     * Show links to developer documentation, blog articles and case studies that support your technical assessment/recommendations.
     * Note: with _Academic Writing_ it is an institutional policy to use Harvard style referencing.
@@ -137,7 +138,7 @@ Guidance
     * > The 'auto-reload' feature supports developers in reducing the cognitive/mechanical overhead of manually restarting the development server. The feedback time to experiment with code changes is reduced. This should reduce development time. Below is an example of autoreload is enabled in the developer settings file and a url to it's documentation.
     * > The framework is structured so that Components can have the html/structure/layout to be in the same file as the language/logic. This ability to have multiple languages in a single file helps reduce the cognitive overhead of developers juggling multiple files and helps reduce the footprint of code changes, making diffs more readable. Developers can more easily identify changes to specific features, this should help reduce the time it takes to identify and resolve bugs in future. Below is an example of a simple Clock component in xxx and a url to it's documentation.
     * > The feature of list types having built in `map`, `filter` and `reduce` methods, allows for single line of code can succinctly express multiple transformations rather than having to manually iterate over a collection multiple times with multiple intermediary collections. This reduces the code footprint (the lines of code a developer has to cognitively process) and also allows the individual transformations to be reused/shared/imported in other parts of the application that may be processing data in a similar way. This reduces duplication and leads to more consistent data processing. below is a code example of the same transforms performed with CSharp Enumerables and without.
-    * The Django enforces a specific file layout for each 'app' that is registered. For smaller microservices, this separation of concerns/files creates a large amount of boilerplate that developers have to create to respond to simple requests. Smaller frameworks like expressjs allow you to define a small REST microservice in a single file if needed, making expressjs readable, deployable and suitable for small microservices. The problem comes when expanding an expressjs application over time, developers need to to create their own more complex file structures/separations that may not follow known established patterns (Fictitious author blog article, 2020).
+    * > The Django Framework enforces a specific file layout for each 'Django app' that is registered. If we were creating smaller REST microservice, this separation of concerns/files layout creates a large amount of boilerplate that developers have to produce. Smaller frameworks (like expressjs) are more suitable for REST microservices as a whole service can be defined in a single file if needed. A single file is more readable/succint and deployable. The problem could come when expanding an expressjs application over time, developers need to to create/invent their own more complex file structures/separations that may not follow known established patterns (Fictitious author blog article, 2020).
 
 
 Marking Rubric
