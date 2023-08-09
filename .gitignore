@@ -1,5 +1,7 @@
 *.log
 *.tmp
+*.zip
+*.pdf
 
 # Mac Cancer
 */.DS_Store
