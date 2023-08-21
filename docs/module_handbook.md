@@ -32,8 +32,10 @@ By the end of the module students should be able to:
 
 ## Equipment you need to bring to class
 * We will be using linux containers to develop and test software
-* CLoud based IDE's will be used (GitPod/CodeSpaces) to support your work both on and off campus
-    * Some students may wish to setup their own equipment for native development environment
+* A Cloud Based IDEs (GitPod/GitHubCodeSpaces) will be used to support your work both on and off campus
+    * Cloud based development environments are becoming common practice for industry development. 
+* Some students may wish to setup their own equipment for native development environment (e.g. DockerDesktop)
+
 
 ## Assessments
 
@@ -112,7 +114,7 @@ Student are reminded again that they should be contributing 150 hours of indepen
 
 ## Session Content Overview
 * Session 1
-    * GitPod/CodeSpaces
+    * Remote Cloud VSCode IDE (CodeSpaces/GitPod)
     * Containers
     * OpenAPI, WebService (curl, json, cors), SinglePage WebApp
 * Session 2

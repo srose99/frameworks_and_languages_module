@@ -71,11 +71,10 @@ Additional/Extension/Optional links to other modules/domains
 ---
 
 ## Equipment you need to bring to class
-•	We will be using linux containers to develop and test software
-•	A cloud based IDE will be used to support your work both on and off campus
-    o	(GitPod (historically) was the recommend online cloud IDE but their pricing model has changed. GitHub-CodeSpaces should be investigated as CCCU in 2023 had an education licence)
-    o	Cloud based development environments are becoming common practice for industry development. 
-o	Some students may wish to setup their own equipment for native development environment (Docker Desktop)
+* We will be using linux containers to develop and test software
+* A cloud based IDE will be used to support your work both on and off campus
+    * Cloud based development environments are becoming common practice for industry development. 
+* Some students may wish to setup their own equipment for native development environment (e.g. DockerDesktop)
 
 
 ---

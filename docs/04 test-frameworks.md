@@ -265,7 +265,7 @@ Cypress (A Browser/End-to-End test Framework)
 
 ### Task: Create a Cypress test to search with Google
 
-* Setup (on gitpod without gui local - just an example) (normally you would run this heedlessly in containers)
+* Setup (on remote IDE without gui local - just an example) (normally you would run this heedlessly in containers)
     * ```bash
         mkdir cypress_test; cd cypress_test
         sudo apt-get update && sudo apt-get install -y PASTE_DEPENDENCIES  # https://docs.cypress.io/guides/continuous-integration/introduction#Ubuntu-Debian

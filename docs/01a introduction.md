@@ -121,8 +121,9 @@ Assessment 1 - Digital Artefact - Familiarisation (1 hour)
 
 ### Demo
 
-Demo working server on gitpod
-* https://gitpod.io/#https://github.com/calaldees/frameworks_and_languages_module
+* Demo working server on Cloud VSCode IDE
+  * https://codespaces.new/calaldees/frameworks_and_languages_module
+  * https://gitpod.io/#https://github.com/calaldees/frameworks_and_languages_module
 ```bash
 make
 make run_example_server_client
@@ -142,22 +143,23 @@ put link on blackboard - class interact
   * Assignment 1 - Digital Artifact - Due 12th December
   * Assignment 2 - Technical Report - Due 9th January
 * Tools
-  * GitPod + containers
+  * Cloud based IDE + containers
   * OpenAPI Spec
 
 
 ### Run it yourself (1 hour)
 
-* https://gitpod.io/ create account with GutHub login
-* https://gitpod.io/#https://github.com/calaldees/frameworks_and_languages_module
-
-* Signup to GitPod
-  * GitPod -> Stop Container !important
-  * GitPod -> Color Theme -> Dark+ (recommended)
+* Cloud based VSCode IDE
+  * GitHub CodeSpaces
+    * [120 hours a month](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces)
+  * GitPod
+    * [50 hours a month](https://www.gitpod.io/pricing)
+    * Create account with GitHub login
 
 Demo:
 1. The IDE
 2. The Interaction (public port)
+  * 
 3. Add an item with the web interface
   * Remember to add the querystring for the server `?api=` e.g. `https://8001-xxxx.ws-eu67.gitpod.io?api=https://8000-xxxxx.ws-eu67.gitpod.io`
 4. Access another persons public port + Add an item to another persons server
@@ -172,25 +174,24 @@ Task: Fork + Run + Commit
 1. Fork your own copy of the repo (description)
   * Allow CI
     * And enable _GitHub Actions/Workflows_
-2. Start a GitPod workspace for YOUR FORK `https://gitpod.io#PASTE_YOUR_GITHUB_FORK_URL_HERE`
-3. Make a commit to `/server/Dockerfile` and see CI
+2. Start a Cloud based IDE for YOUR FORK 
+  * `https://gitpod.io#PASTE_YOUR_GITHUB_FORK_URL_HERE`
+  * `https://codespaces.new/<USERNAME>/<REPO_NAME>`
+1. Make a commit to `/server/Dockerfile` and see CI
   * `git status`
   * `git commit -a`
   * `git push`
-  * [GitPod: granting-additional-github-oauth-permissions](https://www.gitpod.io/docs/configure/authentication/github#granting-additional-github-oauth-permissions)
-    * `public_repo`, `repo` and `workflow`
 
-* GitPod shutdown and startup
-  * 50 hours a month free
+* Shutdown your cloud IDE's
+  * `gp shutdown`
+  * `gh codespace stop`
+
 * (Optional)
   * [GitHub Student Developer Pack](https://education.github.com/pack) - with cccu address + cccu id 
 
 
-
 Unsorted
 ========
-
-
 
   1. Module overview
     1. Assignments

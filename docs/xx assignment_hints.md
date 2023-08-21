@@ -67,8 +67,8 @@ TASK:
 
 ### Client
 
-* Run headless (on GitPod)
+* Run headless (on Cloud IDE)
     * Download/See video
-* Demo GitPod server and local cypress client
+* Demo Cloud IDE server and local cypress client
     * Electron and rewind
 * More in future lectures
