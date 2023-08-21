@@ -86,7 +86,10 @@ Guidance
 * There is no requirement for scale
     * The system will be operating with less than 100 items (pagination is not needed)
 * You will be allocated marks for partial solutions (based on tests that pass)
-* You are working towards being a professional software engineers. It is expected that you share and discuss your solutions with peers throughout this assignment. 
+* You are working towards being a professional software engineers. It is expected that you share and discuss your solutions with peers throughout this assignment.
+
+### Citations, Referencing and Acknowledging sources
+
 * It is expected that you document your sources/references for your code (this includes discussions with dates with classmates, url's to stack overflow resources and framework documentation)
     * It is typical to have citations inline with code (not at the end of a file or document) [e.g.](https://github.com/calaldees/frameworks_and_languages_module/blob/main/test_server/test_api.py#L17)
         * ```python
@@ -104,8 +107,10 @@ Guidance
                 else:
                     return True
             ```
-        * Do NOT put all of your references at the bottom of a code file or in a separate document.
-
+    * Some sharing of solutions is acceptable and normal, but are almost always supported by referencing the developer conversion in code e.g.
+        * > // discussed unique id allocation with @calaldees. The old implementation manifested id conflict. Opted for tracking `last_generated_id` as a variable to prevent id reuse.
+        * > // handling of ISO datetime inspired by @username http://PERMALINK
+    * Do NOT put all of your references at the bottom of a code file or in a separate document. These should be _inline_ see above
 
 
 Mark Breakdown

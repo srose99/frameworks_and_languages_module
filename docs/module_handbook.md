@@ -70,18 +70,21 @@ Return: 14:00 Monday 29th January 2023, Turnitin
 Submissions to any submission may be subject to the academic misconduct process.
 "Student understanding" is the objective of the course/module.
 The digital artifact and written report on their own are are poor proxies for student understanding.
-It is expected that students have continually demonstrated their understanding continually throughout the formative assessment process of this modules delivery.
-Student that submit a solution that has not been subject to the module formative assessment could be called for an Academic Misconduct Meeting. A student could be asked to demo their solution, describe aspects of it’s functionality, show their workflow or engage in discussion about framework/language features.
+It is expected that students have continually demonstrated their understanding throughout the formative assessment process of this modules delivery.
+
+All students should be able to demo their solution, describe aspects of it’s functionality, show their workflow or engage in discussion about framework/language features.
+All students will be given the opportunity to verbally express their understanding of their submissions.
+This will be evidenced by formative assessment and engagement with sessions throughout the module delivery.
+If students have been unable to demonstrate understanding of their work incrementally in sessions, they may be asked to demo their submissions to academic staff after submission.
 
 Examples:
-* If a student submits a repository, with 2 or 3 commits with the title `added stuff`, a few days before the assignment deadline. It is likely that the submission will be reported for the Academic Misconduct process.
 * If a student commits multiple times a week (20+ commits over the module). Each commit message has an accurate technical description of what was added/attempted/changed. The student can demonstrate in sessions, an understanding of their functionality to a tutor or peer. It is evident that the student understands the module leaning outcomes.
+* If a student submits a repository, with 2 or 3 commits with the title `added stuff`, a few days before the assignment deadline. It is likely that the submission will be reported for the Academic Misconduct process.
 
+#### Citing sources of information
 
-### Plagiarism detection
-It is expected that some code solutions could be shared. Some sharing of solutions is acceptable and normal, only if the developer conversion is referenced as detailed in the assignment guidance.
-
-Plagiarism detection software may be used to produce similarity reports for both code submissions and write-up submissions. These reports could be used as evidence towards academic misconduct.
+It is expected that students openly share and discuss code; these are traits/skills of a professional developers. 
+Some sharing of solutions is acceptable and normal, but are almost always supported by referencing the developer conversion. Please refer to individual assignment descriptions for examples.
 
 
 ## Indicative schedule of delivery

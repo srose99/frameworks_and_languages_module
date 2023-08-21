@@ -55,8 +55,7 @@ Scenario
 
 * Freecycle-Inc have an existing working prototype for their FreeCycle platform with tests. 
 * The business executives can see the existing prototype 'working'. They want to continue to expand the existing solution `./example_server/` `./example_client/` into a full commercial product.
-* As a "Software Engineer" You are to create a "Technical Report" for the business leadership
-* Your role is to advise and justify why the business should abandon/rewrite the existing solution and use a variety of frameworks.
+* As a "Software Engineer" You are to create a "Technical Report" for the business leadership.
 * You have explored/created/used a range of frameworks by creating example implementations (This is what you produced for Assignment 1)    
 * Your report should
     * Explain why the current prototype `./example_server/` `./example_client/` (without frameworks) should not be used as the foundation for future enhancements.
@@ -65,7 +64,7 @@ Scenario
     * Explain the features the language used by the framework offers
         * Give code examples of these features from your experiments
     * Use correct technical domain specific terminology
-    * References your sources of information (Documentation for frameworks/languages, tutorials, opinion blogs comparing frameworks or evangelising a framework, etc)
+    * Reference your sources of information (Documentation for frameworks/languages, tutorials, opinion blogs comparing frameworks or evangelising a framework, etc)
   
 Produce a summary technical report to the business directors (1600 words total).
 
@@ -128,8 +127,8 @@ Guidance
     * Note: with _Academic Writing_ it is an institutional policy to use Harvard style referencing.
         * Most of the references will be url's in the form:
             * Example 1:
-                * `(Using Express middleware, no date)`
-                * `Using Express middleware (no date). Available at: https://expressjs.com/en/guide/using-middleware.html (Accessed: 9 August 2023).`
+                * inline `(Using Express middleware, no date)`
+                * in bibliography `Using Express middleware (no date). Available at: https://expressjs.com/en/guide/using-middleware.html (Accessed: 9 August 2023).`
             * Example 2:
                 * `(Dreimanis, 2021)`
                 * `Dreimanis, G. (2021) “Phoenix: An Introduction to Elixir’s Web Framework,” Serokell Software Development Company [Preprint]. Available at: https://serokell.io/blog/introduction-to-phoenix (Accessed: 9 August 2023).`

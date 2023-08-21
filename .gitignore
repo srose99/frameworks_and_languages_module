@@ -1,10 +1,11 @@
 *.log
 *.tmp
+# Binaries
 *.zip
 *.pdf
 
 # Mac Cancer
-*/.DS_Store
+**/.DS_Store
 
 # Python Cancer
 *.py[cod]
@@ -15,3 +16,6 @@
 **/node_modules
 package-lock.json
 yarn.lock
+
+# generated files for this repo
+openapi.html

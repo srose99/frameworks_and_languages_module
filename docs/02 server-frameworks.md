@@ -380,6 +380,11 @@ I want to create a docker demo of this soon
 
 * [Zotonic, the Erlang Web Framework](http://zotonic.com/)
 
+### FastAPI (Python)
+
+https://fastapi.tiangolo.com/features/
+
+Has validators/schema and basic boilerplate for most apps, oauth, auto doc
 
 ### Pyramid (Python)
 

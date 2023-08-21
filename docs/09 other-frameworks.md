@@ -245,3 +245,10 @@ Game Frameworks
         * https://realpython.com/pygame-a-primer/#basic-pygame-program
         * A library not a framework - if you implement the game loop - its not a framework
     * [melonjs.org](https://melonjs.org/)
+
+
+Other Frameworks
+----------------
+
+* [Introducing Darwin: A framework for evolving decentralized web apps](https://evolutionary.arweave.dev/)
+    * An Evolutionary App is a decentralized web application that evolves using a process of incentivized forking and a market-based governance mechanism that fuels the selection process.
