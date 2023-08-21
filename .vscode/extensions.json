@@ -4,7 +4,7 @@
     // Keep these in sync with `.gitpod.yml` to support people with gitpod dev environments
     "recommendations": [
         "ms-azuretools.vscode-docker",
-        "streetsidesoftware.code-spell-checker",
-        "42Crunch.vscode-openapi"
+        "streetsidesoftware.code-spell-checker"
+        //"42Crunch.vscode-openapi"
     ]
 }
