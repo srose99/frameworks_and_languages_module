@@ -110,10 +110,18 @@ Moved to [TeachProgramming -> Language Features](https://github.com/calaldees/Te
 OpenAPI (30min)
 -------
 
-* [redocly - FreeCycle](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/calaldees/frameworks_and_languages_module/main/openapi.yml)
+* [redocly - FreeCycle](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/calaldees/frameworks_and_languages_module/main/openapi.yaml)
 * [OpenAPI Sample Pet Store](https://redocly.github.io/redoc/)
-* use OpenAPI plugin in GitPod (auto generated from yml)
+* VSCode extension: OpenAPI preview (auto generated from yaml)
 * https://swagger.io/specification/
+* https://redocly.com/docs/redoc/deployment/cli/
+    * ```bash
+        alias redocly='docker run --rm -v "$PWD:/spec" -u $(id -u):$(id -g) redocly/cli'
+        redocly build-docs openapi.yaml -o openapi.html
+        ```
+* https://editor.swagger.io/
+* https://editor-next.swagger.io/
+
 
 
 ### using curl to perform HTTP posts

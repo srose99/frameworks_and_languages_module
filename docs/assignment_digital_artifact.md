@@ -54,7 +54,7 @@ Freecycle-Inc have a working prototype implementation of their proposed service.
 
 The repository provides:
 
-* An OpenAPI3 Specification for the server service `openapi.yml`
+* An OpenAPI3 Specification for the server service `openapi.yaml`
 * Complete working reference implementations
     * This `example_` reference implementations were built with NO frameworks to allow you to critique/understand why frameworks are used (see Assignment Technical Report)
     * `example_server` A complete reference server implementation that runs in a container (you re-create this functionality) 

@@ -25,6 +25,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"ms-vscode.live-server",
 				"streetsidesoftware.code-spell-checker",
 				"ms-azuretools.vscode-docker",
 				"42Crunch.vscode-openapi"
