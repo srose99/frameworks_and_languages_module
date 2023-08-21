@@ -1,5 +1,5 @@
-MCOMD3PFL Programming Frameworks and Languages - Handbook
-=========================================================
+Programming Frameworks and Languages - Handbook
+===============================================
 
 Date and validity September 2023, Academic year 2023–2024
 
