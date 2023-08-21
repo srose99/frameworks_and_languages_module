@@ -25,12 +25,17 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"searking.preview-vscode",
-				"streetsidesoftware.code-spell-checker",
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"streetsidesoftware.code-spell-checker"
+
+				// both live preview extensions do not work in codespaces
+				// https://stackoverflow.com/questions/74452866/how-preview-a-html-file-github-codespaces
+				// "searking.preview-vscode",
+				// "ms-vscode.live-server",
+
+				// Other possible recomended extensions - I kind of want to keep this workspace simple
 				// "42Crunch.vscode-openapi"
 				// "ms-vscode.makefile-tools"
-				// "ms-vscode.live-server",
 			]
 		}
 
