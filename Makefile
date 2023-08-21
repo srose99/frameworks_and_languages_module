@@ -66,3 +66,8 @@ test_your_client_with_example_server:  ##
 test_example_client_with_your_server:  ##
 	${DOCKER_COMPOSE_TEST} --file docker-compose.example.client.yml up --build test_client
 	${DOCKER_COMPOSE_TEST} down
+
+
+openapi.html:  ## build openapi html
+	docker run --rm -v "$$PWD:/spec" -u $(id -u):$(id -g) redocly/cli \
+		build-docs openapi.yaml -o openapi.html
