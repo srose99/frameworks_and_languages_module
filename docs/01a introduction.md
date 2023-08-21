@@ -177,14 +177,21 @@ Task: Fork + Run + Commit
 2. Start a Cloud based IDE for YOUR FORK 
   * `https://gitpod.io#PASTE_YOUR_GITHUB_FORK_URL_HERE`
   * `https://codespaces.new/<USERNAME>/<REPO_NAME>`
-1. Make a commit to `/server/Dockerfile` and see CI
+3. Make a commit to `/server/Dockerfile` and see CI
   * `git status`
   * `git commit -a`
   * `git push`
 
-* Shutdown your cloud IDE's
-  * `gp shutdown`
+Workspace Hygiene
+------------------
+* Commit + push: every time any progress is made (even one or two lines of code)
+  * Your workspaces are ephemeral and should be disposed periodically - workspaces are not a datastore
+* Stop your cloud IDE's (save your hours)
+  * `gp stop`
   * `gh codespace stop`
+* Manage/Delete unused workspaces (remove unused workspaces)
+  * https://github.com/codespaces/
+  * https://gitpod.io/workspaces
 
 * (Optional)
   * [GitHub Student Developer Pack](https://education.github.com/pack) - with cccu address + cccu id 
