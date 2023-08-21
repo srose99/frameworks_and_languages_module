@@ -71,3 +71,6 @@ test_example_client_with_your_server:  ##
 openapi.html:  ## build openapi html
 	docker run --rm -v "$$PWD:/spec" -u $(id -u):$(id -g) redocly/cli \
 		build-docs openapi.yaml -o openapi.html
+technical_report.pdf:  ## build pdf version of technical_report.md
+	docker run --rm -v "$$PWD:/data" -u $(id -u):$(id -g) pandoc/latex \
+		technical_report.md -o technical_report.pdf
