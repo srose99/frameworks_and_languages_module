@@ -21,8 +21,5 @@ app.use(function (err, req, res, next) {
   res.status(500).send('Something broke!')
 })
 
-// Docker container exit handler
-// https://github.com/nodejs/node/issues/4182
-process.on('SIGINT', function() {
-    process.exit();
-});
+// Docker container exit handler - https://github.com/nodejs/node/issues/4182
+process.on('SIGINT', function() {process.exit()})
