@@ -36,7 +36,7 @@ Quoting the module handbook for Programming Frameworks and Languages (U14465):
 > All students should be able to demo their solution, describe aspects of it’s functionality, show their workflow or engage in discussion about framework/language features.
 > All students will be given the opportunity to verbally express their understanding of their submissions.
 > This will be evidenced by formative assessment and engagement with sessions throughout the module delivery.
-> If students have been unable to demonstrate understanding of their work incrementally in sessions, they may be asked to demo their submissions to academic staff after submission.
+> If students have been unable to demonstrate understanding of their work incrementally in sessions, it is equitable that they be given the opportunity to demo their submissions to academic staff after submission.
 
 You have been invited to attend a meeting to verbally discuss your submission with members of academic staff.
 

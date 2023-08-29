@@ -155,9 +155,9 @@ Student are reminded again that they should be contributing 150 hours of indepen
 ## Employable skills
 * The majority of software engineering jobs require understanding and use of frameworks. Many software-engineering job are web technology focused as this is the current standard practice for interfacing and distributing content. Many of these jobs refer to frameworks such as React Native (client framework), Django (server framework), Full-Stack (client and server understanding) deploying to the cloud (containers), use of API’s (understanding how to build one, microservices). Many cite DevOps understanding (automated testing). Working with others (version-control/git/github). Developer tooling (CloudBasedIDE/Linux)
 * Look at the jobs offered below and count how many cite frameworks/languages/topics covered in this module
-    * https://www.linkedin.com/jobs/search?keywords=Software Engineer&location=United Kingdom
-    * https://www.reed.co.uk/jobs/software-developer-jobs
-    * https://uk.indeed.com/jobs?q=Software+Developer
+    * [linkedin.com/jobs Software Engineer UK](https://www.linkedin.com/jobs/search?keywords=Software%20Engineer&location=United%20Kingdom)
+    * [reed.co.uk/jobs software-developer](https://www.reed.co.uk/jobs/software-developer-jobs)
+    * [indeed.uk Software Developer](https://uk.indeed.com/jobs?q=Software+Developer)
 * [What Skills Do CS Grads Need?: Colleges And Employers Disagree](https://dl.acm.org/doi/10.1145/3545947.3576369) Video/Poster presentation 10min
     * Employers focus on:
         * working without knowing the answers
