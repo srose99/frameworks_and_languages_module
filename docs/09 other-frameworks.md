@@ -113,7 +113,9 @@ Other approach: Static Site Generation
     * [gatsbyjs](https://www.gatsbyjs.com/) a static site generator with react?
 
 
+### Nikola Demo (Python)
 https://github.com/calaldees/TeachProgramming/tree/master/teachprogramming/static/projects/web/static_site_generation/nikola
+`Makefile`
 ```Makefile
 # Nikola in Docker - Inspired by https://getnikola.com/getting-started.html
 
@@ -136,6 +138,10 @@ shell:
 # edit some of the text in (auto-reload? or start/stop server) + see changes
 #	demo/posts/1.rst
 #	demo/pages/listing-demo.rst
+```
+`.gitignore`
+```
+demo/
 ```
 
 Question: When would you use static site generation?

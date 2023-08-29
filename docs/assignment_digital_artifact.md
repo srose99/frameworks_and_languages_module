@@ -20,15 +20,21 @@ Intended Learning Outcomes
 Submission Guidance
 -------------------
 
-* You will clone a public fork of:
-    * [https://github.com/calaldees/frameworks_and_languages_module](https://github.com/calaldees/frameworks_and_languages_module)
-* You will be working in own public GitHub forked repository. At the datetime of the deadline a snapshot of your fork will automatically be taken.
-* In addition, You need to formally submit a zip file with the contents of your repository to TurnItIn for a formal audit trail. 
+* GitHub Public Fork (auto snapshot)
+    * You will clone a public fork of:
+        * [https://github.com/calaldees/frameworks_and_languages_module](https://github.com/calaldees/frameworks_and_languages_module)
+    * At the datetime of the deadline a snapshot of your fork will automatically be taken
+* Submit a zip file to TurnItIn
+    * In addition to GitHub, You need to formally submit a zip file with the contents of your repository to TurnItIn
+    * zip files should be no more than 5mb. If it is more than 5MB something is wrong! talk to your module lead
+    * GitHub can automatically generate a zip file when you "Create a new [release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)"
+
 
 
 
 Marks Overview
 --------------
+
 
 | Assignment | Section | Marks (Total 60) |
 |---|--------------------------------|---:|
@@ -43,6 +49,8 @@ Marks Overview
 |   |                                | 60 |
 
 1 mark = 1% of module
+
+Marks for the module will be returned to you via TurnItIn as a 'percentage'. e.g: If you achieved `30/60` your returned mark would be `50%` derived by the formula `(30/60)*100`
 
 
 Scenario
@@ -91,6 +99,7 @@ Guidance
     * The assignment has been split into server and client. You can gain marks for these independently. You do not need to complete a working server before you move on to the client or vice versa.
     * If you are struggling with your server you could construct your client against the working reference server in `example_server`. See `Makefile` `run_your_client_with_example_server` and `test_your_client_with_example_server`. 
     * You can also verify your server implementation against the reference client. See `Makefile` `run_example_client_with_your_server` and `test_example_client_with_your_server`
+    * You can gain marks for the use a visual framework without completing a working server or client (see visual framework below for details)
 
 ### Citations, Referencing and Acknowledging sources
 
@@ -188,10 +197,12 @@ no framework == 0 marks.
 
 ### Server framework (independent)
 
-* Independent (use of) Framework (Server and Client)
-    * You will have been given a worked example in a framework (expressjs?) as part of your lectures. To access the marks for independent working, you must select and use a different framework
 * Optional! For advanced students aiming for 50% or more
-    * It is strongly recommended that most student create a working solution (expressjs?) before you move on to investigating and using another framework
+* Independent (use of) Framework (Server and Client)
+    * You will have been given a worked example of a server in _ExpressJS_/_VueJS_/_Bootstrap_ as part of your lectures
+    * To access the marks for independent working, you must select and use a different framework. You can pass this assignment with 55% by sticking with the worked example technologies.
+    * Some students may be advanced enough to independently use a new framework/language from the start of the module. Other may need to gradually move up to this.
+    * It is recommend that students have a secure understanding of an api and workflow by completing a working solution in _ExpressJS_/_VueJS_/_Bootstrap_ and then move on to attempt the use of another framework independently. You will get marks for independent work even if your independent solution is incomplete. If you chose to complete _ExpressJS_/_VueJS_/_Bootstrap_ solution and then moved on to another framework, it would be wise to commit independent work to a placeholder/working folder e.g. `server_independent` or `server_fastapi` while you develop your independent solution.
 
 * Use of a language or framework that was not under direct instruction from lectures
     * Use of framework features (4 marks)
@@ -231,6 +242,8 @@ no framework == 0 marks.
 ### Visual framework
 
 no framework == 0 marks (even if it looks nice).
+
+It is possible to use a visual framework and gain full marks for this section. You could create a stub client html structure that does pass the client tests but still uses a visual framework with the criteria below.
 
 * Tutor verified (5 marks)
     * Navbar/Title (1 mark)

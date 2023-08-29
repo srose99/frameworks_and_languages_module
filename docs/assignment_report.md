@@ -23,8 +23,7 @@ Submission Guidance
 
 * You will clone a public fork of:
     * https://github.com/calaldees/frameworks_and_languages_module
-* You will be working in own public GitHub forked repository. At the datetime of the deadline a snapshot of your fork will automatically be taken. In addition, You need to formally submit a zip file with the contents of your repository to TurnItIn for a formal audit trail. You will be provided with a TurnItIn coversheet.
-
+* You will be working in own public GitHub forked repository. At the datetime of the deadline a snapshot of your fork will automatically be taken. In addition, You need to formally submit a `pdf` to TurnItIn for a formal audit trail.
 * It is industry practice to keep technical documentation alongside program code in the same code repository
     * Project documentation is often written in `Markdown`
 * A Markdown report template has been provided [`./technical_report.md`](https://github.com/calaldees/frameworks_and_languages_module/blob/main/technical_report.md)
