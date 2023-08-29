@@ -87,6 +87,10 @@ Guidance
     * The system will be operating with less than 100 items (pagination is not needed)
 * You will be allocated marks for partial solutions (based on tests that pass)
 * You are working towards being a professional software engineers. It is expected that you share and discuss your solutions with peers throughout this assignment.
+* Modular assignment (use of reference/example implementations)
+    * The assignment has been split into server and client. You can gain marks for these independently. You do not need to complete a working server before you move on to the client or vice versa.
+    * If you are struggling with your server you could construct your client against the working reference server in `example_server`. See `Makefile` `run_your_client_with_example_server` and `test_your_client_with_example_server`. 
+    * You can also verify your server implementation against the reference client. See `Makefile` `run_example_client_with_your_server` and `test_example_client_with_your_server`
 
 ### Citations, Referencing and Acknowledging sources
 
