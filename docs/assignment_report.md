@@ -21,22 +21,22 @@ Intended Learning Outcomes
 Submission Guidance
 -------------------
 
-* You will clone a public fork of:
-    * https://github.com/calaldees/frameworks_and_languages_module
-* You will be working in own public GitHub forked repository. At the datetime of the deadline a snapshot of your fork will automatically be taken. In addition, You need to formally submit a `pdf` to TurnItIn for a formal audit trail.
-* It is industry practice to keep technical documentation alongside program code in the same code repository
-    * Project documentation is often written in `Markdown`
-* A Markdown report template has been provided [`./technical_report.md`](https://github.com/calaldees/frameworks_and_languages_module/blob/main/technical_report.md)
-* You will edit/commit `technical_report.md` markdown file in-place in your cloned fork repository. (do not rename the file)
-
-### Converting MarkDown to PDF for TurnItIn submission
-
-```bash
-alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/latex'
-pandock technical_report.md -o technical_report.pdf
-```
-* from https://hub.docker.com/r/pandoc/core
-
+* GitHub Public Fork (auto snapshot)
+    * You will clone a public fork of:
+        * [https://github.com/calaldees/frameworks_and_languages_module](https://github.com/calaldees/frameworks_and_languages_module)
+    * At the datetime of the deadline a snapshot of your fork will automatically be taken
+    * It is industry practice to keep technical documentation alongside program code in the same code repository
+        * Project documentation is often written in `Markdown`
+    * A Markdown report template has been provided [`./technical_report.md`](https://github.com/calaldees/frameworks_and_languages_module/blob/main/technical_report.md)
+    * You will edit/commit `technical_report.md` markdown file in-place in your cloned fork repository. (do not rename the file)
+* Submit a pdf file to TurnItIn
+    * In addition to GitHub, You need to formally submit a `pdf` file with the contents of your report to TurnItIn
+    * Converting MarkDown to PDF for TurnItIn submission
+        * ```bash
+            alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/latex'
+            pandock technical_report.md -o technical_report.pdf
+            ```
+* Please see section in Module handbook "Formative Assessment" for verification of student understanding
 
 
 Marks Overview

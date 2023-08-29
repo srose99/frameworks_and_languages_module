@@ -28,7 +28,7 @@ Submission Guidance
     * In addition to GitHub, You need to formally submit a zip file with the contents of your repository to TurnItIn
     * zip files should be no more than 5mb. If it is more than 5MB something is wrong! talk to your module lead
     * GitHub can automatically generate a zip file when you "Create a new [release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)"
-
+* Please see section in Module handbook "Formative Assessment" for verification of student understanding
 
 
 
