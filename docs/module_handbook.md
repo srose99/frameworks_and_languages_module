@@ -38,18 +38,17 @@ By the end of the module students should be able to:
 
 
 ## Assessments
-
 * You will be working in own public GitHub forked repository of https://github.com/calaldees/frameworks_and_languages_module
 * At the datetime of the deadline a snapshot of your fork will automatically be taken from GitHub. 
-* In addition, You need to formally submit a zip file with the contents of your repository to TurnitIn for a formal audit trail.
+* In addition, You need to formally submit a zip file with the contents of your repository to TurnitIn for a formal audit trail. (see individual assignment descriptions)
 
 ### Digital Artefact 60%
-Due: 14:00 Monday 11th December 2023, Turnitin and GitHub
-Return: 14:00 Monday 15th January 2024, Turnitin
+* Due: 14:00 Monday 11th December 2023, Turnitin and GitHub
+* Return: 14:00 Monday 15th January 2024, Turnitin
 
 ### Written Report 40% 
-Due: 14:00 Monday 9th January 2023, Turnitin and GitHub
-Return: 14:00 Monday 29th January 2023, Turnitin
+* Due: 14:00 Monday 9th January 2023, Turnitin and GitHub
+* Return: 14:00 Monday 29th January 2023, Turnitin
 
 
 ### Assessment Overview
@@ -93,6 +92,8 @@ The course will consist of 44 hours of workshops with direct tuition and an addi
 Totalling of 88 hours of tutor support.
 The module will be broken into 11 workshops with 4 hours tuition and an additional 4 hours supervised support. It is expected (but not compulsory) that students use the additional supervised support time to apply the concepts conveys in the morning workshops.
 
+It is expected that the first 3 session, the 'supervised support' is utilised to by giving a complete worked example of a server and client in ExpressJS and VueJS. This front loading of material give students a foundation to talke the upcoming assignments. Student are reminded that this is a full time course. In full time employment you will be expected to work 09:00 till 17:30 to fulfil your contractual obligations.
+
 From https://www.canterbury.ac.uk/our-students/ug-current/academic-services/timetable-and-dates/university-dates-2023-24
 
 * Monday 25th September
@@ -115,13 +116,13 @@ Student are reminded again that they should be contributing 150 hours of indepen
 * Session 1
     * Remote Cloud VSCode IDE (CodeSpaces/GitPod)
     * Containers
-    * OpenAPI, WebService (curl, json, cors), SinglePage WebApp
+    * Afternoon: OpenAPI, WebService (curl, json, cors), SinglePage WebApp
 * Session 2
     * Server Frameworks 1
-    * ExpressJS Worked Example - RSPV App Server
+    * Afternoon: ExpressJS Worked Example - RSPV App Server
 * Session 3
     * Client Frameworks 1
-    * VueJS Worked Example - RSPV App Client
+    * Afternoon: VueJS Worked Example - RSPV App Client
 * Session 4
     * Test Frameworks
 * Alternative Curriculum Week
@@ -150,6 +151,21 @@ Student are reminded again that they should be contributing 150 hours of indepen
 * You should be independently reading, exploring, and experimenting with a range of frameworks throughout the module duration.
 * You should be discussing the merits and features of a different frameworks with your peers and citing/references these discussions in code.
 * You should be sharing your code and progress openly. This is good practice for all professional and personal projects.
+
+## Employable skills
+* The majority of software engineering jobs require understanding and use of frameworks. Many software-engineering job are web technology focused as this is the current standard practice for interfacing and distributing content. Many of these jobs refer to frameworks such as React Native (client framework), Django (server framework), Full-Stack (client and server understanding) deploying to the cloud (containers), use of API’s (understanding how to build one, microservices). Many cite DevOps understanding (automated testing). Working with others (version-control/git/github). Developer tooling (CloudBasedIDE/Linux)
+* Look at the jobs offered below and count how many cite frameworks/languages/topics covered in this module
+    * https://www.linkedin.com/jobs/search?keywords=Software Engineer&location=United Kingdom
+    * https://www.reed.co.uk/jobs/software-developer-jobs
+    * https://uk.indeed.com/jobs?q=Software+Developer
+* [What Skills Do CS Grads Need?: Colleges And Employers Disagree](https://dl.acm.org/doi/10.1145/3545947.3576369) Video/Poster presentation 10min
+    * Employers focus on:
+        * working without knowing the answers
+        * collaboration
+        * Manage oneself
+        * experiment
+* You will have the opportunity to understand the use and purpose of a range of web based frameworks. You will be given the opportunity to "working without knowing the answers" and "experiment" with professional tooling
+* This module prepares you with the knowledge needed for interviewing for a professional role using web based technologies
 
 ## Referencing system
 Your work must be adequately referenced throughout.
