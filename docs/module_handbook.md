@@ -156,7 +156,9 @@ Student are reminded again that they should be contributing 150 hours of indepen
 Your work must be adequately referenced throughout.
 In program code; It is good practice to reference code patterns/snippets with url’s within code comments. 
 This is useful for future maintainers to follow your thought process.
-It is always important to acknowledge sources of information. It is acceptable to use snippets of other code if referenced and justified correctly.
+It is always important to acknowledge sources of information. 
+It is acceptable to use snippets of other code if referenced and justified correctly.
+Examples of referencing examples are described for each assignment.
 
 ## Learning Materials/Resources
 * All learning materials and resources will be provided during the taught sessions and will be made available via

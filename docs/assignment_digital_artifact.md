@@ -22,9 +22,9 @@ Submission Guidance
 
 * You will clone a public fork of:
     * [https://github.com/calaldees/frameworks_and_languages_module](https://github.com/calaldees/frameworks_and_languages_module)
-* You will be working in own public GitHub forked repository. At the datetime of the deadline a snapshot of your fork will automatically be taken. In addition, You need to formally submit a zip file with the contents of your repository to TurnItIn for a formal audit trail. You will be provided with a TurnItIn coversheet.
+* You will be working in own public GitHub forked repository. At the datetime of the deadline a snapshot of your fork will automatically be taken.
+* In addition, You need to formally submit a zip file with the contents of your repository to TurnItIn for a formal audit trail. 
 
-* see the folder for your solution below
 
 
 Marks Overview
@@ -91,26 +91,34 @@ Guidance
 ### Citations, Referencing and Acknowledging sources
 
 * It is expected that you document your sources/references for your code (this includes discussions with dates with classmates, url's to stack overflow resources and framework documentation)
-    * It is typical to have citations inline with code (not at the end of a file or document) [e.g.](https://github.com/calaldees/frameworks_and_languages_module/blob/main/test_server/test_api.py#L17)
-        * ```python
-            def isiterable(iterable):
-                """
-                https://stackoverflow.com/a/36407550/3356840
-                `iter(o)` will work for all items that implement `__iter__` and is more correct/flexible than explicitly looking for a `Sequence`
-                """
-                if isinstance(iterable, (str, bytes)):
-                    return False
-                try:
-                    _ = iter(iterable)
-                except TypeError:
-                    return False
-                else:
-                    return True
+    * It is typical to have citations inline with code (not at the end of a file or document) [e.g.](https://github.com/calaldees/frameworks_and_languages_module/blob/main/test_server/test_api.py#L17)2
+        * Referencing stackoverflow as a source (use the `share` link)
+            * ```python
+                def isiterable(iterable):
+                    """
+                    https://stackoverflow.com/a/36407550/3356840
+                    `iter(o)` will work for all items that implement `__iter__` and is more correct/flexible than explicitly looking for a `Sequence`
+                    """
+                    if isinstance(iterable, (str, bytes)):
+                        return False
+                    try:
+                        _ = iter(iterable)
+                    except TypeError:
+                        return False
+                    else:
+                        return True
+                ```
+    * Some sharing of solutions is acceptable and normal, but are almost always supported by referencing the developer @USERNAME conversions in-line in code comments e.g.
+        * ```javascript
+            NEXT_ID = max(ITEMS.keys()) + 1  // Crude placeholder for generating unique id's after discussions with @calaldees
             ```
-    * Some sharing of solutions is acceptable and normal, but are almost always supported by referencing the developer conversion in code e.g.
-        * > // discussed unique id allocation with @calaldees. The old implementation manifested id conflict. Opted for tracking `last_generated_id` as a variable to prevent id reuse.
-        * > // handling of ISO datetime inspired by @username http://PERMALINK
-    * Do NOT put all of your references at the bottom of a code file or in a separate document. These should be _inline_ see above
+        * ```javascript
+            xxxx; // discussed unique id allocation with @calaldees. The old implementation manifested id conflict. Opted for tracking `last_generated_id` as a variable to prevent id reuse.
+            ```
+        * ```javascript
+            xxxx; // handling of ISO datetime inspired by @calaldees https://github.com/calaldees/frameworks_and_languages_module/blob/83e93cc29a2158b17040faf0fb77dfe3ff889a14/example_server/app/views.py#L45
+            ```
+    * Do NOT put all of your references at the bottom of a code file or in a separate document. These should be _inline with code_ see above
 
 
 Mark Breakdown
@@ -181,11 +189,11 @@ no framework == 0 marks.
 * Optional! For advanced students aiming for 50% or more
     * It is strongly recommended that most student create a working solution (expressjs?) before you move on to investigating and using another framework
 
-* Use of a language or framework that was not under direct instruction from lectures (5 marks)
-    * Use of framework features (3 marks)
-        * comment with text `framework feature` and url to framework feature documentation
-    * Use of language features (list comprehensions, async etc) (3 marks)
-        * comment with text `language feature` and url to language feature documentation
+* Use of a language or framework that was not under direct instruction from lectures
+    * Use of framework features (4 marks)
+        * comment with text `framework feature` and url to framework feature documentation/example
+    * Use of language features (list comprehensions, async etc) (4 marks)
+        * comment with text `language feature` and url to language feature documentation/example
     * Conciseness (verbose? unneeded intermediaries? readable) (1 mark)
     * File/folder structure (sensible names, use of framework conventions) (1 mark)
 
@@ -194,7 +202,7 @@ no framework == 0 marks.
 
 ### Client framework (independent)
 
-* See Server framework (independent) (above)
+* See "Server framework (independent)" (above)
 
 10 marks total
 
@@ -235,6 +243,5 @@ no framework == 0 marks (even if it looks nice).
 * Optional! For advanced students aiming for 80% or more
 * You independently used a framework that was not under direct instruction (5 marks).
     * comment with text `layout framework feature` and url to framework feature documentation
-
 
 5 marks total
