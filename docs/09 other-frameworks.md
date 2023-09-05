@@ -27,6 +27,16 @@ Company TechStack
 TASK: Using stackshare.io, find a company and find some technologies in it's tech stack
 
 
+Server or Client?
+----------------
+
+This module has shown one paradgime REST api with single page webapp client
+There are alternatives
+
+* [Everything I wish I knew before moving 50,000 lines of code to React Server Components](https://www.mux.com/blog/what-are-react-server-components)
+    * > React Server Components is to understand what problem they’re solving. So let’s start there.
+
+
 Serverless Architecture
 -----------------------
 
