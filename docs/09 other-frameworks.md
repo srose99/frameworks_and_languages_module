@@ -161,6 +161,10 @@ Question: What problem is static-site-generation trying to solve?
 Server State Frameworks
 -----------------------
 
+### svelte
+* [Svelte](https://svelte.dev/)
+    * Server database and fontend linked - changed to db/state -> automatic frontend event
+    * [How to get rich as a solo software developer - The Ultimate Guide](https://youtu.be/A4_TFHzqAAg?si=Cib45aISEEEnGESl&t=243) 4min into the video, talks about tech stack and svelte example! WOW!
 ### Fusion
 * [Stl.Fusion](https://github.com/servicetitan/Stl.Fusion)
     * > Fusion is a .NET library that implements Distributed REActive Memoization (DREAM) – a novel technique that gracefully solves a number of well-known problems

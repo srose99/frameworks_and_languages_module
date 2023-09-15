@@ -11,6 +11,9 @@ Objectives
 
 * [Why Static Languages Suffer From Complexity](https://hirrolot.github.io/posts/why-static-languages-suffer-from-complexity.html)
     * Amazing description of dynamic abstractions and actual static implementations and why there is always coupling between both "biformity"
+* [Bun](https://bun.sh/) a javascript runtime
+    * (learners need to know what a dynamic language is to understand the concept of a language runtime)
+    * [FireShip: Bun disrupting javascript](https://www.youtube.com/watch?v=dWqNgzZwVJQ) 5min
 
 * Interview question
     * > What are you your favourite new features in LANGUAGE and why

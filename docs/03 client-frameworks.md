@@ -430,6 +430,9 @@ Other Client frameworks
 
 These looks cool. I've not investigated them.
 
+* [Nue.js](https://nuejs.org/)
+    * Absolutely tiny
+    * Super hot reload
 * [solid.js](https://www.solidjs.com/)
     * > Solid follows the same philosophy as React with unidirectional data flow, read/write segregation, and immutable interfaces. It however has a completely different implementation that forgoes using a Virtual DOM.
     * Fragments, Portals, Context, Suspense, Error Boundaries, Lazy Components, Async & Concurrent Rendering, Implicit Delegation, SSR & Hydration, Directives
