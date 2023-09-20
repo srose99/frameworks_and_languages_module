@@ -68,6 +68,10 @@ def test_item_post_405(ENDPOINT):
     assert response.status_code == 405
 
 def test_item_post_201(ENDPOINT):
+    """
+    After POSTing a successful item - we get a json object of the created object
+    The created object must have an id field
+    """
     ITEM = {
         'user_id': "user1234",
         'keywords': ["hammer", "nails", "tools"],
@@ -81,36 +85,57 @@ def test_item_post_201(ENDPOINT):
     assert response.json().get('id')
 
 def test_item_get_200(ENDPOINT, new_item):
+    """
+    We should be able to GET an item after it has been created with a POST
+    """
     response = requests.get(f"{ENDPOINT}/item/{new_item['id']}")
     assert response.status_code == 200
 def test_item_get_200_fields(ENDPOINT, new_item):
+    """
+    When we GET an individual item, it should have all of the fields that were returned by the creation POST
+    """
     response = requests.get(f"{ENDPOINT}/item/{new_item['id']}")
     assert response.status_code == 200
     assert response.json() == new_item
 
 def test_item_get_404(ENDPOINT):
+    """
+    GETing an item id that is not in our dataset should return a 404
+    """
     response = requests.get(f"{ENDPOINT}/item/99999999")
     assert response.status_code == 404
 
 def test_items_get_200(ENDPOINT):
     """
-    /items responds with list
+    GET /items responds with 'list'
     """
     response = requests.get(f"{ENDPOINT}/items")
     assert response.status_code == 200
     items = response.json()
     assert isinstance(items, list)
 def test_items_get_200_fields(ENDPOINT, new_item):
+    """
+    After POSTing an item, a GET to /items should have our new item as a last entry of the list/array
+    """
     response = requests.get(f"{ENDPOINT}/items")
     assert response.status_code == 200
     items = response.json()
     assert items[-1] == new_item
 
 def test_item_delete_404(ENDPOINT):
+    """
+    DELETEing an item that does not exist is a 404
+    """
     response = requests.delete(f"{ENDPOINT}/item/99999999")
     assert response.status_code == 404
 
 def test_item_delete(ENDPOINT, new_item):
+    """
+    create an item with POST
+    GET the created  item to see if it exists 
+    DELETE the item
+    GET the item_id again and it should not exist
+    """
     url = f"{ENDPOINT}/item/{new_item['id']}"
     response = requests.get(url)
     assert response.status_code == 200
@@ -129,6 +154,9 @@ def test_root_options_cors_headers(ENDPOINT):
     #assert 'Content-Type' in response.headers['Access-Control-Allow-Headers']  # Investigate why this was needed - this is not part of express.js default CORS handling? BLAME?
 
 def test_items_get_cors_headers(ENDPOINT):
+    """
+    OPTIONS request to an endpoint should contain a CORS header (preferably allowing all domains `*`)
+    """
     response = requests.options(f"{ENDPOINT}/items")
     assert response.headers['Access-Control-Allow-Origin'], 'CORS Headers must be set - preferably to * for this learning exercise'
 
