@@ -106,29 +106,33 @@ JSON
 
 Moved to [TeachProgramming -> Language Features](https://github.com/calaldees/TeachProgramming/blob/master/teachprogramming/static/projects/language_features/json.md)
 
+Understand that dynamic languages are good tools for dealing with unstructured ad-hock data structures. Static languages this type of operation is much more difficult.
+
 
 OpenAPI (30min)
 -------
 
-* [redocly - FreeCycle](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/calaldees/frameworks_and_languages_module/main/openapi.yaml)
+
 * [OpenAPI Sample Pet Store](https://redocly.github.io/redoc/)
-* VSCode extension: OpenAPI preview (auto generated from yaml)
+* [VSCode extension](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi): OpenAPI preview (auto generated from yaml)
 * https://swagger.io/specification/
-* https://redocly.com/docs/redoc/deployment/cli/
-    * ```bash
-        alias redocly='docker run --rm -v "$PWD:/spec" -u $(id -u):$(id -g) redocly/cli'
-        redocly build-docs openapi.yaml -o openapi.html
-        ```
+* ReDocly
+    * From https://redocly.com/docs/redoc/deployment/cli/
+        * ```bash
+            alias redocly='docker run --rm -v "$PWD:/spec" -u $(id -u):$(id -g) redocly/cli'
+            redocly build-docs openapi.yaml -o openapi.html
+            ```
+    * already available for you `make openapi.html`
+    * [redocly - FreeCycle](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/calaldees/frameworks_and_languages_module/main/openapi.yaml) (only if you're logged into GitHub because you need access to `raw.githubusercontent.com`)
 * https://editor.swagger.io/
 * https://editor-next.swagger.io/
-
 
 
 ### using curl to perform HTTP posts
 
 * `POST` example (with JSON data)
     * ```bash
-        curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
+        curl -X POST http://localhost:3000/data -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}'
         ```
 
 ### cURL commands to add an item and read it back
@@ -137,27 +141,54 @@ OpenAPI (30min)
 # for GitPod - https://8000-aaa-bbb-1234abcd.ws-eu00.gitpod.io/
 #   notice the http(s) differences and where the port is
 curl -X POST http://localhost:8000/item -H "Content-Type: application/json" -d '{"user_id": "user1234", "keywords": ["hammer", "nails", "tools"], "description": "A hammer and nails set. In canterbury", "lat": 51.2798438, "lon": 1.0830275}'
-curl http://localhost:8000/items
-curl http://localhost:8000/item/1
-curl http://localhost:8000/items?user_id=user1234
+curl -X GET http://localhost:8000/items
+curl -X GET http://localhost:8000/item/1
+curl -X GET http://localhost:8000/items?user_id=user1234
 curl -X DELETE http://localhost:8000/item/1
 ```
 
+(Advanced tip)
+You can pipe `|` the output of curl into another command/process - `jq` formats json in a terminal (and can provide other filtering/query features)
+`curl https://jsonplaceholder.typicode.com/posts/1 | jq`
+
 ### Task
 
-Run my example_server. Either with raw python or starting container.
+Run `make run_example_server`. Either with raw python or starting container.
 
 * Using cURL
     * reminder - use `-vvv` to see more debug details
 * Add 4 items
     * with different lat/lon and user_id
-    * use /items/? to query different items
-* Open the port - get a friend to add an item to your server
+    * use `/items/???` to query different items
+* Open public port - give a friend your server url
+    * get a friend to add an item to your server
     * Read another servers list of items
 * (Advanced) do this in javascript (see notes below)
 
 
 ### Further API Practice
-* [JSONPlaceholder/guide](https://jsonplaceholder.typicode.com/guide/)
-    * Paste into browser or use with other languages
-    * This shows how to do exactly what you've done in `curl` (GET, POST with json) with javascript
+
+* Perform a HTTP Request (like your curls above) in other languages
+
+* Javascript GET, POST, DELETE
+    * [JSONPlaceholder/guide](https://jsonplaceholder.typicode.com/guide/)
+        * Open a 'new tab' in your browser and press `F12` (devtools) - Paste code 'console'
+* Python GET, POST, DELETE
+
+
+```python
+import urllib.request
+def urllib_request(*args, **kwargs):
+    request = urllib.request.Request(*args, **kwargs)
+    with urllib.request.urlopen(request) as response:
+        return response.read()
+
+import json
+def fetch_json(url, data={}, method='GET'):
+    return json.loads(urllib_request(url, json.dumps(data).encode('utf8'), method=method, headers={"Content-type": "application/json"}))
+
+from pprint import pprint
+pprint(fetch_json('https://jsonplaceholder.typicode.com/posts/1', method="GET"))
+pprint(fetch_json('http://localhost:8000/item', {"user_id": "user1234", "keywords": ["hammer", "nails", "tools"], "description": "A hammer and nails set. In canterbury", "lat": 51.2798438, "lon": 1.0830275}, method='POST'))
+pprint(fetch_json('http://localhost:8000/items', method="GET"))
+```

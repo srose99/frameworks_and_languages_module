@@ -214,6 +214,9 @@ def test_items_contains_from_post(ENDPOINT, item_factory):
 
 
 def test_ids_generated_are_unique(ENDPOINT, new_item, get_items, item_factory):
+    """
+    It is expected that ID's are unique. Most systems expect to not reuse ID's.
+    """
     ids = tuple(item['id'] for item in get_items())
     for id in ids:  # DELETE all items
         requests.delete(f"{ENDPOINT}/item/{id}")

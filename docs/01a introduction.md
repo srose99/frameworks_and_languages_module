@@ -15,8 +15,8 @@ Who am I?
     * 6 years - Global Radio (full stack web, android dev, lead test and internal tooling engineer)
     * 6 months - Financial investment platform CI infrastructure
     * 1.5 years - NHS Genome processing pipeline for cancer and rare disease analysis
-* 4 years Lecturer in Education (teacher training)
-* 2 years Lecturer in Computing
+* 5 years Lecturer in Education (teacher training)
+* 3 years Lecturer in Computing
 
 * Side projects
   * DMX Stage lighting and projector sys (with 3d stage visualiser)
@@ -37,6 +37,8 @@ TASK: (10min)
 ## Module Aims
 To develop the student’s understanding of the fundamental concepts of Programming Frameworks and Languages. 
 This module supports the Implement and Operate elements of the CDIO model.
+
+* [module_handbook.md#employable-skills](./module_handbook.md#employable-skills)
 
 ### Intended Learning Outcomes 
 By the end of the module students should be able to:
@@ -64,7 +66,7 @@ This module will help develop an important part of your professional skill-set:
 * Framework
   * Inversion of control
     * It calls you, rather than you call it
-* Tests
+* Tests that are
   * Automated
   * Document business requirements/spec
   * Document correct flow
@@ -72,12 +74,15 @@ This module will help develop an important part of your professional skill-set:
 ### How will we learn
 
 1. Focus on a business engineering problem with real industry tools
-    * Hands-on each week with a range of tools
+  * Hands-on each week with a range of tools
 2. Discussion
-    * Real engineers can discuss/reason about technology
-    * Pair programming
-3. Multiple languages
+  * Real engineers can discuss/reason about technology
+  * Pair programming (you have to verbally describe your rational)
+3. Multiple languages/frameworks (they are all just tools that you can learn)
   * [langauge_reference.html](https://computingteachers.uk/static/langauge_reference.html)
+4. Self directed (Level 6) 150 hours
+  * You can read + action on your own now
+
 
 #### Level 6
 * Level 4 - You are told what to do
@@ -87,7 +92,7 @@ This module will help develop an important part of your professional skill-set:
 * My role is NOT to have all the answers
 * My role is to facilitate your transition towards a skilled professional
 
-Side Note: Employment. Popular languages? Less popular or new languages? Mark scheme 70%+
+Side Note: Employment. Popular languages? Less popular or new languages? Mark scheme 50%+
 
 #### Session Overview - Online/Campus
 
@@ -96,6 +101,8 @@ Task: Look on blackboard at session list
 * Each week
     * 09:00 - 13:00 Lab
     * 14:00 - 18:00 Supervised Workshop Support
+      * First 3 week (vital)
+      * can be flexible later in the module
 
 
 Starting point Quiz (15min)
@@ -107,10 +114,29 @@ How much do you as a class know already?
 https://b.socrative.com/login/student/
 `CALLAGHAN1818`
 
+(Go over each question and why it was asked)
 
 
+Key Terminology (Today)
+---------------
+* Cloud based IDE
+* Bash/linux commandline
+* Makefile
+* Containerisation
+* Git version control (from commandline)
+* GitHub Actions (CI) (to run tests - triggered by `git push`)
 
-Assessment 1 - Digital Artefact - Familiarisation (1 hour)
+Today
+-----
+* Morning
+  * Overview of assignemnts and core tools
+* Afternoon
+  * HTTP (curl and other methods)
+  * JSON and working with dynamic data structures
+  * OpenAPI spec
+
+
+Assessment 1 - Digital Artefact - Familiarisation (2 hour)
 ------------------
 
 ### Read (10 min)
@@ -119,7 +145,7 @@ Assessment 1 - Digital Artefact - Familiarisation (1 hour)
 * TASK: Look at Assignment 2 - read it - discuss
 
 
-### Demo
+### Demo (15 min)
 
 * Demo working server on Cloud VSCode IDE
   * https://codespaces.new/calaldees/frameworks_and_languages_module
@@ -140,14 +166,15 @@ put link on blackboard - class interact
   * Client Layout Framework (styles + visuals)
 * Assignments
   * Set Today
-  * Assignment 1 - Digital Artifact - Due 12th December
-  * Assignment 2 - Technical Report - Due 9th January
+  * Assignment 1 - Digital Artifact - Due 11th December
+  * Assignment 2 - Technical Report - Due 8th January
 * Tools
   * Cloud based IDE + containers
   * OpenAPI Spec
 
 
-### Run it yourself (1 hour)
+Run it yourself (30 min)
+------------------------
 
 * Cloud based VSCode IDE
   * GitHub CodeSpaces
@@ -159,34 +186,47 @@ put link on blackboard - class interact
 Demo:
 1. The IDE
 2. The Interaction (public port)
-  * 
+  * launch containers
+  * make ports public
 3. Add an item with the web interface
   * Remember to add the querystring for the server `?api=` e.g. `https://8001-xxxx.ws-eu67.gitpod.io?api=https://8000-xxxxx.ws-eu67.gitpod.io`
 4. Access another persons public port + Add an item to another persons server
 5. Run the tests
   * `make test_example_server`
   * `make test_example_client`
-    * download video
+    * (Demo this natively to show Cypress interface. We will return to this in session 4 in more detail)
 
 
-Task: Fork + Run + Commit
+Task: Fork + Run + Commit (30 min)
 ----
 1. Fork your own copy of the repo (description)
   * Allow CI
     * And enable _GitHub Actions/Workflows_
 2. Start a Cloud based IDE for YOUR FORK 
-  * `https://gitpod.io#PASTE_YOUR_GITHUB_FORK_URL_HERE`
   * `https://codespaces.new/<USERNAME>/<REPO_NAME>`
+  * `https://gitpod.io#PASTE_YOUR_GITHUB_FORK_URL_HERE`
 3. Make a commit to `/server/Dockerfile` and see CI
+  * ```Dockerfile
+      FROM python:alpine
+      WORKDIR /app/
+      COPY . .
+      CMD ["python", "-m", "http.server", "8000"]
+      ```
   * `git status`
+  * `git diff`
   * `git commit -a`
   * `git push`
+4. See you test report online on GitHub
+  * GitHub -> YOUR FORK -> Actions -> `test_server` -> server-junit
+  * or
+  * commit -> red 'x' next to commit -> test_server/server-junit (push)
+
 
 Workspace Hygiene
 ------------------
 * Commit + push: every time any progress is made (even one or two lines of code)
   * Your workspaces are ephemeral and should be disposed periodically - workspaces are not a datastore
-* Stop your cloud IDE's (save your hours)
+* Stop your cloud IDE's (save your cloud hours)
   * `gp stop`
   * `gh codespace stop`
 * Manage/Delete unused workspaces (remove unused workspaces)
@@ -195,6 +235,24 @@ Workspace Hygiene
 
 * (Optional)
   * [GitHub Student Developer Pack](https://education.github.com/pack) - with cccu address + cccu id 
+
+
+Plenary (30min)
+-------
+
+* What is Assignment 1
+  * How will you be assessed
+* What is Assignment 2
+  * How will you be assessed
+* Look at the session overview outlines
+  * How will you be supported
+* Review Key Terminology
+  * What is a container?
+  * Why do we construct software in containers?
+* Why is this module level 6?
+* Why is this module relevant/important?
+* How are you feeling?
+
 
 
 Unsorted
@@ -259,11 +317,12 @@ Updated
     3. Haskell (X)
     4. Prolog
     5.  Java
-6. What are websockets used for?
+6. What are WebSockets used for?
     1. Downloading files from websites
     2. Used to serve websites sites via HTTP on a known port
-    3. Websockets are an abstract concept
-    4. Enabling browser based apps to have ongoing bi-directional communication (X)
+    3. WebSockets are an abstract concept based on REST
+    4. Browser based apps to have persistent bi-directional communication (X)
+    5. Accelerates websites with use of more modern protocols
 7. `git pull --rebase` is used for
     1. Refreshing a repository content with the upstream
     2. Replaying local commits over remote changes to make a linear history (X)
@@ -280,6 +339,7 @@ Updated
     2. Markdown (X)
     3. LaTex
     4. Python
+    5. HTML
 
 
 
