@@ -254,6 +254,41 @@ Plenary (30min)
 * How are you feeling?
 
 
+Expectations
+------------
+
+### Expected marks
+* Weak students
+  * Turn up every week
+  * Are supported in afternoon sessions with complete worked examples in expressjs, vuejs and bootstrap
+  * Will all pass 40% to 50%
+* Mid tier students
+  * Complete assignment 1 with supported frameworks expressjs, vuejs, bootstrap by November
+  * Spend time exploring/implementing another framework independently, may be partially complete and only pass some of the tests
+  * Will pass at 55% to 65%
+* Top tier students
+  * Are present for the expressjs, vuejs, bootstrap examples (but they can be skipped for the truly l33t). 
+  * Full implementation across different languages independently.
+  * Will pass at 75%+
+* Students that don't attend the afternoon support sessions
+  * Don't waste my time asking for help the week before the assignment is due
+
+### Working day?
+* I/we are here 09:00 to 18:00 Mondays
+* Welcome to a full time job
+* If you want to be a software engineer, expect this every day, with only 20 days holiday a year until you are 68
+
+### Who are you working for?
+* You will spend the rest of your life working for someone else and working for their objectives
+* Currently you are working for you
+  * If you don't utilise this time now, we call this 'friendly fire'
+
+### Job prospects
+
+This module has the most industry aligned skills in the entire degree suite.
+A combination of this and your final year project are going to be the linchpin modules of your entire degree.
+Put in the time.
+
 
 Unsorted
 ========
