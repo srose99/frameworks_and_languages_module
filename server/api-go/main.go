@@ -22,10 +22,20 @@ var testdatasets = []testdata{
 func main() {
 	router := gin.Default()
 	router.GET("/testdatasets", getTestData)
+	router.POST("/testdatasets", postTestData)
 
 	router.Run("localhost:8000")
 }
 
 func getTestData(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, testdatasets)
+}
+
+func postTestData(c *gin.Context) {
+	var newTestData testdata
+	if err := c.BindJSON(&newTestData); err != nil {
+		return
+	}
+	testdatasets = append(testdatasets, newTestData)
+	c.IndentedJSON(http.StatusCreated, newTestData)
 }
