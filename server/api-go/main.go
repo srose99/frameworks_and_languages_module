@@ -2,14 +2,15 @@ package main
 
 import (
 	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
 
 type testdata struct {
-    ID     string  `json:"id"`
-    Title  string  `json:"title"`
-    Name   string  `json:"name"`
-    Price  float64 `json:"price"`
+	ID    string  `json:"id"`
+	Title string  `json:"title"`
+	Name  string  `json:"name"`
+	Price float64 `json:"price"`
 }
 
 var testdatasets = []testdata{
@@ -22,7 +23,7 @@ func main() {
 	router := gin.Default()
 	router.GET("/testdatasets", getTestData)
 
-	router.Run("localhost:8080")
+	router.Run("localhost:8000")
 }
 
 func getTestData(c *gin.Context) {
