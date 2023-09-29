@@ -6,17 +6,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type Keywords struct {
+	Tools []string `json:"Tools"`
+}
+
 type testdata struct {
-	ID    string  `json:"id"`
-	Title string  `json:"title"`
-	Name  string  `json:"name"`
-	Price float64 `json:"price"`
+	User_ID     string   `json:"userid"`
+	Keywords    Keywords `json:"keywords"`
+	Description string   `json:"description"`
+	Lat         float64  `json:"lat"`
+	Lon         float64  `json:"lon"`
 }
 
 var testdatasets = []testdata{
-	{ID: "1", Title: "Mr", Name: "Testing1", Price: 55.99},
-	{ID: "2", Title: "Mrs", Name: "Testing2", Price: 56.99},
-	{ID: "3", Title: "Sir", Name: "Testing3", Price: 57.99},
+	{User_ID: "1", Keywords: Keywords{Tools: []string{"Hammer", "Nails"}}, Description: "A hammer and nails set", Lat: 51.2798438, Lon: 1.0830275},
 }
 
 func main() {
@@ -34,6 +37,7 @@ func getTestData(c *gin.Context) {
 func postTestData(c *gin.Context) {
 	var newTestData testdata
 	if err := c.BindJSON(&newTestData); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 	testdatasets = append(testdatasets, newTestData)
