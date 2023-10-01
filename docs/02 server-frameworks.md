@@ -49,12 +49,17 @@ History + Terms
 * [REST: Representational state transfer](https://en.wikipedia.org/wiki/Representational_state_transfer)
     * > RESTful web APIs are typically loosely based on HTTP methods to access resources via URL-encoded parameters and the use of JSON or XML to transmit data.
     * GET, POST, DELETE, PUT, PATCH
+    * REST is loosely related to CRUD in database's
+    * A layer of abstraction from datastore with some business/application logic
 * [Common Gateway Interface (CGI)](https://en.wikipedia.org/wiki/Common_Gateway_Interface)
     * Just drop a script in an executable folder (new process on each request)
-* [Web Server Gateway Interface (WSGI)](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
-    * Connect web server (Apache, Nginx) to application logic (Python)
-* [Asynchronous Server Gateway Interface (ASGI)](https://en.wikipedia.org/wiki/Asynchronous_Server_Gateway_Interface)
-    * [Difference between WSGI and ASGI?](https://medium.com/analytics-vidhya/difference-between-wsgi-and-asgi-807158ed1d4c)
+* Web Server (Python example)
+    * > WSGI is a standard interface which allows to seperate server code from the application code where you add your business logic. WSGI succeeded in allowing much more freedom and innovation in the Python web space.
+    * But can't handle persistant http2 and websocket connections required by some modern services
+    * [Web Server Gateway Interface (WSGI)](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
+        * Connect web server (Apache, Nginx) to application logic (Python)
+    * [Asynchronous Server Gateway Interface (ASGI)](https://en.wikipedia.org/wiki/Asynchronous_Server_Gateway_Interface)
+        * [Difference between WSGI and ASGI?](https://medium.com/analytics-vidhya/difference-between-wsgi-and-asgi-807158ed1d4c)
 * [Middleware](https://en.wikipedia.org/wiki/Middleware)
     * Pre-request + Post-response hooks
     * Like _decorators_ (the language feature we looked at in the languages session)
@@ -88,7 +93,7 @@ Features probably not needed for Assignment 1
 * Serializers (output data)
     * Streams
 * Security/Authentication framework
-* Websockets (realtime)
+* Websockets (realtime bi-directional)
 * Plugin or expansion framework
 
 
@@ -109,11 +114,22 @@ Let's do a tutorial to find out what the components are.
 * https://www.djangoproject.com/
     * Install Django
     * Tutorial Part 1 to Part 3
-* Tutorial (first 3 parts)
 * Let's live code!
+    * new codespace (on your fork)
+    * ![github-codespace-new](images/github-codespace-new.gif)
+    * or https://github.com/codespaces/ (quick start 'blank')
     * https://gitpod.io/#https://github.com/gitpod-io/template-python-django
+    * `f1` toggle autosave (off)
+    * Skip `python manage.py shell` model bit
+    
 
-Quick note
+<details>
+<summary>Implementation notes</summary>
+
+* Part2 of tutorial missed out adding `Choice` to admin?
+    * `admin.site.register(Choice)`
+
+csrf trusted origins? no longer needed?
 ```python
 # mysite/settings.py 
 # addition
@@ -123,10 +139,23 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.gitpod.io',
 ]
 ```
-In django templates
+
+```python
+from django.core import serializers
+from django.http import JsonResponse
+def index(request):
+    return JsonResponse(
+        serializers.serialize("python", Question.objects.all()),
+        safe=False,
+    )
 ```
-{# <p>This is comment</p> #}
+
 ```
+{# <p>This is comment in Django templates</p> #}
+```
+</details>
+
+
 
 #### Further Django Reading
 * [Django Girls Tutorial](https://tutorial.djangogirls.org/en/)
@@ -149,10 +178,10 @@ In django templates
 
 
 * http://falconframework.org/
-    * https://falcon.readthedocs.io/en/stable/user/quickstart.html
+    * [quickstart](https://falcon.readthedocs.io/en/stable/user/quickstart.html)
+    * [on_post req.media](https://falcon.readthedocs.io/en/stable/api/media.html#usage)
 
-Let's build it in gitpod - livecode - containerize
-* bind/host to `0.0.0.0` + explain
+Let's build it - livecode - containerize
 
 * https://www.fullstackpython.com/falcon.html
     * > Falcon is a WSGI-compliant web framework designed to build RESTful APIs without requiring external code library dependencies.

@@ -1,10 +1,13 @@
-# Incomplete - need to dockerize this
+DOCKER_IMAGE:=dotnet_test
 
-run: Program.cs
+# https://dotnet.microsoft.com/en-us/apps/aspnet/apis
+
+run_local: Program.cs
 	dotnet run
 Program.cs:
 	dotnet new web
 dotnet:
+	# Notes for installed dotnet on ubuntu linux
 	wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb &&\
 	sudo dpkg -i packages-microsoft-prod.deb &&\
 	rm packages-microsoft-prod.deb &&\
@@ -28,3 +31,8 @@ clean:
 	true
 
 
+# https://learn.microsoft.com/en-us/dotnet/architecture/microservices/net-core-net-framework-containers/official-net-docker-images
+build:
+	docker build --tag ${DOCKER_IMAGE} .
+run_container:
+	docker run -it --publish 8000:8000 ${DOCKER_IMAGE}
