@@ -3,7 +3,7 @@ DOCKER_IMAGE:=dotnet_test
 # https://dotnet.microsoft.com/en-us/apps/aspnet/apis
 
 run_local: Program.cs
-	dotnet run
+	dotnet run --urls=http://0.0.0.0:8000/
 Program.cs:
 	dotnet new web
 dotnet:
@@ -20,14 +20,10 @@ clean:
 	rm -rf \
 		bin \
 		obj \
-		Pages \
 		Properties \
-		Controllers \
-		wwwroot \
 		appsettings.* \
 		*.csproj \
 		Program.cs \
-		WeatherForecast.cs \
 	true
 
 
