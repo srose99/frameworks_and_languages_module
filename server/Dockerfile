@@ -1,4 +1,6 @@
-  FROM python:alpine
-  WORKDIR /app/
+  FROM golang:latest
+  WORKDIR /app
   COPY . .
-  CMD ["python", "-m", "http.server", "8000"]
+  RUN go build -o main .
+  EXPOSE 8000
+  CMD ["./main"]
