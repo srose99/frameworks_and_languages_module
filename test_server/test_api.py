@@ -13,6 +13,7 @@ import datetime
 import pytest
 import requests
 
+ENDPOINT = 'http://localhost:8000'
 
 def isiterable(iterable):
     """

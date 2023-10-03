@@ -1,5 +1,5 @@
   FROM golang:latest
-  WORKDIR /go/src/app
+  WORKDIR /server
   
   COPY go.mod .
   COPY go.sum .
@@ -7,4 +7,5 @@
 
   COPY . .
   RUN go build -o main main.go
+  EXPOSE 8000
   CMD ["./main"]

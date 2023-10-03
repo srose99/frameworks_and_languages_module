@@ -30,7 +30,7 @@ func main() {
 	router.GET("/item", getTestData)
 	router.POST("/item", postTestData)
 
-	router.Run("localhost:8000")
+	router.Run("0.0.0.0:8000")
 }
 
 func getTestData(c *gin.Context) {
