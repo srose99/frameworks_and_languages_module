@@ -35,11 +35,29 @@ func getTestData(c *gin.Context) {
 }
 
 func postTestData(c *gin.Context) {
-	var newTestData testdata
-	if err := c.BindJSON(&newTestData); err != nil {
+	var userpostdataJSON struct {
+		User_ID     string   `json:"userid"`
+		Keywords    []string `json:"keywords"`
+		Description string   `json:"description"`
+		Lat         float64  `json:"lat"`
+		Lon         float64  `json:"lon"`
+	}
+
+	if err := c.BindJSON(&userpostdataJSON); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	testdatasets = append(testdatasets, newTestData)
-	c.IndentedJSON(http.StatusCreated, newTestData)
+
+	postData := testdata{
+		User_ID: userpostdataJSON.User_ID,
+		Keywords: Keywords{
+			Tools: userpostdataJSON.Keywords,
+		},
+		Description: userpostdataJSON.Description,
+		Lat:         userpostdataJSON.Lat,
+		Lon:         userpostdataJSON.Lon,
+	}
+
+	testdatasets = append(testdatasets, postData)
+	c.IndentedJSON(http.StatusCreated, postData)
 }
