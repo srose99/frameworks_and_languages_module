@@ -29,6 +29,7 @@ func main() {
 	})
 	router.GET("/item", getTestData)
 	router.POST("/item", postTestData)
+	router.DELETE("/item/:userid", deleteTestData)
 
 	router.Run("0.0.0.0:8000")
 }
@@ -63,4 +64,25 @@ func postTestData(c *gin.Context) {
 
 	testdatasets = append(testdatasets, postData)
 	c.IndentedJSON(http.StatusCreated, postData)
+}
+
+func deleteTestData(c *gin.Context) {
+	userID := c.Param("userid")
+
+	index := -1
+	for i, data := range testdatasets {
+		if data.User_ID == userID {
+			index = i
+			break
+		}
+	}
+
+	if index == -1 {
+		c.JSON(http.StatusNotFound, gin.H{"error": "data not found"})
+		return
+	}
+
+	testdatasets = append(testdatasets[:index], testdatasets[index+1:]...)
+
+	c.JSON(http.StatusOK, gin.H{"message": "data selected removed successfully"})
 }
