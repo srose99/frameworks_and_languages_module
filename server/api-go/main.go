@@ -27,8 +27,8 @@ func main() {
 	router.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "Hello, Welcome to my API")
 	})
-	router.GET("/testdatasets", getTestData)
-	router.POST("/testdatasets", postTestData)
+	router.GET("/item", getTestData)
+	router.POST("/item", postTestData)
 
 	router.Run("localhost:8000")
 }
