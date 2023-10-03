@@ -1,6 +1,5 @@
   FROM golang:latest
-  WORKDIR /app
+  WORKDIR /server/api-go
   COPY . .
-  RUN go build -o main .
-  EXPOSE 8000
+  RUN go build -o main main.go
   CMD ["./main"]
