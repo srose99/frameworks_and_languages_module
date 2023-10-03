@@ -1,4 +1,4 @@
   FROM python:alpine
-  WORKDIR /api-go/
+  WORKDIR /app/
   COPY . .
-  CMD [ "go", "run", "." ]
+  CMD ["python", "-m", "http.server", "8000"]
