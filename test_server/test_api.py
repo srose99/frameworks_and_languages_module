@@ -55,6 +55,7 @@ def test_root(ENDPOINT):
     """
     Base endpoint should return html of some form to the user.
     """
+    ENDPOINT = 'http://0.0.0.0:8000'
     response = requests.get(ENDPOINT)
     assert response.status_code == 200
     assert 'text/html' in response.headers['Content-type']
