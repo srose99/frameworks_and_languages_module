@@ -2,6 +2,7 @@ Client Frameworks
 =================
 
 Objectives
+----------
 1. Understand the requirements for the client component of the assessment
 2. Understand how we can manipulate dynamic webpages with the javascript DOM
 3. Understand how we can perform HTTP requests in javascript
@@ -9,6 +10,11 @@ Objectives
     * vue.js
     * hyperapp
     * react
+
+Other
+-----
+
+* GitHub - fetch upstream
 
 
 Demo Client Example (15min)
@@ -23,7 +29,6 @@ Demo Client Example (15min)
         * `run_your_client_with_example_server`
         * `test_your_client_with_example_server`
     * Running on GitHub Actions
-* GitHub FETCH UPSTREAM!!!!
 
 
 
@@ -33,8 +38,8 @@ Types of Web Applications (10min)
 (A simplified and not entirely accurate overview)
 
 * Server Rendered 
-    * (majority of sites before 2014)
-    * Older model - invented when browsers were less capable and had less features
+    * (majority of dynamic websites before 2014)
+    * Invented when browsers were less capable and had less features
     * Loads/Requests entire new page every link/click/action
     * Server template rendering
     * Example
@@ -62,6 +67,8 @@ Types of Web Applications (10min)
 Browser: Document Object Model (DOM) (30min)
 --------------------------------------------
 
+* visit the url `about:blank`, press `F12` for developer tools, view `console`
+
 ```javascript
 // Open a blank browser tab and bring up devtools (F12)
 // Type the following a line at a time
@@ -85,6 +92,7 @@ document.body.appendChild(text)  // you still have a variable `text` and can re-
 
 // TASK:
 // 1.) using the techniques above create the following html structure with javascript code
+//   hints - you need to create a `ul` -> add it to the dom -> create `li` add it as a child to `ul`
 /*
 <ul>
     <li data-id="a">Bread</li>
@@ -102,7 +110,7 @@ Questions
     * Do you think this could be reduced?
     * Hint: client frameworks will have a way of reducing this
 * Understand
-    * DOM functions `createElement`, `appendChild`, `textContent`, `data`, `querySelector`
+    * DOM functions `createElement`, `appendChild`, `textContent`, `dataset['xx']`->`data-xx`, `querySelector`
     * Creating DOM elements in plain javascript is cumbersome and hard to follow
     * `data` attributes and how they can be selected/found with query (IMPORTANT CONCEPT)
 
@@ -152,107 +160,6 @@ Why?
     * Async/multithreading (things happen at different times and take indeterminate time)
 
 
-Client/Browser communication with ServerAPI (15min)
--------------------------------------------
-
-Interacting with our API from client browser javascript
-
-```javascript
-// Open a blank browser tab and bring up devtools (F12)
-// Copy and paste the code below
-//   These are javascript equivalent of `curl` statesmen's from previous session
-// Start `example_server` api (suggest: `make run_example_server`)
-// Set `urlAPI` to your server address. (It MUST not end with a `/` as path is appended e.g. `/items`)
-// TASK: using the devtools console
-//   - add 3 items
-//   - get the item list (explore in devtools)
-//   - delete the middle item
-
-urlAPI = 'http://localhost:8000'
-testItem = {
-    user_id: "bob",
-    lat: 1,
-    lon: 1,
-    image: "http://placekitten.com/100/100",
-    keywords: "a, b, c",
-    description: "a test item that is great",
-}
-
-let items = []
-
-function getItems() {
-    fetch(`${urlAPI}/items`, {
-        method: 'GET',
-    })
-        .then(response => response.json())
-        .then(json => {
-            console.log("getItems", json)
-            items = json  // save the json we got back into the variable `items`
-        })
-    .catch(err => console.error(err))
-}
-
-function createItem(data) {
-    fetch(`${urlAPI}/item`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data),
-    })
-        .then(response => response.json())
-        .then(json => console.log('createItems()', json))
-    .catch(err => console.error(err));
-}
-
-function deleteItem(item_id) {
-    fetch(`${urlAPI}/item/${item_id}`, {
-        method: 'DELETE',
-    })
-        .then(json => console.log('deleteItem()', json))
-    .catch(err => console.error(err));
-}
-```
-
-
-Helpers for Assignment 1: Client (notes)
---------------------------------
-
-### Helper HTML
-```html
-<h2>Create</h2>
-<form>
-    <input name="user_id" placeholder="user_id">
-    <input name="lat" placeholder="lat">
-    <input name="lon" placeholder="lon">
-    <input name="image" placeholder="image">
-    <input name="keywords" placeholder="keywords">
-    <textarea name="description" placeholder="description"></textarea>
-    <button data-action="create_item">Create Item</button>
-</form>
-<!-- Hints
-    1.) Prevent default onSubmit behaviour
-    2.) Bind all inputs to data model
-    3.) Bind POST action to button
--->
-
-<h2>Items</h2>
-<ul>
-    <li><!-- Somehow templated for each item -->
-        <img src="item.image">
-        <span data-field="id">??? item.id ???</span>
-        <span data-field="lat">??? item.lat ???</span>
-        ...
-        <button data-action="delete" someKindOfOnClickAction="deleteItem(item.id)">Delete</button>
-    </li>
-</ul>
-```
-
-### Helper QueryString
-```javascript
-    // http://HOST:PORT/ADDRESS/OF/PAGE.HTML?query_param1=a&query_param2=b&api=http://localhost:8000
-    // Get api url (default to `CURRENT_HOST/api/v1`) (and remove trailing slash if present)
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlAPI = (urlParams.get('api') || '/api/v1').replace(/\/$/, '');
-```
 
 
 HTML Boilerplate (5min)
@@ -294,12 +201,16 @@ Vue.js (45min)
 
 * [vuejs.org](https://vuejs.org/)
     * See _Why Vue.JS_ video (3min)
-    * [vuejs.org/guide/quick-start.html#using-vue-from-cdn](https://vuejs.org/guide/quick-start.html#using-vue-from-cdn)
-    * [vuejs.org/tutorial](https://vuejs.org/tutorial/)
+        * Lots of techno babel - important concept "progressive framework"
+    * [vuejs.org/guide/quick-start.html#enabling-import-maps](https://vuejs.org/guide/quick-start.html#enabling-import-maps)
     * [vuejs.org/examples](https://vuejs.org/examples/)
+        * `Options` API (rather than `Composition`) and `HTML` (rather than `SFC`(SingleFileComponent))
+        * Go thought all the `Basic` items
+            * especially https://vuejs.org/examples/#handling-input
+    * [vuejs.org/tutorial](https://vuejs.org/tutorial/)
 * Example
     * [frameworks_and_languages_module/examples/client/vue_test](https://github.com/calaldees/frameworks_and_languages_module/tree/main/examples/client/vue_test)
-    * You could choose to use the `npm init vue` method. See react example for tips on containerising
+    * You could choose to use the `npm init vue` method. See react example for tips on containerising - but this creates loads of file and needs the vue server to build and serve the code
 
 ### Concepts
 * State, View and Actions are separate
@@ -425,6 +336,7 @@ Client Further Reading
 * [Simple, Modern JavaScript](https://vue-mjs.web-templates.io/blog/javascript) 2023
     * Doing most things with vue3 and tailwind
 
+
 Other Client frameworks
 -----------------------
 
@@ -441,6 +353,7 @@ These looks cool. I've not investigated them.
     * Elm is a functional language that compiles to JavaScript. It helps you make websites and web apps. It has a strong emphasis on simplicity and quality tooling.
 * [Fresh](https://fresh.deno.dev/)
 
+
 Unsorted
 ========
 Linked in [other-frameworks.md](09 other-frameworks.md)
@@ -450,7 +363,8 @@ Linked in [other-frameworks.md](09 other-frameworks.md)
 * [Building a Frontend Framework; Reactivity and Composability With Zero Dependencies](https://18alan.space/posts/how-hard-is-it-to-build-a-frontend-framework.html)
     * No dependencies.
     * No build-step before it can be used.
-* [vanilla-fp](https://github.com/abuseofnotation/vanilla-fp)
-    * The no-framework framework for building component-based purely-functional UIs.
-* [VanJS](https://github.com/vanjs-org/van)
-    *  🍦VanJS (Vanilla JavaScript): World's smallest reactive UI framework 
+* Without a framework (sometimes called 'vanilla javascript') - patters
+    * [vanilla-fp](https://github.com/abuseofnotation/vanilla-fp)
+        * The no-framework framework for building component-based purely-functional UIs.
+    * [VanJS](https://github.com/vanjs-org/van)
+        * 🍦VanJS (Vanilla JavaScript): World's smallest reactive UI framework 
