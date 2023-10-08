@@ -32,7 +32,7 @@ Demo Client Example (15min)
 
 
 
-Types of Web Applications (10min)
+Types of Web Applications (15min)
 -------------------------
 
 (A simplified and not entirely accurate overview)
@@ -55,7 +55,7 @@ Types of Web Applications (10min)
         * [React] javascript
         * [angular] javascript
         * [vue] javascript
-* Static Site Generation 
+* Static Site Generation
     * (grew significantly in popularity form 2014)
     * Generate entire (static) site (efficiently) on data change
     * Example
@@ -143,10 +143,12 @@ document.querySelector(`[data-id='b']`).remove()
 </details>
 
 
-Client Frameworks (5min)
+Client Frameworks (10min)
 -----------------
 
-Why?
+* Question:
+    * Given working with the DOM is long winded and a pain in the ass ... 
+    * Why do we have client frameworks?
 
 * Separate out:
     * State
@@ -155,18 +157,20 @@ Why?
         * (You do not change the state - the framework calls your functions to manipulate the state when needed)
     * Template/Visuals/Look
         * (You do not manipulate/manage the DOM, the framework does)
-* Every time we change our application’s _state_, with our _actions_ (functions), we need to update the _template_ (UI/DOM) to match.
+* Every time we change our application’s _state_, with our _actions_ (functions), the framework efficiently re-renders the _template_ (UI/DOM) to match.
 * Considering
     * Async/multithreading (things happen at different times and take indeterminate time)
 
 
 
 
-HTML Boilerplate (5min)
+HTML Boilerplate (10min)
 ----------------
 
 Anatomy of basic html page (for upcoming tutorials)
 
+
+`index.html`
 ```html
 <!DOCTYPE html>
 <html>
@@ -195,8 +199,19 @@ Anatomy of basic html page (for upcoming tutorials)
 </html>
 ```
 
+* `mkdir my_cool_html_folder`
+    * create `index.html` with boilerplate above
+* To serve local folder via http
+    * `python -m http.server 8001`
+* (extra) to server static files from container
+    * suggest [nginx](https://www.nginx.com/)
+    * see `Dockerfile` in `examples/client/vue_test` or `examples/client/hyperapp`
+* Note about `index.html`
+    * Any file called this will load by default at the root path `/`
 
-Vue.js (45min)
+
+
+Vue.js (1 hour)
 ------
 
 * [vuejs.org](https://vuejs.org/)
@@ -207,18 +222,20 @@ Vue.js (45min)
         * `Options` API (rather than `Composition`) and `HTML` (rather than `SFC`(SingleFileComponent))
         * Go thought all the `Basic` items
             * especially https://vuejs.org/examples/#handling-input
-    * [vuejs.org/tutorial](https://vuejs.org/tutorial/)
 * Example
     * [frameworks_and_languages_module/examples/client/vue_test](https://github.com/calaldees/frameworks_and_languages_module/tree/main/examples/client/vue_test)
-    * You could choose to use the `npm init vue` method. See react example for tips on containerising - but this creates loads of file and needs the vue server to build and serve the code
+        * Using `nginx` server
+    * You could choose to use the `npm init vue` method. See react example for tips on containerising - but this creates loads of file and needs the vue server to build and serve the code'
 
 ### Concepts
+
+* Progressive (you don't need EVERYTHING to start with, you can use/add more of the framework incrementally as you need it)
 * State, View and Actions are separate
 * Template/View (can be) made in html and mounted/attached to code (`v-if`, `v-for`)
-    * Vue components (advanced concept) can be separate/modular
+* Vue components (advanced concept) can be separate/modular
 
 ### Further Reading
-* [VueMastery - Intro to Vue 3](https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/) 
+* [VueMastery - Intro to Vue 3](https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/)
     * 20min video (1 hour to do?) video course for complete shopping basket with repo example
 
 ### Hint for assignment
@@ -235,7 +252,11 @@ HyperApp Tutorial (45min)
 * [Hyperapp](https://github.com/jorgebucaran/hyperapp)
     * Tiny 1k framework
 * Try _Todo example_ in CodePen
+* serve the todo file yourself
+    * `Makefile` + `Dockerfile` on port 8001
+* [package: hyperapp/html](https://github.com/jorgebucaran/hyperapp/tree/main/packages/html)
 * [Tutorial](https://github.com/jorgebucaran/hyperapp/blob/main/docs/tutorial.md)
+    * is a bit heavy going
 * Example
     * [frameworks_and_languages_module/examples/client/hyperapp](https://github.com/calaldees/frameworks_and_languages_module/tree/main/examples/client/hyperapp)
 
@@ -253,52 +274,45 @@ React (1hour)
 Facebook
 200kb
 
-* Beta [beta.reactjs.org/learn](https://beta.reactjs.org/learn)
-    * (Beta; Looks like a better tutorial, but incomplete, so I have some more bits below)
+* [react.dev/learn](https://react.dev/learn)
+    * is incomplete - they push you to extended frameworks - so I have some more bits below
 * Setup
     * `npx create-react-app my-app` && `cd my-app` && `npm start`
-    * `rm src/*`
-    * `index.js`
+        * > added 1458 packages in 2m
+        * `du -shc node_modules/` .. yes .. you read xxxMB correctly! .. react is one fat chunky monkey
+    * `rm src/*` remove the spiny example crud
+    * `src/index.js`
         * ```javascript 
             import React from 'react';
             import ReactDOM from 'react-dom/client';
 
-            import RootComponent from './myapp';
+            import RootComponent from './App';
 
             const root = ReactDOM.createRoot(document.getElementById("root"));
             root.render(<RootComponent />);
             ```
-    * `myapp.js` -> copy `MyButton` and `MyApp` example from [beta.reactjs.org/learn](https://beta.reactjs.org/learn)
-* Old [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
-    * How to
-        1. Copy `index.js` from tutorial into `tictactoe.js`. Replacing the `cont root ...; root.render` -> `export default Game`
-        2. `import RootComponent from './tictactoe';`
-    * Build O's and X's
+    * `src/App.js` -> copy from https://react.dev/learn `MyButton` `MyApp`
+    * Profile Example
+        * create `profile.css` and `profile.js`. 
+        * add `import './profile.css';` to profile.js. 
+        * Update `import RootComponent from './profile';`
+    * Products Example
+        * create `products.js`
+    * Actions/Buttons Example
+        * create `action_example_1.js`
+        * create `action_example_2.js`
+* TicTacToe
+    * create `tictactoe.js` (copy from full `App.js` example - click 'fork' to get codesandbox.io)
+        * add `import './tictactoe.css';`
+    * create `tictactoe.css` (copy from full example)
+    * Update `index.js` with `import RootComponent from './tictactoe';`
     * Follow tutorial and stop at _Adding Time Travel_ (The history is very cool though)
 
-<details>
-<summary>old instructions</summary>
-
-* Setup
-    * `.env`
-        * ```
-            FAST_REFRESH=false
-            ```
-    * `src/index.tsx` -> `src/index.backup.tsx`
-    * `src/index.tsx`
-        * ```
-            import './index2'
-            ```
-    * From [React Tutorial: Setup Option 2: Local Development Environment](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment)
-        * `index2.js` copy from source (edit line with `index.css` -> `index2.css`)
-        * `index2.css` copy from source
-</details>
 
 ### Concepts
 * Compiler transforms _inline html_ into javascript code to dynamically create elements
     * `jsx` files
     * Q: What problem is `jsx` trying to solve
-        * [React tutorial; what is react](https://reactjs.org/tutorial/tutorial.html#what-is-react) -> see babel
 * State separate from components
 * Lifting state up
     * Components do not communicate with each other (except though shared functions/actions)
