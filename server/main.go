@@ -69,6 +69,7 @@ func postTestData(c *gin.Context) {
 
 	postData.ID = generateUUID()
 	testdatasets = append(testdatasets, postData)
+	c.JSON(http.StatusCreated, postData)
 }
 
 func deleteTestData(c *gin.Context) {
