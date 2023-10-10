@@ -77,11 +77,13 @@ func postTestData(c *gin.Context) {
 		return
 	}
 
+	itemID := generateUUID()
+
 	postData := testdata{
-		ID:      generateUUID(),
-		User_ID: userpostdataJSON.User_ID,
-		Keywords: Keywords{
-			Tools: userpostdataJSON.Keywords,
+		ID:         itemID,
+		User_ID:    userpostdataJSON.User_ID,
+		Keywords:   Keywords{
+			Tools:   userpostdataJSON.Keywords,
 		},
 		Description: userpostdataJSON.Description,
 		Lat:         userpostdataJSON.Lat,
