@@ -32,6 +32,7 @@ func main() {
 		c.String(http.StatusOK, "<html><body>Hello, Welcome to my API</body></html>")
 	})
 	router.GET("/item", getTestData)
+	router.GET("/item/:id", getIDData)
 	router.POST("/item", postTestData)
 	router.DELETE("/item/:userid", deleteTestData)
 
@@ -40,6 +41,25 @@ func main() {
 
 func getTestData(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, testdatasets)
+}
+
+func getIDData(c *gin.Context) {
+	id := c.Param("id")
+
+	index := -1
+	for i, data := range testdatasets {
+		if data.ID == id {
+			index = i
+			break
+		}
+	}
+
+	if index == -1 {
+		c.JSON(http.StatusNotFound, gin.H{"error": "data not found"})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, testdatasets[:index])
 }
 
 func postTestData(c *gin.Context) {
