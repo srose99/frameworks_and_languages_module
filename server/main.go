@@ -46,20 +46,21 @@ func getTestData(c *gin.Context) {
 func getIDData(c *gin.Context) {
 	id := c.Param("id")
 
-	index := -1
-	for i, data := range testdatasets {
+	var responseData []testdata
+
+	for _, data := range testdatasets {
 		if data.ID == id {
-			index = i
+			responseData = append(responseData, data)
 			break
 		}
 	}
 
-	if index == -1 {
+	if len(responseData) == 0 {
 		c.JSON(http.StatusNotFound, gin.H{"error": "data not found"})
 		return
 	}
 
-	c.IndentedJSON(http.StatusOK, testdatasets[:index])
+	c.IndentedJSON(http.StatusOK, responseData)
 }
 
 func postTestData(c *gin.Context) {
