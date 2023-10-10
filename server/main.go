@@ -4,6 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	"github.com/google/uuid"
 )
 
 type Keywords struct {
@@ -11,6 +13,7 @@ type Keywords struct {
 }
 
 type testdata struct {
+	ID          string   `json:"id"`
 	User_ID     string   `json:"userid"`
 	Keywords    Keywords `json:"keywords"`
 	Description string   `json:"description"`
@@ -19,7 +22,7 @@ type testdata struct {
 }
 
 var testdatasets = []testdata{
-	{User_ID: "1", Keywords: Keywords{Tools: []string{"Hammer", "Nails"}}, Description: "A hammer and nails set", Lat: 51.2798438, Lon: 1.0830275},
+	{ID: "1", User_ID: "1", Keywords: Keywords{Tools: []string{"Hammer", "Nails"}}, Description: "A hammer and nails set", Lat: 51.2798438, Lon: 1.0830275},
 }
 
 func main() {
@@ -54,6 +57,7 @@ func postTestData(c *gin.Context) {
 	}
 
 	postData := testdata{
+		ID:      generateUUID(),
 		User_ID: userpostdataJSON.User_ID,
 		Keywords: Keywords{
 			Tools: userpostdataJSON.Keywords,
@@ -63,8 +67,8 @@ func postTestData(c *gin.Context) {
 		Lon:         userpostdataJSON.Lon,
 	}
 
+	postData.ID = generateUUID()
 	testdatasets = append(testdatasets, postData)
-	c.IndentedJSON(http.StatusCreated, postData)
 }
 
 func deleteTestData(c *gin.Context) {
@@ -86,4 +90,9 @@ func deleteTestData(c *gin.Context) {
 	testdatasets = append(testdatasets[:index], testdatasets[index+1:]...)
 
 	c.JSON(http.StatusOK, gin.H{"message": "data selected removed successfully"})
+}
+
+func generateUUID() string {
+	id := uuid.New().String()
+	return id
 }
