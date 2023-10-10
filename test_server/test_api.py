@@ -79,7 +79,7 @@ def test_item_post_201(ENDPOINT):
         "lat": 51.2798438,
         "lon": 1.0830275,
     }
-    response = requests.post(f'{ENDPOINT}/item -d ', json=ITEM)
+    response = requests.post(f'{ENDPOINT}/item', json=ITEM)
     assert response.status_code == 201
     assert 'application/json' in response.headers.get('Content-type')
     assert response.json().get('id')
