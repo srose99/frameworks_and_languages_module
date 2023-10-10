@@ -90,7 +90,10 @@ func postTestData(c *gin.Context) {
 	}
 
 	testdatasets = append(testdatasets, postData)
-	c.JSON(http.StatusCreated, postData)
+	c.JSON(http.StatusCreated, gin.H{
+		"id": itemID,
+		"item": postData,
+	})
 }
 
 func deleteTestData(c *gin.Context) {
