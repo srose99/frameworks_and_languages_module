@@ -39,7 +39,7 @@ def new_item(ENDPOINT):
         "lat": (random.random() * (70*2)) - 70,
         "lon": (random.random() * (180*2)) - 180,
     }
-    response = requests.post(ENDPOINT + '/item', ' -d ', json=ITEM)
+    response = requests.post(f'{ENDPOINT}/item', json=ITEM)
     yield response.json()
 
 
@@ -82,19 +82,19 @@ def test_item_post_201(ENDPOINT):
     response = requests.post(f'{ENDPOINT}/item', json=ITEM)
     assert response.status_code == 201
     assert 'application/json' in response.headers.get('Content-type')
-    assert response.json().get('id')
+    assert response.json().get('ID')
 
 def test_item_get_200(ENDPOINT, new_item):
     """
     We should be able to GET an item after it has been created with a POST
     """
-    response = requests.get(f"{ENDPOINT}/item/{new_item['id']}")
+    response = requests.get(f"{ENDPOINT}/item/{new_item['ID']}")
     assert response.status_code == 200
 def test_item_get_200_fields(ENDPOINT, new_item):
     """
     When we GET an individual item, it should have all of the fields that were returned by the creation POST
     """
-    response = requests.get(f"{ENDPOINT}/item/{new_item['id']}")
+    response = requests.get(f"{ENDPOINT}/item/{new_item['ID']}")
     assert response.status_code == 200
     assert response.json() == new_item
 
@@ -136,7 +136,7 @@ def test_item_delete(ENDPOINT, new_item):
     DELETE the item
     GET the item_id again and it should not exist
     """
-    url = f"{ENDPOINT}/item/{new_item['id']}"
+    url = f"{ENDPOINT}/item/{new_item['ID']}"
     response = requests.get(url)
     assert response.status_code == 200
     response = requests.delete(url)
