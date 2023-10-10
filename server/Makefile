@@ -1,5 +1,7 @@
+DOCKER_IMAGE:=api-go
+
 build:
 	docker build --tag api-go .
 
 run:
-	docker run --rm -p 8000:8000 api-go
+	docker run -it --rm --publish 8000:8000 ${DOCKER_IMAGE} 
