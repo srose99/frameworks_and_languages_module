@@ -83,14 +83,12 @@ func postTestData(c *gin.Context) {
 		ID:         itemID,
 		User_ID:    userpostdataJSON.User_ID,
 		Keywords:   Keywords{
-			Tools:   userpostdataJSON.Keywords,
-		},
+			Tools:   userpostdataJSON.Keywords},
 		Description: userpostdataJSON.Description,
 		Lat:         userpostdataJSON.Lat,
 		Lon:         userpostdataJSON.Lon,
 	}
 
-	postData.ID = generateUUID()
 	testdatasets = append(testdatasets, postData)
 	c.JSON(http.StatusCreated, postData)
 }
