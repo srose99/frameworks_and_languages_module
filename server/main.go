@@ -25,7 +25,8 @@ var testdatasets = []testdata{
 func main() {
 	router := gin.Default()
 	router.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello, Welcome to my API")
+		c.Header("Content-Type", "text/html; charset=utf-8")
+		c.String(http.StatusOK, "<html><body>Hello, Welcome to my API</body></html>")
 	})
 	router.GET("/item", getTestData)
 	router.POST("/item", postTestData)
