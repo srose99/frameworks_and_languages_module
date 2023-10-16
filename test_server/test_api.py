@@ -39,7 +39,7 @@ def new_item(ENDPOINT):
         "lat": (random.random() * (70*2)) - 70,
         "lon": (random.random() * (180*2)) - 180,
     }
-    response = requests.post(ENDPOINT + '/item', ' -d ', json=ITEM)
+    response = requests.post(ENDPOINT + '/item', json=ITEM)
     yield response.json()
 
 
@@ -64,7 +64,7 @@ def test_item_post_405(ENDPOINT):
         "a": 1,
         "b": 2,
     }
-    response = requests.post(ENDPOINT + '/item', ' -d ', json=ITEM)
+    response = requests.post(ENDPOINT + '/item', json=ITEM)
     assert response.status_code == 405
 
 def test_item_post_201(ENDPOINT):

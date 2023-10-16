@@ -14,7 +14,7 @@ type Keywords struct {
 
 type testdata struct {
 	ID          string   `json:"id"`
-	User_ID     string   `json:"userid"`
+	User_ID     string   `json:"user_id"`
 	Keywords    Keywords `json:"keywords"`
 	Description string   `json:"description"`
 	Lat         float64  `json:"lat"`
@@ -31,11 +31,11 @@ func main() {
 		c.Header("Content-Type", "text/html; charset=utf-8")
 		c.String(http.StatusOK, "<html><body>Hello, Welcome to my API</body></html>")
 	})
-	router.GET("/item", getTestData)
+	router.GET("/items", getTestData)
 	router.GET("/item/:id", getIDData)
 	router.POST("/item", postTestData)
 	router.DELETE("/item/:userid", deleteTestData)
-
+	router.HandleMethodNotAllowed = true
 	router.Run("0.0.0.0:8000")
 }
 
@@ -64,6 +64,7 @@ func getIDData(c *gin.Context) {
 }
 
 func postTestData(c *gin.Context) {
+
 	var userpostdataJSON struct {
 		User_ID     string   `json:"userid"`
 		Keywords    []string `json:"keywords"`
@@ -80,9 +81,9 @@ func postTestData(c *gin.Context) {
 	itemID := generateUUID()
 
 	postData := testdata{
-		ID:         itemID,
-		User_ID:    userpostdataJSON.User_ID,
-		Keywords:   Keywords{
+		ID:          itemID,
+		User_ID:     userpostdataJSON.User_ID,
+		Keywords:    Keywords{
 			Tools:   userpostdataJSON.Keywords},
 		Description: userpostdataJSON.Description,
 		Lat:         userpostdataJSON.Lat,
