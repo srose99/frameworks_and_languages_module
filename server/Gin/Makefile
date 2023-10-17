@@ -1,4 +1,4 @@
-DOCKER_IMAGE:=api-express
+DOCKER_IMAGE:=api-go
 
 build:
 	docker build --tag ${DOCKER_IMAGE} .
