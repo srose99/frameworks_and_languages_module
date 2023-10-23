@@ -20,7 +20,40 @@ app.get('/', (req, res) => {
 })
 
 app.get('/items', (req, res) => {
-    res.status(200).json(toolsdataset)
+    const {user_id, lat, lon, radius, date_from} = req.query
+    let filteredItems = toolsdataset
+
+    if (user_id) {
+        filteredItems = filteredItems.filter((data) => data.userid === user_id)
+    }
+
+    if (lat && lon && radius) {
+        const latRadians = (Math.PI * parseFloat(lat)) / 180
+        const lonRadians = (Math.PI * parseFloat(lon)) / 180
+
+        filteredItems = filteredItems.filter((data) => {
+            const itemLatRadians = (Math.PI * data.lat) / 180
+            const itemLonRadians = (Math.PI * data.lon) / 180
+            const distance = calculateDistance(latRadians, lonRadians, itemLatRadians, itemLonRadians)
+            return distance <= parseFloat(radius)
+        })
+    }
+
+    if (date_from) {
+        const providedDate = new Date(date_from)
+        console.log('Converted date_from = ', providedDate)
+        filteredItems = filteredItems.filter((data) => {
+            const itemDate = new Date(data.date_from)
+            itemDate.setMilliseconds(0)
+            providedDate.setMilliseconds(0)
+            console.log('item date_from = ', itemDate)
+            return itemDate >= providedDate
+        })
+    }
+
+    console.log('Filtered Items = ', filteredItems)
+
+    res.status(200).json(filteredItems)
 })
 
 app.get('/item/:id', (req, res) => {
@@ -84,6 +117,22 @@ function generateDateISO() {
     return isoDate
 }
 
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const earthRadiusKm = 6371
+    const dLat = (lat2 - lat1) * Math.PI / 180
+    const dLon = (lon2 - lon1) * Math.PI / 180
+
+    const lat1Rad = lat1 * Math.PI / 180
+    const lat2Rad = lat2 * Math.PI / 180
+
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1Rad) * Math.cos(lat2Rad)
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+
+    const distance = earthRadiusKm * c
+    return distance
+}
+
 app.options('*', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE')
@@ -95,6 +144,6 @@ app.listen(port, () => {
 })
 
 process.on('SIGINT', function() {
-    console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
-    process.exit(0);
-  });
+    console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" )
+    process.exit(0)
+  })
