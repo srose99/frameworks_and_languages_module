@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,....==" />
+    <title>Vue.js Test</title>
+    
+    <!-- https://vuejs.org/guide/quick-start.html#enabling-import-maps -->
+    <!-- Change the path to  ./vue.esm-browser.js for complete local run -->
+    <script type="importmap">
+        {
+          "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+          }
+        }
+    </script>
+    
+    <style>
+        /* -- Style -- */
+    </style>
+</head>
+<body>
+    <h1>Vue.js Test</h1>
+
+<!-- copy/paste from https://vuejs.org/guide/introduction.html#what-is-vue -->
+
+<div id="app">
+    <button @click="count++">{{ count }}</button>
+</div>
+
+<script type="module">
+    import { createApp } from 'vue'
+
+    const app = createApp({
+        data() {
+            return {
+                count: 0
+            }
+        }
+    })
+
+    app.mount('#app')
+</script>
+
+</body>
+</html>
