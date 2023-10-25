@@ -8,4 +8,4 @@ vue.esm-browser.js:  ## https://vuejs.org/guide/quick-start.html#using-vue-from-
 build:
 	docker build --tag ${DOCKER_IMAGE} .
 run:
-	docker run --rm -it --publish 8001:8001 ${DOCKER_IMAGE}
+	docker run --rm --publish 8001:8001 ${DOCKER_IMAGE}

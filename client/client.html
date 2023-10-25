@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,....==" />
-    <title>Vue.js Test</title>
-    
-    <!-- https://vuejs.org/guide/quick-start.html#enabling-import-maps -->
-    <!-- Change the path to  ./vue.esm-browser.js for complete local run -->
-    <script type="importmap">
-        {
-          "imports": {
-            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-          }
-        }
-    </script>
-    
-    <style>
-        /* -- Style -- */
-    </style>
+    <meta charset="utf-8">
+    <title>Vue.js Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
-    <h1>Vue.js Test</h1>
-
-<!-- copy/paste from https://vuejs.org/guide/introduction.html#what-is-vue -->
 
 <div id="app">
-    <button @click="count++">{{ count }}</button>
+    <h1>Vue Test</h1>
+    <form @submit.prevent="submitForm">
+        <div>
+            <label for="input1">ID:</label>
+            <input type="text" id="input1" v-model="inputs.input1">
+        </div>
+        <div>
+            <label for="input2">User ID:</label>
+            <input type="text" id="input2" v-model="inputs.input2">
+        </div>
+        <div>
+            <label for="input3">Keywords:</label>
+            <input type="text" id="input3" v-model="inputs.input3">
+        </div>
+        <div>
+            <label for="input4">Description:</label>
+            <input type="text" id="input4" v-model="inputs.input4">
+        </div>
+        <div>
+            <label for="input5">Latitude:</label>
+            <input type="text" id="input5" v-model="inputs.input5">
+        </div>
+        <div>
+            <label for="input6">Longitude:</label>
+            <input type="text" id="input6" v-model="inputs.input6">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 </div>
 
-<script type="module">
-    import { createApp } from 'vue'
-
-    const app = createApp({
-        data() {
-            return {
-                count: 0
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            inputs: {
+                input1: '',
+                input2: '',
+                input3: '',
+                input4: '',
+                input5: '',
+                input6: ''
+            }
+        },
+        methods: {
+            submitForm() {
+                console.log('Form submitted with data:', this.inputs);
             }
         }
-    })
-
-    app.mount('#app')
+    });
 </script>
 
 </body>
