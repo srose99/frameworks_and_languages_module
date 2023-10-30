@@ -399,7 +399,7 @@ Starting `index.html` boilerplate
 
     <div class="container my-3">
 
-        <!-- https://getbootstrap.com/docs/5.2/layout/grid/#mix-and-match -->
+        <!-- https://getbootstrap.com/docs/5.3/layout/grid/#mix-and-match -->
         <div class="row">
             <div class="col-md-4">
             section1
@@ -426,7 +426,7 @@ Starting `index.html` boilerplate
     </div>
 
     <div class="container my-3">
-        <!-- https://getbootstrap.com/docs/5.2/forms/form-control/#example -->
+        <!-- https://getbootstrap.com/docs/5.3/forms/form-control/#example -->
         <div class="mb-3">
             <input type="text" class="form-control" placeholder="Full Name">
           </div>
@@ -434,13 +434,13 @@ Starting `index.html` boilerplate
         <div class="mb-3">
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
-        <!-- https://getbootstrap.com/docs/5.2/components/buttons/#examples -->
+        <!-- https://getbootstrap.com/docs/5.3/components/buttons/#examples -->
         <button type="button" class="btn btn-primary">Submit</button>
     </div>
 
 
     <div class="container my-3">
-        <!-- https://getbootstrap.com/docs/5.2/components/card/#example -->
+        <!-- https://getbootstrap.com/docs/5.3/components/card/#example -->
         <div class="card" style="width: 18rem;">
             <img src="https://placekitten.com/408/287" class="card-img-top" alt="...">
             <div class="card-body">
