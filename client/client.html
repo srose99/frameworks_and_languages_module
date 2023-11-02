@@ -35,9 +35,12 @@
             <label for="input6">Longitude:</label>
             <input type="text" id="input6" v-model="inputs.input6">
         </div>
-        <button type="submit">Submit</button>
-        <button onclick="submitForm"></button>
+        <button type="submit" @click="submitForm">Submit</button>
     </form>
+    <div v-if="responseData">
+        <h2>Response Data:</h2>
+        <pre>{{ responseData }}</pre>
+    </div>
 </div>
 
 <script>
@@ -51,11 +54,25 @@
                 inputDescription: '',
                 inputLat: '',
                 inputLon: ''
-            }
+            },
+            responseData: null
         },
         methods: {
             submitForm() {
-                console.log('Form submitted with data:', this.inputs);
+                const urlParams = new URLSearchParams(window.location.search)
+                const serverURL = urlParams.get('api')
+
+                if (serverURL) {
+                    axios.get(`${serverURL}/items`)
+                    .then(response => {
+                        this.responseData = response.data
+                    })
+                    .catch(error => {
+                        console.error(error)
+                    })
+                } else {
+                    console.error('Server URL is not specified')
+                }
                 
             }
         }

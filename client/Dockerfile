@@ -1,9 +1,11 @@
-FROM python:alpine
+FROM node
 
-WORKDIR /app/
+WORKDIR /client/
+
+RUN npm install express
 
 EXPOSE 8001
 
-COPY client.html .
+COPY . .
 
-CMD ["python3", "-m", "http.server", "8001"]
+CMD ["node", "server.js"]

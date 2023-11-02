@@ -15,6 +15,16 @@ let toolsdataset = [
 
 app.use(express.json())
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE')
+    next()
+})
+
+app.options('*', (req, res) => {
+    res.status(204).end()
+})
+
 app.get('/', (req, res) => {
   res.send('Welcome to my API!')
 })
@@ -133,11 +143,6 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     return distance
 }
 
-app.options('*', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE')
-    res.status(204).end()
-})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
