@@ -256,15 +256,15 @@ def test_items_filter_date_from(get_items, item_factory):
 
 #@pytest.mark.skip(reason="optional functionality not used by client")
 def test_items_filter_keywords(get_items, item_factory):
-    item_factory(keywords=("test1", "test2"))
-    item_factory(keywords=("test2", "test3"))
-    item_factory(keywords=("test1", "test2", "test3"))
+    item_factory(keywords=["test1", "test2"])
+    item_factory(keywords=["test2", "test3"])
+    item_factory(keywords=["test1", "test2", "test3"])
 
-    items = get_items(keywords=('test1'))
+    items = get_items(keywords=['test1'])
     assert len(items) == 2
-    items = get_items(keywords=('test2'))
+    items = get_items(keywords=['test2'])
     assert len(items) == 3
-    items = get_items(keywords=('test1','test2'))
+    items = get_items(keywords=['test1', 'test2'])
     assert len(items) == 2
-    items = get_items(keywords=('test1','test2', 'test3'))
+    items = get_items(keywords=['test1','test2', 'test3'])
     assert len(items) == 1

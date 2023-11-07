@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/items', (req, res) => {
-    const {user_id, lat, lon, radius, date_from} = req.query
+    const {user_id, lat, lon, radius, date_from, keywords} = req.query
     let filteredItems = toolsdataset
 
     if (user_id) {
@@ -42,8 +42,8 @@ app.get('/items', (req, res) => {
         const lonRadians = (Math.PI * parseFloat(lon)) / 180
 
         filteredItems = filteredItems.filter((data) => {
-            const itemLatRadians = (Math.PI * data.lat) / 180
-            const itemLonRadians = (Math.PI * data.lon) / 180
+            const itemLatRadians = (Math.PI * parseFloat(data.lat)) / 180
+            const itemLonRadians = (Math.PI * parseFloat(data.lon)) / 180
             const distance = calculateDistance(latRadians, lonRadians, itemLatRadians, itemLonRadians)
             return distance <= parseFloat(radius)
         })
@@ -61,7 +61,15 @@ app.get('/items', (req, res) => {
         })
     }
 
-    console.log('Filtered Items = ', filteredItems)
+    if (keywords) {
+        const searchKeywords = Array.isArray(keywords) ? keywords : keywords.split(',')
+        filteredItems = filteredItems.filter((data) => {
+            const itemKeywords = data.keywords
+            console.log('Search Keywords:', searchKeywords)
+            console.log('Item Keywords:', itemKeywords)
+            return searchKeywords.every((keyword) => itemKeywords.includes(keyword))
+        })
+    }
 
     res.status(200).json(filteredItems)
 })
@@ -128,18 +136,25 @@ function generateDateISO() {
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
-    const earthRadiusKm = 6371
+    const earthRadiusM = 6371008.8
     const dLat = (lat2 - lat1) * Math.PI / 180
     const dLon = (lon2 - lon1) * Math.PI / 180
-
     const lat1Rad = lat1 * Math.PI / 180
     const lat2Rad = lat2 * Math.PI / 180
 
     const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1Rad) * Math.cos(lat2Rad)
+              Math.cos(lat1Rad) * Math.cos(lat2Rad) *
+              Math.sin(dLon / 2) * Math.sin(dLon / 2)
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 
-    const distance = earthRadiusKm * c
+    const distance = earthRadiusM * c
+
+    console.log('lat1 =', lat1)
+    console.log('lon1 =', lon1)
+    console.log('lat2 =', lat2)
+    console.log('lon2 =', lon2)
+    console.log('distance =', distance)
+
     return distance
 }
 
