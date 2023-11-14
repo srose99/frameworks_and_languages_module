@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "cors": "^2.8.5",
-    "cypress": "^13.5.0"
+    "cors": "^2.8.5"
   }
 }

@@ -10,7 +10,7 @@ module.exports = defineConfig({
         chromeWebSecurity: false,
         reporter: 'junit',
         reporterOptions: {
-            mochaFile: 'reports/junit-client.xml'
+            mochaFile: 'reports/junit-[hash].xml'
         },
     }
 })
