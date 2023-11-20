@@ -123,3 +123,34 @@ Conclusions
 
 (justify why frameworks are recommended - 120ish words)
 (justify which frameworks should be used and why 180ish words)
+
+
+Notes on Framework-less Implementation
+==========================
+
+Server:
+    How is routing handled?
+
+    https://github.com/srose99/frameworks_and_languages_module/blob/ad2fa47971cd4f067b25f0d7134cd8db2a1b8c95/example_server/app/server.py#L9-L16
+
+    https://github.com/srose99/frameworks_and_languages_module/blob/ad2fa47971cd4f067b25f0d7134cd8db2a1b8c95/example_server/app/web_utils.py#L15-L35
+
+    Is it expandable? no, because of this implementation is can handle basic routing but any type of expansion leads to overriding. Also the routing is case/order sensitive so in future adding more routes will become difficult and time consuming
+
+    Where are the CORS Headers set?
+
+    https://github.com/srose99/frameworks_and_languages_module/blob/ad2fa47971cd4f067b25f0d7134cd8db2a1b8c95/example_server/app/web_utils.py#L48-L60
+
+    Is this good/bad?
+
+    It will work correctly if the function is called correctly. It is imported onto the http header but is'nt inherently called. Also accepts "*" as a default meaning any domain can access, extremely unsafe.
+
+    The socket/network handling is very weak, why?
+
+    No input validation for requests 
+
+    What problem is Middleware trying to solve?
+
+    Connectivity issues, it acts as the fabric mesh between applications and works to remove common issues developers may have regarding connectivity.
+
+
