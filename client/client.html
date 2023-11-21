@@ -60,7 +60,7 @@
         methods: {
             GetAll() {
                 const urlParams = new URLSearchParams(window.location.search)
-                const serverURL = urlParams.get('api')
+                const serverURL = (urlParams.get('api') || '').replace(/\/$/, '')
 
                 if (serverURL) {
                     axios.get(`${serverURL}/items`)
