@@ -1,5 +1,9 @@
 FROM node
-WORKDIR /app/
+
+WORKDIR /app
+
 RUN npm install express
+
 COPY *.js .
+
 CMD ["node", "app.js"]

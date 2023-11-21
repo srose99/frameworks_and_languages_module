@@ -1,6 +1,6 @@
-FROM node
+FROM node:lts-alpine
 
-WORKDIR /client/
+WORKDIR /app
 
 RUN npm install express
 
