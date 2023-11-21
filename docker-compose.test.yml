@@ -25,6 +25,6 @@ services:
         - client
     environment:
       #- DISPLAY
-      - CYPRESS_BASE_URL=http://client:8001/?api=http://server:8000
+      - CYPRESS_BASE_URL=https://bug-free-acorn-r56q9wg9rwg25r46-8001.app.github.dev/?api=https://bug-free-acorn-r56q9wg9rwg25r46-8000.app.github.dev
     #user: ${USER}  # ummm, problems with user on cypress startup
 
