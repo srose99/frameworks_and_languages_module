@@ -1,5 +1,3 @@
-
-
 services:
   server:
     build:
@@ -18,6 +16,5 @@ services:
     ports:
       - 8001:8001
     links:
-        - server
+      - server
     init: true
-
