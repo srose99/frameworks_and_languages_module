@@ -16,5 +16,6 @@ services:
     environment:
       #- DISPLAY
       - CYPRESS_BASE_URL=http://client:8001/?api=http://server:8000
-      - WAIT_TIMEOUT=120
+      - WAIT_TIMEOUT=300
+      - RETRIES=5
     #user: ${USER}  # ummm, problems with user on cypress startup
