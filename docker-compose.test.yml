@@ -1,4 +1,5 @@
 services:
+
   test_server:
     build:
       context: ./test_server/
@@ -7,15 +8,13 @@ services:
     volumes:
       - ${PWD}/test_server/reports:/pytest/reports:rw
     links:
-      - server
+        - server
 
   test_client:
     links:
-      - server
-      - client
+        - server
+        - client
     environment:
       #- DISPLAY
       - CYPRESS_BASE_URL=http://client:8001/?api=http://server:8000
-      - WAIT_TIMEOUT=300
-      - RETRIES=5
     #user: ${USER}  # ummm, problems with user on cypress startup
