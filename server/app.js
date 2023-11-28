@@ -8,6 +8,7 @@ let toolsdataset = [
         userid: 'user1',
         keywords: ['hammer', 'screwdriver'],
         description: 'A hammer and screwdriver set',
+        image: 'http://placekitten.com/100/100',
         lat: 1.000001,
         lon: 2.000002,
     },
@@ -15,14 +16,23 @@ let toolsdataset = [
 
 app.use(express.json())
 
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE')
+    res.header('Access-Control-Allow-Headers', 'Content-Type')
     next()
 })
 
 app.options('*', (req, res) => {
     res.status(204).end()
+})
+
+app.options('/item', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Methods', 'POST')
+    res.header('Access-Control-Allow-Headers', 'Content-Type')
+    res.send()
 })
 
 app.get('/', (req, res) => {
@@ -86,17 +96,19 @@ app.get('/item/:id', (req, res) => {
 
 app.post('/item', (req, res) => {
     const {user_id, keywords, description, lat, lon} = req.body
-
+    console.log(req.body)
     if(!user_id || !keywords || !description || !lat || !lon){
         res.status(405).json({ error: 'Invalid JSON data format'})
     } else {
         const id = generateUUID()
         const date_from = generateDateISO()
+        const image = ''
         const newItem = {
             id,
             userid: user_id,
             keywords,
             description,
+            image,
             lat,
             lon,
             date_from,
