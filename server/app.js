@@ -16,7 +16,7 @@ let toolsdataset = [
 
 app.use(express.json())
 
-
+//CORS Policy
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE')
@@ -24,10 +24,12 @@ app.use((req, res, next) => {
     next()
 })
 
+//Specific options for response type 204
 app.options('*', (req, res) => {
     res.status(204).end()
 })
 
+//Options for the "/item" endpoint due to method not allowed errors
 app.options('/item', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Methods', 'POST')
@@ -35,6 +37,7 @@ app.options('/item', (req, res) => {
     res.send()
 })
 
+//Response for api frontpage to know its loaded
 app.get('/', (req, res) => {
   res.send('Welcome to my API!')
 })
@@ -42,11 +45,11 @@ app.get('/', (req, res) => {
 app.get('/items', (req, res) => {
     const {user_id, lat, lon, radius, date_from, keywords} = req.query
     let filteredItems = toolsdataset
-
+    //Allows filtering by user id if the param is supplied in the request
     if (user_id) {
         filteredItems = filteredItems.filter((data) => data.userid === user_id)
     }
-
+    //Allows filtering by lat & lon if supplied by the request
     if (lat && lon && radius) {
         const latRadians = (Math.PI * parseFloat(lat)) / 180
         const lonRadians = (Math.PI * parseFloat(lon)) / 180
@@ -58,7 +61,7 @@ app.get('/items', (req, res) => {
             return distance <= parseFloat(radius)
         })
     }
-
+    //Date filtering logic
     if (date_from) {
         const providedDate = new Date(date_from)
         console.log('Converted date_from = ', providedDate)
@@ -70,7 +73,7 @@ app.get('/items', (req, res) => {
             return itemDate >= providedDate
         })
     }
-
+    //Keyword filtering logic
     if (keywords) {
         const searchKeywords = Array.isArray(keywords) ? keywords : keywords.split(',')
         filteredItems = filteredItems.filter((data) => {
@@ -80,10 +83,11 @@ app.get('/items', (req, res) => {
             return searchKeywords.every((keyword) => itemKeywords.includes(keyword))
         })
     }
-
+    //Respond with a 200 and return a JSON object of the data
     res.status(200).json(filteredItems)
 })
 
+//Specific filtering to a different endpoint for id filtering
 app.get('/item/:id', (req, res) => {
     const id = req.params.id
     const item = toolsdataset.find((data) => data.id === id)
@@ -94,6 +98,7 @@ app.get('/item/:id', (req, res) => {
     }
 })
 
+//Post takes the string sent with the request and formats it so it can be stored locally and accessed by a get request
 app.post('/item', (req, res) => {
     const {user_id, keywords, description, lat, lon} = req.body
     console.log(req.body)
@@ -130,10 +135,12 @@ app.delete('/item/:id', (req, res) => {
     }
 })
 
+//Logic for generating unique ID's for filtering and storage purposes
 function generateUUID() {
     return Math.random().toString(36).substring(2) + Date.now().toString(36)
 }
 
+//Logic for generating a date in a specific format that the tests require
 function generateDateISO() {
     const now = new Date()
     const year = now.getUTCFullYear()
@@ -147,6 +154,7 @@ function generateDateISO() {
     return isoDate
 }
 
+//Logic for taking 2 coords and generating a radius, then detecting if an overlap occurs in those radius
 function calculateDistance(lat1, lon1, lat2, lon2) {
     const earthRadiusM = 6371008.8
     const dLat = (lat2 - lat1) * Math.PI / 180
@@ -174,6 +182,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
+//Function to shutdown the server manually from the CLI
 process.on('SIGINT', function() {
     console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" )
     process.exit(0)
