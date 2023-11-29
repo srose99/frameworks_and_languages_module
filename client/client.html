@@ -6,42 +6,68 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #app {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
 
 <div id="app">
     <h1>Vue Test</h1>
     <form @submit.prevent="submitForm">
-        <div>
-            <label for="input1">UserID:</label>
-            <input type="text" id="input1" v-model="inputs.inputUserID">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">UserID:</span>
+            </div>
+            <input type="text" id="input1" class="form-control" v-model="inputs.inputUserID" aria-label="UserID" aria-describedby="inputGroup-sizing-default">
         </div>
-        <div>
-            <label for="input2">Keywords:</label>
-            <input type="text" id="input2" v-model="inputs.inputKeywords">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Keywords:</span>
+            </div>
+            <input type="text" id="input2" class="form-control" v-model="inputs.inputKeywords" aria-label="Keywords" aria-describedby="inputGroup-sizing-default">
         </div>
-        <div>
-            <label for="input3">Description:</label>
-            <input type="text" id="input3" v-model="inputs.inputDescription">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
+            </div>
+            <input type="text" id="input3" class="form-control" v-model="inputs.inputDescription" aria-label="Description" aria-describedby="inputGroup-sizing-default">
         </div>
-        <div>
-            <label for="input4">Image:</label>
-            <input type="text" id="input4" v-model="inputs.inputImage">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Image:</span>
+            </div>
+            <input type="text" id="input4" class="form-control" v-model="inputs.inputImage" aria-label="Image" aria-describedby="inputGroup-sizing-default">
         </div>
-        <div>
-            <label for="input5">Latitude:</label>
-            <input type="text" id="input5" v-model="inputs.inputLat">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Latitude:</span>
+            </div>
+            <input type="text" id="input5" class="form-control" v-model="inputs.inputLat" aria-label="Latitude" aria-describedby="inputGroup-sizing-default">
         </div>
-        <div>
-            <label for="input6">Longitude:</label>
-            <input type="text" id="input6" v-model="inputs.inputLon">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Longitude:</span>
+            </div>
+            <input type="text" id="input6" class="form-control" v-model="inputs.inputLon" aria-label="Longitude" aria-describedby="inputGroup-sizing-default">
         </div>
-        <button type="submit" @click="GetAll">Get Data</button>
-        <button type="submit" @click="PostItem">Add Item</button>
+
+        <button type="submit" @click="GetAll" class="btn btn-primary">Get Data</button>
+        <button type="submit" @click="PostItem" class="btn btn-success" data-action="create_item">Add Item</button>
     </form>
     <div id="container">
     </div>
 </div>
+    
 
 <script>
     new Vue({
@@ -57,7 +83,7 @@
             },
             responseData: null
         },
-        
+        //A lot of repeated code here should look into optimising 
         methods: {
             GetAll() {
                 const urlParams = new URLSearchParams(window.location.search)
