@@ -17,7 +17,7 @@
 <body>
 
 <div id="app">
-    <h1>Vue Test</h1>
+    <h1>Welcome to my client</h1>
     <form @submit.prevent="submitForm">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -97,20 +97,28 @@
 
                         this.responseData.forEach(item => {
                             const div = document.createElement('div')
-                            div.textContent = `UserID: ${item.userid}, Description: ${item.description}`
+                            div.className = 'card'
+
+                            const cardBody = document.createElement('div')
+                            cardBody.className = 'card-body'
+
+                            cardBody.textContent = `UserID: ${item.userid}, Description: ${item.description}`
 
                             const image = document.createElement('img')
                             image.src = item.image
                             image.alt = 'Image of a Cat'
+                            image.className = 'img-fluid'
 
                             const removeButton = document.createElement('button')
                             removeButton.textContent = 'Remove'
+                            removeButton.className = 'btn btn-danger'
                             removeButton.addEventListener('click', () => {
                                 container.removeChild(div)
                             })
 
-                            div.appendChild(image)
-                            div.appendChild(removeButton)
+                            cardBody.appendChild(image)
+                            cardBody.appendChild(removeButton)
+                            div.appendChild(cardBody)
                             container.appendChild(div)
                         })
 
@@ -119,7 +127,9 @@
                         console.error(error)
                     })
                 } else {
-                    console.error('Server URL is not specified')
+                    const urlMissing = document.createElement('h1')
+                    urlMissing.textContent = "Connect the client to server e.g client url + '?api=' + server url"
+                    document.body.append(urlMissing)
                 }
                 
             },
@@ -143,20 +153,28 @@
                     .then(response => {
                         const container = document.getElementById('container')
                         const div = document.createElement('div')
-                        div.textContent = `UserID: ${response.data.userid}, Description: ${response.data.description}`
+                        div.className = 'card'
+
+                        const cardBody = document.createElement('div')
+                        cardBody.className = 'card-body'
+
+                        cardBody.textContent = `UserID: ${response.data.userid}, Description: ${response.data.description}`
 
                         const image = document.createElement('img')
                         image.src = response.data.image
                         image.alt = 'Image of a Cat'
+                        image.className = 'img-fluid'
 
                         const removeButton = document.createElement('button')
                         removeButton.textContent = 'Remove'
+                        removeButton.className = 'btn btn-danger'
                         removeButton.addEventListener('click', () => {
                             container.removeChild(div)
                         })
 
-                        div.appendChild(image)
-                        div.appendChild(removeButton)
+                        cardBody.appendChild(image)
+                        cardBody.appendChild(removeButton)
+                        div.appendChild(cardBody)
                         container.appendChild(div)
 
                     })
