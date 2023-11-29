@@ -12,28 +12,28 @@
     <h1>Vue Test</h1>
     <form @submit.prevent="submitForm">
         <div>
-            <label for="input1">User ID:</label>
-            <input type="text" id="input2" v-model="inputs.inputUserID">
+            <label for="input1">UserID:</label>
+            <input type="text" id="input1" v-model="inputs.inputUserID">
         </div>
         <div>
             <label for="input2">Keywords:</label>
-            <input type="text" id="input3" v-model="inputs.inputKeywords">
+            <input type="text" id="input2" v-model="inputs.inputKeywords">
         </div>
         <div>
             <label for="input3">Description:</label>
-            <input type="text" id="input4" v-model="inputs.inputDescription">
+            <input type="text" id="input3" v-model="inputs.inputDescription">
         </div>
         <div>
             <label for="input4">Image:</label>
-            <input type="text" id="input5" v-model="inputs.inputImage">
+            <input type="text" id="input4" v-model="inputs.inputImage">
         </div>
         <div>
             <label for="input5">Latitude:</label>
-            <input type="text" id="input6" v-model="inputs.inputLat">
+            <input type="text" id="input5" v-model="inputs.inputLat">
         </div>
         <div>
             <label for="input6">Longitude:</label>
-            <input type="text" id="input7" v-model="inputs.inputLon">
+            <input type="text" id="input6" v-model="inputs.inputLon">
         </div>
         <button type="submit" @click="GetAll">Get Data</button>
         <button type="submit" @click="PostItem">Add Item</button>
@@ -70,7 +70,7 @@
 
                         this.responseData.forEach(item => {
                             const div = document.createElement('div')
-                            div.textContent = `User ID: ${item.user_id}, Description: ${item.description}`
+                            div.textContent = `UserID: ${item.userid}, Description: ${item.description}`
 
                             const image = document.createElement('img')
                             image.src = item.image
@@ -115,8 +115,8 @@
 
                     .then(response => {
                         const container = document.getElementById('container')
-                        const div = document.getElementById('div')
-                        div.textContent = `User ID: ${response.data.user_id}, Description: ${response.data.description}`
+                        const div = document.createElement('div')
+                        div.textContent = `UserID: ${response.data.userid}, Description: ${response.data.description}`
 
                         const image = document.createElement('img')
                         image.src = response.data.image
@@ -139,6 +139,10 @@
                 } else {
                     console.error('Server URL is not Specified')
                 }
+            },
+
+            submitForm() {
+
             }
         }
     })
