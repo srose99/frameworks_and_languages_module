@@ -100,14 +100,12 @@ app.get('/item/:id', (req, res) => {
 
 //Post takes the string sent with the request and formats it so it can be stored locally and accessed by a get request
 app.post('/item', (req, res) => {
-    const {user_id, keywords, description, lat, lon} = req.body
-    console.log(req.body)
+    const {user_id, keywords, description, lat, lon, image} = req.body
     if(!user_id || !keywords || !description || !lat || !lon){
         res.status(405).json({ error: 'Invalid JSON data format'})
     } else {
         const id = generateUUID()
         const date_from = generateDateISO()
-        const image = ''
         const newItem = {
             id,
             userid: user_id,

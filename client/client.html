@@ -17,51 +17,50 @@
 <body>
 
 <div id="app">
-    <h1>Welcome to my client</h1>
+    <h1>Freecycle</h1>
     <form @submit.prevent="submitForm">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">UserID:</span>
             </div>
-            <input type="text" id="input1" class="form-control" v-model="inputs.inputUserID" aria-label="UserID" aria-describedby="inputGroup-sizing-default">
+            <input type="text" id="input1" name="user_id" class="form-control" v-model="inputs.inputUserID" aria-label="UserID" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Keywords:</span>
             </div>
-            <input type="text" id="input2" class="form-control" v-model="inputs.inputKeywords" aria-label="Keywords" aria-describedby="inputGroup-sizing-default">
+            <input type="text" id="input2" name="keywords" class="form-control" v-model="inputs.inputKeywords" aria-label="Keywords" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
             </div>
-            <input type="text" id="input3" class="form-control" v-model="inputs.inputDescription" aria-label="Description" aria-describedby="inputGroup-sizing-default">
+            <input type="text" id="input3" name="description" class="form-control" v-model="inputs.inputDescription" aria-label="Description" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Image:</span>
             </div>
-            <input type="text" id="input4" class="form-control" v-model="inputs.inputImage" aria-label="Image" aria-describedby="inputGroup-sizing-default">
+            <input type="text" id="input4" name="image" class="form-control" v-model="inputs.inputImage" aria-label="Image" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Latitude:</span>
             </div>
-            <input type="text" id="input5" class="form-control" v-model="inputs.inputLat" aria-label="Latitude" aria-describedby="inputGroup-sizing-default">
+            <input type="text" id="input5" name="lat" class="form-control" v-model="inputs.inputLat" aria-label="Latitude" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Longitude:</span>
             </div>
-            <input type="text" id="input6" class="form-control" v-model="inputs.inputLon" aria-label="Longitude" aria-describedby="inputGroup-sizing-default">
+            <input type="text" id="input6" name="lon" class="form-control" v-model="inputs.inputLon" aria-label="Longitude" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <button type="submit" @click="GetAll" class="btn btn-primary">Get Data</button>
         <button type="submit" @click="PostItem" class="btn btn-success" data-action="create_item">Add Item</button>
     </form>
     <div id="container">
@@ -85,55 +84,16 @@
         },
         //A lot of repeated code here should look into optimising 
         methods: {
-            GetAll() {
-                const urlParams = new URLSearchParams(window.location.search)
-                const serverURL = (urlParams.get('api') || '').replace(/\/$/, '')
-
-                if (serverURL) {
-                    axios.get(`${serverURL}/items`)
-                    .then(response => {
-                        this.responseData = response.data
-                        const container = document.getElementById('container')
-
-                        this.responseData.forEach(item => {
-                            const div = document.createElement('div')
-                            div.className = 'card'
-
-                            const cardBody = document.createElement('div')
-                            cardBody.className = 'card-body'
-
-                            cardBody.textContent = `UserID: ${item.userid}, Description: ${item.description}`
-
-                            const image = document.createElement('img')
-                            image.src = item.image
-                            image.alt = 'Image of a Cat'
-                            image.className = 'img-fluid'
-
-                            const removeButton = document.createElement('button')
-                            removeButton.textContent = 'Remove'
-                            removeButton.className = 'btn btn-danger'
-                            removeButton.addEventListener('click', () => {
-                                container.removeChild(div)
-                            })
-
-                            cardBody.appendChild(image)
-                            cardBody.appendChild(removeButton)
-                            div.appendChild(cardBody)
-                            container.appendChild(div)
-                        })
-
-                    })
-                    .catch(error => {
-                        console.error(error)
-                    })
-                } else {
-                    const urlMissing = document.createElement('h1')
-                    urlMissing.textContent = "Connect the client to server e.g client url + '?api=' + server url"
-                    document.body.append(urlMissing)
-                }
-                
+            clearInputs() {
+                this.inputs.inputUserID =''
+                this.inputs.inputKeywords =''
+                this.inputs.inputDescription =''
+                this.inputs.inputImage =''
+                this.inputs.inputLat =''
+                this.inputs.inputLon =''
             },
 
+            //feels extremely bloated but ul and li elements needed for cypress tests
             PostItem() {
                 const urlParams = new URLSearchParams(window.location.search)
                 const serverURL = (urlParams.get('api') || '').replace(/\/$/, '')
@@ -146,49 +106,89 @@
                         image: this.inputs.inputImage,
                         lat: this.inputs.inputLat,
                         lon: this.inputs.inputLon
-                    };
+                    }
 
                     axios.post(`${serverURL}/item`, inputData)
 
                     .then(response => {
                         const container = document.getElementById('container')
-                        const div = document.createElement('div')
-                        div.className = 'card'
+                        const ul = document.createElement('ul')
+                        ul.className = 'item-list'
 
-                        const cardBody = document.createElement('div')
-                        cardBody.className = 'card-body'
-
-                        cardBody.textContent = `UserID: ${response.data.userid}, Description: ${response.data.description}`
+                        const li = document.createElement('li')
+                        li.className = 'item-card'
+                        li.dataset.itemID - response.data.id
 
                         const image = document.createElement('img')
                         image.src = response.data.image
-                        image.alt = 'Image of a Cat'
-                        image.className = 'img-fluid'
+                        image.alt = 'Image of a cat'
+                        image.className = 'card-img-top img-fluid'
+
+                        const idSpan = document.createElement('span')
+                        idSpan.dataset.field = 'id'
+                        idSpan.textContent = `ID: ${response.data.id}`
+
+                        const useridSpan = document.createElement('span')
+                        useridSpan.dataset.field = 'user id'
+                        useridSpan.textContent = `UserID: ${response.data.user_id}`
+
+                        const keywordsSpan = document.createElement('span')
+                        keywordsSpan.dataset.field = 'keywords'
+                        keywordsSpan.textContent = `Keywords: ${response.data.keywords}`
+
+                        const descriptionSpan = document.createElement('span')
+                        descriptionSpan.dataset.field = 'description'
+                        descriptionSpan.textContent = `Description: ${response.data.description}`
+
+                        const dateSpan = document.createElement('span')
+                        dateSpan.dataset.field = 'date from'
+                        dateSpan.textContent = `Date from: ${response.data.date_from}`
+
+                        const latSpan = document.createElement('span')
+                        latSpan.dataset.field = 'lat'
+                        latSpan.textContent = `Lat: ${response.data.lat}`
+
+                        const lonSpan = document.createElement('span')
+                        lonSpan.dataset.field = 'lon'
+                        lonSpan.textContent = `Lon: ${response.data.lon}`
 
                         const removeButton = document.createElement('button')
                         removeButton.textContent = 'Remove'
                         removeButton.className = 'btn btn-danger'
+                        removeButton.dataset.action = 'delete'
                         removeButton.addEventListener('click', () => {
-                            container.removeChild(div)
+                            container.removeChild(ul)
                         })
 
-                        cardBody.appendChild(image)
-                        cardBody.appendChild(removeButton)
-                        div.appendChild(cardBody)
-                        container.appendChild(div)
+                        li.append(image)
+                        li.append(idSpan)
+                        li.append(useridSpan)
+                        li.append(keywordsSpan)
+                        li.append(descriptionSpan)
+                        li.append(dateSpan)
+                        li.append(latSpan)
+                        li.append(lonSpan)
+                        li.append(removeButton)
 
+                        ul.append(li)
+                        container.appendChild(ul)
+                        
                     })
                     .catch(error => {
                         console.error(error)
                     })
                 } else {
-                    console.error('Server URL is not Specified')
+                    const urlMissing = document.createElement('h1')
+                    urlMissing.textContent = "Connect the client to server e.g client url + '?api=' + server url"
+                    document.body.append(urlMissing)
                 }
             },
 
             submitForm() {
 
             }
+
+            
         }
     })
 </script>
