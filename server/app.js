@@ -1,3 +1,4 @@
+const { filter } = require('cypress/types/bluebird')
 const express = require('express')
 const app = express()
 const port = 8000
@@ -63,14 +64,9 @@ app.get('/items', (req, res) => {
     }
     //Date filtering logic
     if (date_from) {
-        const providedDate = new Date(date_from)
-        console.log('Converted date_from = ', providedDate)
+        const parsedDateFrom = new Date(Date.parse(date_from))
         filteredItems = filteredItems.filter((data) => {
-            const itemDate = new Date(data.date_from)
-            itemDate.setMilliseconds(0)
-            providedDate.setMilliseconds(0)
-            console.log('item date_from = ', itemDate)
-            return itemDate >= providedDate
+            return new Date(data.date) >= parsedDateFrom
         })
     }
     //Keyword filtering logic
@@ -140,15 +136,8 @@ function generateUUID() {
 
 //Logic for generating a date in a specific format that the tests require
 function generateDateISO() {
-    const now = new Date()
-    const year = now.getUTCFullYear()
-    const month = String(now.getUTCMonth() + 1).padStart(2, '0')
-    const day = String(now.getUTCDate()).padStart(2, '0')
-    const hours = String(now.getUTCHours()).padStart(2, '0')
-    const minutes = String(now.getUTCMinutes()).padStart(2, '0')
-    const seconds = String(now.getUTCSeconds()).padStart(2, '0')
-
-    const isoDate = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`
+    const currentDate = new Date()
+    const isoDate = currentDate.toISOString()
     return isoDate
 }
 
