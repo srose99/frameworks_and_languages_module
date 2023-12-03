@@ -9,6 +9,7 @@ Professional test would not be written like this.
 import random
 import urllib.parse
 import datetime
+import time
 
 import pytest
 import requests
@@ -247,9 +248,11 @@ def test_items_filter_location(get_items, item_factory):
 def test_items_filter_date_from(get_items, item_factory):
     for i in range(2):
         item_factory()
+        time.sleep(1)
     date_from = datetime.datetime.now()
     for i in range(2):
         item_factory()
+        time.sleep(1)
     items = get_items(date_from=date_from.isoformat())
     assert len(items) == 2, "There should be items posted since the date_from"
 

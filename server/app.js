@@ -61,7 +61,9 @@ app.get('/items', (req, res) => {
     if (date_from) {
         const parsedDateFrom = new Date(Date.parse(date_from))
         filteredItems = filteredItems.filter((data) => {
-            return new Date(data.date_from) >= parsedDateFrom
+            const itemDate = new Date(data.date_from)
+            const timeWindow = 5 * 60 * 1000
+            return itemDate >= parsedDateFrom && itemDate <= new Date(parsedDateFrom.getTime() + timeWindow)
         })
     }
     //Keyword filtering logic
