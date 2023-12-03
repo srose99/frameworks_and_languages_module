@@ -1,4 +1,3 @@
-const { filter } = require('cypress/types/bluebird')
 const express = require('express')
 const app = express()
 const port = 8000
@@ -10,8 +9,9 @@ let toolsdataset = [
         keywords: ['hammer', 'screwdriver'],
         description: 'A hammer and screwdriver set',
         image: 'http://placekitten.com/100/100',
-        lat: 1.000001,
-        lon: 2.000002,
+        lat: null,
+        lon: null,
+        date_from: ''
     },
 ]
 
@@ -52,13 +52,8 @@ app.get('/items', (req, res) => {
     }
     //Allows filtering by lat & lon if supplied by the request
     if (lat && lon && radius) {
-        const latRadians = (Math.PI * parseFloat(lat)) / 180
-        const lonRadians = (Math.PI * parseFloat(lon)) / 180
-
         filteredItems = filteredItems.filter((data) => {
-            const itemLatRadians = (Math.PI * parseFloat(data.lat)) / 180
-            const itemLonRadians = (Math.PI * parseFloat(data.lon)) / 180
-            const distance = calculateDistance(latRadians, lonRadians, itemLatRadians, itemLonRadians)
+            const distance = calculateDistance(parseFloat(lat), parseFloat(lon), parseFloat(data.lat), parseFloat(data.lon))
             return distance <= parseFloat(radius)
         })
     }
@@ -66,7 +61,7 @@ app.get('/items', (req, res) => {
     if (date_from) {
         const parsedDateFrom = new Date(Date.parse(date_from))
         filteredItems = filteredItems.filter((data) => {
-            return new Date(data.date) >= parsedDateFrom
+            return new Date(data.date_from) >= parsedDateFrom
         })
     }
     //Keyword filtering logic
@@ -143,25 +138,7 @@ function generateDateISO() {
 
 //Logic for taking 2 coords and generating a radius, then detecting if an overlap occurs in those radius
 function calculateDistance(lat1, lon1, lat2, lon2) {
-    const earthRadiusM = 6371008.8
-    const dLat = (lat2 - lat1) * Math.PI / 180
-    const dLon = (lon2 - lon1) * Math.PI / 180
-    const lat1Rad = lat1 * Math.PI / 180
-    const lat2Rad = lat2 * Math.PI / 180
-
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.cos(lat1Rad) * Math.cos(lat2Rad) *
-              Math.sin(dLon / 2) * Math.sin(dLon / 2)
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-
-    const distance = earthRadiusM * c
-
-    console.log('lat1 =', lat1)
-    console.log('lon1 =', lon1)
-    console.log('lat2 =', lat2)
-    console.log('lon2 =', lon2)
-    console.log('distance =', distance)
-
+    const distance = Math.sqrt(Math.pow(lat2 - lat1, 2) + Math.pow(lon2 - lon1, 2))
     return distance
 }
 
