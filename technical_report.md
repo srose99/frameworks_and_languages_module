@@ -151,6 +151,6 @@ Server:
 
     What problem is Middleware trying to solve?
 
-    Connectivity issues, it acts as the fabric mesh between applications and works to remove common issues developers may have regarding connectivity.
+    Middleware is working to perform repetitive actions such as JSON decoding to either singular endpoints or groups of endpoints. In the express example the app.use syntax is used to outline predefined logic for the server to handle requests and responses. This allows us as developers to let the middleware handle it without having to define logic for each endpoint as to how it should behave when a request is made to it.
 
 

@@ -2,7 +2,8 @@ FROM node:lts-alpine
 
 WORKDIR /app
 
-RUN npm install express
+COPY package.json .
+RUN npm install
 
 EXPOSE 8001
 
