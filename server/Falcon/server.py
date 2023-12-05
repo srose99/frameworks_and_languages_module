@@ -43,7 +43,8 @@ def calculate_distance(lat1, lon1, lat2, lon2):
 
 class FrontPageResource:
     def on_get(self, req, resp):
-        resp.text = 'Welcome to my API!'
+        resp.content_type = 'text/html'
+        resp.body = '<html><body>Welcome to my API!</body></html>'
 
 class ItemsResource:
     def on_get(self, req, resp):
@@ -72,6 +73,10 @@ class ItemsResource:
             filtered_items = [
                 item for item in filtered_items if parsed_date_from <= datetime.fromisoformat(item['date_from']) <= parsed_date_from + timedelta(seconds=time_window)
             ]
+            # Add debugging output
+            for item in filtered_items:
+                print(f"parsed_date_from: {parsed_date_from}, item['date_from']: {datetime.fromisoformat(item['date_from'])}")
+
 
         if keywords:
             search_keywords = keywords if isinstance(keywords, list) else keywords.split(',')
@@ -92,9 +97,14 @@ class ItemResource:
 
     def on_delete(self, req, resp, id):
         global tooldataset
-        tooldataset = [item for item in tooldataset if item['id'] != id]
-        resp.status = falcon.HTTP_204
-        resp.media = {'message': 'data selected removed successfully'}
+        found_item = next((item for item in tooldataset if item['id'] == id), None)
+        if found_item:
+            tooldataset = [item for item in tooldataset if item['id'] != id]
+            resp.status = falcon.HTTP_204
+            resp.media = {'message': 'data selected removed successfully'}
+        else:
+            resp.status = falcon.HTTP_404
+            resp.media = {'error': 'data not found'}
 
 class CreateItemResource:
     def on_post(self, req, resp):
