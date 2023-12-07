@@ -117,7 +117,7 @@ app.post('/item', (req, res) => {
 app.delete('/item/:id', (req, res) => {
     const ID = req.params.id
     const index = toolsdataset.findIndex((data) => data.id === ID)
-
+    //If the item is'nt an invalid index, splice the item with that id from the dataset
     if (index !== -1) {
         toolsdataset.splice(index, 1)
         res.status(204).json({ message: 'data selected removed successfully'})

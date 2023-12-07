@@ -82,7 +82,6 @@
             },
             responseData: null
         },
-        //A lot of repeated code here should look into optimising 
         methods: {
             clearInputs() {
                 this.inputs.inputUserID =''
@@ -109,7 +108,7 @@
                     }
 
                     axios.post(`${serverURL}/item`, inputData)
-
+                    // HTML elements being dynamically created and populated with JSON response data
                     .then(response => {
                         const container = document.getElementById('container')
                         const ul = document.createElement('ul')
@@ -157,6 +156,7 @@
                         removeButton.className = 'btn btn-danger'
                         removeButton.dataset.action = 'delete'
                         removeButton.addEventListener('click', () => {
+                            //Dynamically removes the element from the container, does'nt send a DELETE req yet
                             container.removeChild(ul)
                         })
 
@@ -178,6 +178,7 @@
                         console.error(error)
                     })
                 } else {
+                    //If a base URL is missing to the server, provides a heading to instruct how to connect the 2 services
                     const urlMissing = document.createElement('h1')
                     urlMissing.textContent = "Connect the client to server e.g client url + '?api=' + server url"
                     document.body.append(urlMissing)

@@ -5,6 +5,7 @@ import uuid
 from datetime import datetime, timedelta
 from falcon.http_status import HTTPStatus
 
+#Solution for opening CORS to all, taken from https://github.com/falconry/falcon/issues/1220 
 class CORSMiddleware:
     def process_request(self, req, resp):
       resp.set_header('Access-Control-Allow-Origin', '*')
@@ -13,7 +14,7 @@ class CORSMiddleware:
       resp.set_header('Access-Control-Max-Age', '1728000')
       if req.method == 'OPTIONS':
             raise HTTPStatus(falcon.HTTP_204, body='\n')
-
+#applying that middleware to the application
 app = falcon.App(middleware=[CORSMiddleware()])
 
 tooldataset = [
@@ -28,19 +29,19 @@ tooldataset = [
         "date_from": ""
     }
 ]
-
+#Logic for handling unique identifiers using the uuid library
 def generate_uuid():
     return str(uuid.uuid4())
-
+#Date generation in the iso format for cypress tests
 def generate_date_iso():
     current_date = datetime.now()
     iso_date = current_date.isoformat()
     return iso_date
-
+#euclidean distance calculation using logic from  https://stackoverflow.com/questions/20916953/get-distance-between-two-points-in-canvas
 def calculate_distance(lat1, lon1, lat2, lon2):
     distance = math.sqrt((lat2 - lat1)**2 + (lon2 - lon1)**2)
     return distance
-
+#Default return when visiting the port to show it is running and for cypress tests
 class FrontPageResource:
     def on_get(self, req, resp):
         resp.content_type = 'text/html'
@@ -54,9 +55,9 @@ class ItemsResource:
         radius = req.get_param('radius')
         date_from = req.get_param('date_from')
         keywords = req.get_param('keywords')
-
+        #empty array instantiated for the returned data
         filtered_items = tooldataset
-
+        #Logic for handling extra params that may be passed to the api on a get i.e user_id, lat + lon etc.
         if user_id:
             filtered_items = [item for item in filtered_items if item['userid'] == user_id]
 
@@ -73,12 +74,12 @@ class ItemsResource:
             filtered_items = [
                 item for item in filtered_items if parsed_date_from <= datetime.fromisoformat(item['date_from']) <= parsed_date_from + timedelta(seconds=time_window)
             ]
-            # Add debugging output
             for item in filtered_items:
                 print(f"parsed_date_from: {parsed_date_from}, item['date_from']: {datetime.fromisoformat(item['date_from'])}")
 
 
         if keywords:
+            #isinstance, python function returning a bool if parsed var is of type provided
             search_keywords = keywords if isinstance(keywords, list) else keywords.split(',')
             filtered_items = [
                 item for item in filtered_items if all(keyword in item['keywords'] for keyword in search_keywords)
@@ -88,6 +89,7 @@ class ItemsResource:
 
 class ItemResource:
     def on_get(self, req, resp, id):
+        #filtering by id
         item = next((item for item in tooldataset if item['id'] == id), None)
         if item:
             resp.media = item
@@ -114,7 +116,7 @@ class CreateItemResource:
         description = data.get('description')
         lat = data.get('lat')
         lon = data.get('lon')
-
+        # if listed var's are not provided return an invalid post request
         if not all([user_id, keywords, description, lat, lon]):
             resp.status = falcon.HTTP_405
             resp.media = {'error': 'Invalid JSON data format'}
@@ -139,6 +141,7 @@ app.add_route('/item/{id}', ItemResource())
 app.add_route('/item', CreateItemResource())
 
 if __name__ == '__main__':
+    #server from https://docs.python.org/3/library/wsgiref.html for hosting the api
     from wsgiref import simple_server
 
     httpd = simple_server.make_server('', 8000, app)
