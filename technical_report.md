@@ -10,19 +10,33 @@ Critique of Server/Client prototype
 ### Overview
 ()
 
-### (name of Issue 1)
+### Server Issue: Hard-Coded HTTP version
 
-(A code snippet example demonstrating the issue)
-(Explain why this pattern is problematic - 40ish words)
+`head = f"HTTP/1.0 {code} {RESPONSE_CODES[code]}".encode('utf8')`
+
+This code locks the HTTP version to 1.0 in the response header. This is problematic if the server needs to respond to different HTTP versions. The version should be dynamically determined based on the incoming request or configured as a variable.
 
 ### (name of Issue 2)
 
-(A code snippet example demonstrating the issue)
-(Explain why this pattern is problematic - 40ish words)
+```
+fetch(`${urlAPI}/item`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+})
+.then(response => response.json())
+.then(() => hashchange())  // reload the page
+.catch(err => console.error(err));
+```
+The snippet lacks any kind of error handling it instead just prints it to the console. Without error handling the fetch can return a JSON response but also return an error simultaneously. This pattern isn't conducive to providing helpful feedback on what is happening within the function.
 
 ### Recommendation
-(why the existing implementation should not be used - 40ish words)
-(suggested direction - frameworks 40ish words)
+
+The existing implementation contains a combination of poor error handling and error prone software patterns such as manual web-socket handling that can lead to further issues down the line. The synchronous nature of the solution also limits the solutions ability to handle scalability and responsiveness issues, making it not practical for production use.
+
+The suggested direction to move towards would be one of implementing server and client web frameworks. Frameworks abstract away low-level complexities such as web socket handling; Simplifying the code to less familiar developers, making the code more readable, maintainable, and less error-prone.
 
 
 Server Framework Features
