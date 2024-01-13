@@ -103,31 +103,74 @@ expressjs.com. (n.d.). Express cors middleware. [online] Available at: https://e
 ‌
 
 
-### (name of Feature 3)
+### Route Parameters
 
-(Technical description of the feature - 40ish words)
+Route parameters are named URL segments that are used to capture the values specified at their position in the URL. This allows for the extraction of values from the URL, making them accessible from the `req.params` object.
 (A code block snippet example demonstrating the feature)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-(Provide reference urls to your sources of information about the feature - required)
+```
+app.get('/item/:id', (req, res) => {
+    const id = req.params.id
+    const item = toolsdataset.find((data) => data.id === id)
+    if (item) {
+        res.status(200).json(item)
+    } else {
+        res.status(404).json({ error: 'data not found'})
+    }
+})
+```
+The problem this aims to solve is the issue of static handling of requests and instances of a resource, for example a news application will have different articles based on genre but also within those genres each article will have a unique ID. Without route params you would have to search every article for the one with the correct ID, with route parameters you can create a single route to handle various instances of a resource and make interacting with your API routes dynamic.
 
+### References 
+
+Expressjs.com. (2017). Express routing. [online] Available at: https://expressjs.com/en/guide/routing.html.
+
+Mastering JS. (n.d.). Route Parameters in Express. [online] Available at: https://masteringjs.io/tutorials/express/route-parameters [Accessed 11 Jan. 2024].
+
+‌
+
+‌
 
 Server Language Features
 -----------------------
 
-### (name of Feature 1)
+### Array Filtering
 
-(Technical description of the feature - 40ish words)
-(A code block snippet example demonstrating the feature)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-(Provide reference urls to your sources of information about the feature - required)
+The array `filter` method feature in JavaScript creates a new array by evaluating each element against data from a provided function. Elements returning `true` are included in the new array, facilitating data comparison with concise array transformations based on specific criteria.
+
+`filteredItems = filteredItems.filter((data) => data.userid === user_id)`
+
+This solves the issue of manual iteration and comparison, without this feature conditional checks and iteration are required, resulting in longer, more error-prone code that leaves room for developer misinterpretation of what data needs abstracting. The feature does remove some of the room for developer error however it does have issues related with performance scaling, mainly around the callback function used for filtering, if this is under high load some unintended side effects can occur within the feature.
+
+### References
+
+www.w3schools.com. (n.d.). JavaScript Array filter() Method. [online] Available at: https://www.w3schools.com/jsref/jsref_filter.asp.
+
+MDN Web Docs. (2019). Array.prototype.filter(). [online] Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter.
+
+‌
+‌
 
 
-### (name of Feature 2)
+### Event Handling
 
-(Technical description of the feature - 40ish words)
-(A code block snippet example demonstrating the feature)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-(Provide reference urls to your sources of information about the feature - required)
+Event handling in JavaScript involves capturing and responding to user or system events, such as clicks or keyboard inputs. Event listeners enable the execution of specific code when said event occurs, enhancing interactivity and enabling custom input based commands in web applications.
+
+```
+process.on('SIGINT', function() {
+    console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" )
+    process.exit(0)
+  })
+```
+
+Event handling handles the need for dynamic response within a web application. By allowing the execution of code in response to an event, it enhances the interactivity and responsiveness to the user allowing them edit their experience during application run time.
+
+### References
+
+developer.mozilla.org. (n.d.). Event handling (overview) - Event reference | MDN. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers.
+
+‌www.w3schools.com. (n.d.). JavaScript DOM EventListener. [online] Available at: https://www.w3schools.com/js/js_htmldom_eventlistener.asp.
+
+‌
 
 
 
