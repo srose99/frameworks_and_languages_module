@@ -177,46 +177,112 @@ developer.mozilla.org. (n.d.). Event handling (overview) - Event reference | MDN
 Client Framework Features
 -------------------------
 
-### (name of Feature 1)
+### Two-Way data binding
 
-(Technical description of the feature - 40ish words)
-(A code block snippet example demonstrating the feature)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-(Provide reference urls to your sources of information about the feature - required)
+Vue.js' two-way data binding creates a seamless connection between the DOM and the data model. Using directives like `v-model`, it automatically synchs user input changes with underlying data, allowing real-time updates and eliminating manual event handling for user input to data fields.
+
+`<input type="text" id="input1" name="user_id" class="form-control" v-model="inputs.inputUserID" aria-label="UserID" aria-describedby="inputGroup-sizing-default">`
+
+The problem this is solving is the removal of the need for manual DOM manipulation and event listeners in Vue.js applications. Without it, additional code would be required to manually update the data model on every user input or interaction with the UI, leading to more error-prone code by allowing room for error. Because this feature handles the DOM for the developer it can however lead to some situations where the standard behavior of the v-model isn't sufficient, and shortfalls in the functionality of two-way data binding in Vue.js can be seen here.
+
+### References
+
+Laracasts. (n.d.). https://laracasts.com/discuss/channels/vue/issue-with-two-way-data-binding-in-vue-component. [online] Available at: https://laracasts.com/discuss/channels/vue/issue-with-two-way-data-binding-in-vue-component [Accessed 12 Jan. 2024].
+
+‌DigitalOcean. (n.d.). Using v-model for Two-Way Binding in Vue.js. [online] Available at: https://www.digitalocean.com/community/tutorials/vuejs-v-model-two-way-binding.
+
+‌v2.vuejs.org. (n.d.). Form Input Bindings — Vue.js. [online] Available at: https://v2.vuejs.org/v2/guide/forms [Accessed 12 Jan. 2024].
+
+‌
 
 
-### (name of Feature 2)
+### Conditional Rendering
 
-(Technical description of the feature - 40ish words)
-(A code block snippet example demonstrating the feature)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-(Provide reference urls to your sources of information about the feature - required)
+Vue.js conditional rendering uses directives like `v-if` & `v-show` to dynamically control visibility and behavior of DOM elements based on criteria or conditions. It can help to improve rendering efficiency by selectively including or excluding elements from the DOM on form load.
+
+```
+<button @click="handleClick(index)">
+        <div v-if="data.loading">
+```
+
+This feature makes the display logic of element rendering in Vue.js much simpler to use, allowing developers to conditionally show or hide elements with ease. Without this feature manual DOM manipulation would be required, resulting in more complex, error-prone, and less maintainable code for managing dynamic UI changes.
+
+### References
+
+Stack Overflow. (n.d.). Conditionally render a component on a click event in Vue JS. [online] Available at: https://stackoverflow.com/questions/72780072/conditionally-render-a-component-on-a-click-event-in-vue-js [Accessed 12 Jan. 2024].
+
+‌vuejs.org. (n.d.). Conditional Rendering | Vue.js. [online] Available at: https://vuejs.org/guide/essentials/conditional.html.
+
+‌www.w3schools.com. (n.d.). Vue v-if Directive. [online] Available at: https://www.w3schools.com/vue/vue_v-if.php [Accessed 12 Jan. 2024].
+
+‌
 
 
-### (name of Feature 3)
+### Event handling manipulation
 
-(Technical description of the feature - 40ish words)
-(A code block snippet example demonstrating the feature)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-(Provide reference urls to your sources of information about the feature - required)
+Vue.js event handling utilises directives to bind methods to DOM events. Manually allowing developers to add or change default behaviors such as form submits or click events.
+
+`<form @submit.prevent="submitForm">`
+
+This is solving the problem of default DOM behaviors not having the required behavior a developer needs. In the above code example `.prevent` is used to precisely that means, to stop the form from submitting and refreshing on any DOM change. Without this feature developers lose all customisation of event logic and are forced to rely on traditional boilerplate event listeners, resulting in less declarative form handling.
+
+### References
+
+vuejs.org. (n.d.). Vue.js. [online] Available at: https://vuejs.org/guide/essentials/event-handling [Accessed 12 Jan. 2024].
+
+GeeksforGeeks. (2023). Vue.js Event Handling. [online] Available at: https://www.geeksforgeeks.org/vue-js-event-handling/ [Accessed 12 Jan. 2024].
+
+‌
+‌
 
 
 Client Language Features
 ------------------------
 
-### (name of Feature 1)
+### JavaScript Destructuring Assignment
 
-(Technical description of the feature - 40ish words)
-(A code block snippet example demonstrating the feature)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-(Provide reference urls to your sources of information about the feature - required)
+The JS destructuring assignment is used to declare and initialise multiple variables in a singular line. It simplifies the assignment of default values to properties within specific objects that may be contained within a Vue.js component.
 
-### (name of Feature 2)
+```
+data: {
+    inputs: {
+        inputUserID: '',
+        inputKeywords: '',
+        inputDescription: '',
+        inputImage: '',
+        inputLat: '',
+        inputLon: ''
+    },
+    responseData: null
+},
 
-(Technical description of the feature - 40ish words)
-(A code block snippet example demonstrating the feature)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-(Provide reference urls to your sources of information about the feature - required)
+```
+
+This feature is attempting to solve syntax complication issues when initialising multiple variables from an object. It enhances readability, concisely assigning default values to an object's properties when interacting with a data structure as seen in the code snippet.
+
+### References
+
+developer.mozilla.org. (n.d.). Destructuring assignment - JavaScript | MDN. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment.
+
+‌www.programiz.com. (n.d.). JavaScript Destructuring Assignment. [online] Available at: https://www.programiz.com/javascript/destructuring-assignment [Accessed 13 Jan. 2024].
+
+‌
+
+### Template Literals
+
+A template literal in JS facilitates dynamic string creation by allowing for the embedding of expressions within `${}`. This concise syntax allows for efficient parsing of dynamic variables to a function or variable while improving readability and simplifying the concatenation of said functions and variables.
+
+`axios.post('${serverURL}/item', inputData)`
+
+The problem this solves is the one of cumbersome string concatenation. Before the introduction of template literals developers would have to use manual methods of concatenation such as `+` to achieve the same result, leading to error-prone clumsy code. This feature helps to improve interpolation, conciseness, and readability significantly improving string handling for developers.
+
+### References
+
+MDN Web Docs. (n.d.). Template literals (Template strings). [online] Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals.
+
+‌www.digitalocean.com. (n.d.). Understanding Template Literals in JavaScript | DigitalOcean. [online] Available at: https://www.digitalocean.com/community/tutorials/understanding-template-literals-in-javascript [Accessed 13 Jan. 2024].
+
+‌
 
 
 
@@ -225,34 +291,5 @@ Conclusions
 
 (justify why frameworks are recommended - 120ish words)
 (justify which frameworks should be used and why 180ish words)
-
-
-Notes on Framework-less Implementation
-==========================
-
-Server:
-    How is routing handled?
-
-    https://github.com/srose99/frameworks_and_languages_module/blob/ad2fa47971cd4f067b25f0d7134cd8db2a1b8c95/example_server/app/server.py#L9-L16
-
-    https://github.com/srose99/frameworks_and_languages_module/blob/ad2fa47971cd4f067b25f0d7134cd8db2a1b8c95/example_server/app/web_utils.py#L15-L35
-
-    Is it expandable? no, because of this implementation is can handle basic routing but any type of expansion leads to overriding. Also the routing is case/order sensitive so in future adding more routes will become difficult and time consuming
-
-    Where are the CORS Headers set?
-
-    https://github.com/srose99/frameworks_and_languages_module/blob/ad2fa47971cd4f067b25f0d7134cd8db2a1b8c95/example_server/app/web_utils.py#L48-L60
-
-    Is this good/bad?
-
-    It will work correctly if the function is called correctly. It is imported onto the http header but is'nt inherently called. Also accepts "*" as a default meaning any domain can access, extremely unsafe.
-
-    The socket/network handling is very weak, why?
-
-    No input validation for requests 
-
-    What problem is Middleware trying to solve?
-
-    Middleware is working to perform repetitive actions such as JSON decoding to either singular endpoints or groups of endpoints. In the express example the app.use syntax is used to outline predefined logic for the server to handle requests and responses. This allows us as developers to let the middleware handle it without having to define logic for each endpoint as to how it should behave when a request is made to it.
 
 
