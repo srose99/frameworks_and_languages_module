@@ -1,14 +1,11 @@
 Technical Report
 ================
 
-(intro describing purpose of report - 200ish words)
+In web development, the choice of employing a framework is pivotal to achieving industry standards of efficiency, maintainability, & scalability. This report aims to identify the pitfalls a developer can fall into when implementing a framework-less solution alongside the inadequacies of framework-less solutions in general. By examining code snippets and general design choices, I will attempt to unearth challenges such as verbose practices, lack of structure, and manually handling functions that could be automated. Then, a transition towards how a framework would handle such challenges with similar code snippets and explanation as to how these features work to improve the product of the developer. Through this exploration of both framework and language features, I aim to underscore the transformative impact that embracing a framework can have on production code maintainability, scalability, and overall adherence to industry standards, thereby positioning the clients product to be the best version possible.
 
 
 Critique of Server/Client prototype
 ---------------------
-
-### Overview
-()
 
 ### Server Issue: Hard-Coded HTTP version
 
@@ -49,9 +46,7 @@ Middleware in express allows the execution of code during the request-response c
 
 `app.use(express.json())`
 
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words)
-
-The problem this feature solves is the issue that developers would have to parse through request-response bodies manually for JSON data and then perform conversions in order to operate upon the data. This feature circumvents the manual parsing and conversion, making JSON payloads easier to work with and faster to operate upon for developers. This feature also ensures the JSON is parsed early in the middleware stack, making subsequent middleware functions have the ability to operate on the data before it is handled by other functions in the server. There are issues with this style of middleware, namely security implications due to the nature that `express.json()` accepts and parses any JSON sent by the client. Meaning very large payloads could be sent maliciously using this type of middleware.
+This feature streamlines JSON data handling by automatically parsing request-response bodies, eliminating the need for manual parsing and conversions. It accelerates developers' operations on JSON payloads and ensures early parsing in the middleware stack. However, security concerns arise, as express.json() accepts and parses any JSON, potentially leading to malicious exploitation through large payloads.
 
 ### References
 
@@ -106,6 +101,7 @@ expressjs.com. (n.d.). Express cors middleware. [online] Available at: https://e
 ### Route Parameters
 
 Route parameters are named URL segments that are used to capture the values specified at their position in the URL. This allows for the extraction of values from the URL, making them accessible from the `req.params` object.
+
 (A code block snippet example demonstrating the feature)
 ```
 app.get('/item/:id', (req, res) => {
@@ -183,7 +179,7 @@ Vue.js' two-way data binding creates a seamless connection between the DOM and t
 
 `<input type="text" id="input1" name="user_id" class="form-control" v-model="inputs.inputUserID" aria-label="UserID" aria-describedby="inputGroup-sizing-default">`
 
-The problem this is solving is the removal of the need for manual DOM manipulation and event listeners in Vue.js applications. Without it, additional code would be required to manually update the data model on every user input or interaction with the UI, leading to more error-prone code by allowing room for error. Because this feature handles the DOM for the developer it can however lead to some situations where the standard behavior of the v-model isn't sufficient, and shortfalls in the functionality of two-way data binding in Vue.js can be seen here.
+This is solving the removal of the need for manual DOM manipulation and event listeners in Vue.js applications. Without it, additional code would be required to manually update the data model on every user input or interaction with the UI, leading to more error-prone code by allowing room for error. Because this feature handles the DOM for the developer it can however lead to some situations where the standard behavior of the v-model isn't sufficient, and shortfalls in the functionality of two-way data binding in Vue.js can be seen here.
 
 ### References
 
@@ -289,7 +285,6 @@ MDN Web Docs. (n.d.). Template literals (Template strings). [online] Available a
 Conclusions
 -----------
 
-(justify why frameworks are recommended - 120ish words)
-(justify which frameworks should be used and why 180ish words)
+In conclusion, the adoption of frameworks for the clients solution emerges as a compelling direction for the next stages of product change. Frameworks, exemplified by Vue.js and Express.js in this analysis, offer a structured and efficient paradigm that solve the challenges faced by a framework-less solution. With the features analysed above frameworks not only allow for ease of code organisation but also enhance readability and maintainability. The modular architecture provided by frameworks aligns with industry best practices, fostering scalability and ease of development. Embracing frameworks proves instrumental in achieving not just industry standards but also in future-proofing the codebase, ensuring adaptability to evolving requirements and delivering a robust, maintainable, and client-beneficial solution.
 
-
+In particular, the choice of Express and Vue stands as a strategic pairing. Express, a minimalist and flexible Node.js framework, excels in handling applications with needs like the clients. With a focus on robustness and scalability alongside its vast ecosystem of middleware, ensures efficient API development and a strong end product for the client. On the client side, Vue provides its reactive data-binding, component based architecture, and ease of integration. Vue heavily compliments express, allowing for a cohesive development experience. The lightweight nature of both frameworks aligns with the projects requirements, fostering agile development. This pairing not only addresses the current project needs but also positions the client to adapt seamlessly to future enhancements, underscoring the holistic advantages of adopting a curated set of frameworks.
